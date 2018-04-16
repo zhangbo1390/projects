@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<style type="text/css">
+    .videoHW {
+        width: 70%;
+        height: 70%
+    }
+    .threat-report-read-it-now {
+        font-size: 20px;
+    }
+    tbody th, tbody td {
+        vertical-align: top;
+    }
+    .section3BlockImg{
+        padding-top:100px;
+    }
+    .section3Left{
+        text-align: right;
+        padding: 20px;
+    }
+    .section3Right{
+        text-align: left;
+        padding: 20px;
+    }
+    #oSection2 {
+        padding:0px;
+    }
+    #reportThumb {
+        max-width: 600px;
+        position:absolute;
+        left:3000px;
+        display: none;
+    }
+    .reportvideo {
+        margin-top: 50px;
+        display: block;
+    }
+    #videoBg {
+        background-image: url('https://cdn.sonicwall.com/sonicwall.com/media/images/2018-cyber-threat-report/top-banner_preview.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 800px;
+        margin-bottom: 0px;
+    }
+    .fw {
+        color: #fff;
+    }
+    .quote1{
+        color: #062a3e;
+        font-size: 20px;
+    }
+    .quote2{
+        color: #062a3e;
+        font-size: 16px;
+    }
+    .image-wrapper {
+        text-align: center;
+    }
+    .iconList {
+        width: 10%;
+        padding: 10px;
+    }
+    .oBg{
+        background-color: #dbdfe1;
+        margin-top: 60px;
+    }
+
+    .solution-image-inline{
+        opacity:1;
+        filter:alpha(opacity:100);
+    }
+    .square1 {
+        margin-top: 0px;
+        background: #68696b;
+        height: 480px!important;
+        opacity:1;
+        filter:alpha(opacity:100);
+    }
+    .circle1 {
+        height: 200px;
+        width: 200px;
+        margin: 10px auto;
+        padding: 30px;
+    }
+    .cirlep1 {
+        color: #fff;
+        font-size: 40px;
+        padding-top: 0px;
+    }
+    .squarep1 {
+        font-size: 30px;
+        font-weight: bold;
+        color: #fff;
+    }
+    .square2 {
+        margin-top: 0px;
+        background: #FF791A;
+        height: 480px!important;
+        opacity:1;
+        filter:alpha(opacity:100);
+    }
+    .circle2 {
+        height: 200px;
+        width: 200px;
+        margin: 10px auto;
+        padding: 30px;
+    }
+    .cirlep2 {
+        color: #000;
+        font-size: 40px;
+        padding-top: 30px;
+    }
+    .squarep2 {
+        font-size: 30px;
+        font-weight: bold;
+        color: #000;
+    }
+    .square3 {
+        margin-top: 0px;
+        background: #47AFE8;
+        height: 480px!important;
+        opacity:1;
+        filter:alpha(opacity:100);
+    }
+    .circle3 {
+        height: 200px;
+        width: 200px;
+        margin: 10px auto;
+        padding: 30px;
+    }
+    .cirlep3 {
+        font-size: 40px;
+        color: #fff;
+        padding-top: 30px;
+    }
+    .squarep3 {
+        font-size: 30px;
+        font-weight: bold;
+        color: #fff;
+    }
+    #bgimg {
+        margin-left:0px;
+        margin-right: 0px;
+        /*max-width: 100%;*/
+        background-color: #68696b;
+    }
+    .imgOpacity {
+        opacity:1;
+        filter:alpha(opacity:100);
+    }
+    .h2font {
+        color: #fff;
+    }
+    .pfont {
+        color: #fff;
+    }
+    .pfont1 {
+        color: #ff6c0b;
+    }
+    a {
+        color: #fff;
+    }
+    a:hover {
+        color: #fff;
+    }
+    .alink {
+        font-size: 10px;
+        padding: 20px;
+        background: #ff6c0c;
+        color: #fff;
+    }
+    .block{
+        text-align: center;
+        float: left;
+        padding: 50px;
+        align-items: center;
+    }
+    .button-link-wrapper-centered {
+        height:0;
+    }
+    .aimg {
+        width: 70%
+    }
+
+    @media print, screen and (min-width: 20em){
+        iframe{border:3px solid #fff;}
+        #reportThumb {
+            width: 300px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+        p {
+            font-size: 14px;
+        }
+        .square1 {
+            margin-top: 30px;
+        }
+        .square2 {
+            margin-top: 30px;
+        }
+        .square3 {
+            margin-top: 30px;
+        }
+        .section5Res {
+            margin-bottom: 20px;
+            width: 150px;
+        }
+        .section3BlockMT {
+            margin-top: 0px;
+        }
+        .section2big {
+            display: none;
+        }
+        .section2small {
+            width: 60px;
+            display: inline-block;
+        }
+        .small-12 {
+            width: 100%
+        }
+        #videoBg {
+            height: 670px;
+            margin-bottom: 20px;
+        }
+        .reportvideo {
+            margin-top: 230px;
+        }
+        .pfont1 {
+            font-size: 25px;
+        }
+        .iconList {
+            width: 25%;
+            padding: 10px;
+        }
+        .solution-item .cta-left .image-wrapper {
+            padding:0;
+        }
+        .aimg {
+            width: 70%;
+            margin: 10px;
+        }
+        img {
+            max-width: 199px;
+        }
+        #divRightScroll {
+            position:fixed;
+            top:300px;
+            right:0;
+        }
+        .divRightScrollIMG {
+            width: 40px;
+        }
+    }
+    @media print, screen and (min-width: 40em) {
+        .button.orange {
+            font-size: 16px !important;
+        }
+        iframe{border:6px solid #fff;}
+        .square1 {
+            margin-top: 0px;
+        }
+        .square2 {
+            margin-top: 0px;
+        }
+        .square3 {
+            margin-top: 0px;
+        }
+        .section3Left{
+            text-align: right;
+            padding: 20px 20px 20px 100px;
+        }
+        .section3Right{
+            text-align: left;
+            padding: 20px 100px 20px 20px;
+        }
+        .section3Block {
+            height: 200px;
+            width: auto;
+        }
+        .block {
+            padding: 30px;
+        }
+        .pfont1 {
+            font-size: 32px;
+        }
+        .iconList {
+            width: 12%;
+            padding: 10px;
+        }
+        .aimg {
+            width: 40%;
+            margin: 20px;
+        }
+        .medium-3 {
+            height: 250px;
+        }
+        .square1 {
+            height: 300px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle1 {
+            height: 100px;
+            width: 100px;
+            margin: 10px auto;
+            padding: 15px;
+        }
+        .cirlep1 {
+            font-size: 18px;
+        }
+        .squarep1 {
+            font-size: 18px;
+        }
+        .square2 {
+            height: 300px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle2 {
+            height: 100px;
+            width: 100px;
+            margin: 10px auto;
+            padding: 15px;
+        }
+        .cirlep2 {
+            font-size: 18px;
+            padding-top: 12px;
+        }
+        .squarep2 {
+            font-size: 18px;
+        }
+        .square3 {
+            height: 300px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle3 {
+            height: 100px;
+            width: 100px;
+            margin: 10px auto;
+            padding: 15px;
+        }
+        .cirlep3 {
+            font-size: 18px;
+            padding-top: 12px;
+        }
+        .squarep3 {
+            font-size: 18px;
+        }
+        #videoBg {
+            background-image: url('https://cdn.sonicwall.com/sonicwall.com/media/images/2018-cyber-threat-report/top-banner_preview.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 1250px;
+            margin-bottom: 0px;
+        }
+        .reportvideo {
+            margin-top: 600px;
+        }
+        img {
+            max-width: 550px;
+        }
+        #oSection2 .row {
+            /*margin: 0 auto;*/
+        }
+        .brClass {
+            display:block;
+        }
+        .section2big {
+            display: none;
+        }
+        .section2small {
+            width: 100px;
+            display: inline-block;
+        }
+        .section5Res {
+            margin-bottom: 20px;
+            width: 135px;
+        }
+        .section5Txt {
+            color: #68696B;
+            font-size: 22px;
+        }
+        #divRightScroll {
+            position:fixed;
+            top:500px;
+            right:0;
+        }
+        .divRightScrollIMG {
+            width: 40px;
+        }
+    }
+    @media print, screen and (min-width: 62em){
+        .button.orange {
+            font-size: 20px !important;
+        }
+        iframe{border:6px solid #fff;}
+        .square1 {
+            margin-top: 0px;
+        }
+        .square2 {
+            margin-top: 0px;
+        }
+        .square3 {
+            margin-top: 0px;
+        }
+        .section3Left{
+            text-align: right;
+            padding: 20px;
+        }
+        .section3Right{
+            text-align: left;
+            padding: 20px;
+        }
+        .row .row {
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+        h1 {
+            font-size: 42px;
+        }
+        h3 {
+            font-size: 24px;
+        }
+        .block {
+            padding: 10px;
+        }
+        .thumbS1 {
+            max-width: 450px;
+        }
+        .pfont1 {
+            font-size: 35px;
+        }
+        .quote1{
+            font-size: 30px;
+            color: #062a3e;
+        }
+        .quote2{
+            font-size: 23px;
+            color: #062a3e;
+        }
+        #bgimg {
+            padding: 60px 50px 60px 50px;
+        }
+        .iconList {
+            width: 10%;
+            padding: 10px;
+        }
+        .aimg {
+            width: 70%;
+            margin: 10px;
+        }
+        .square1 {
+            height: 240px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle1 {
+            height: 200px;
+            width: 200px;
+            margin: 10px auto;
+            padding: 30px;
+        }
+        .cirlep1 {
+            font-size: 28px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .squarep1 {
+            font-size: 22px;
+        }
+        .square2 {
+            height: 240px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle2 {
+            height: 200px;
+            width: 200px;
+            margin: 10px auto;
+            padding: 30px;
+        }
+        .cirlep2 {
+            font-size: 28px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .squarep2 {
+            font-size: 22px;
+        }
+        .square3 {
+            height: 240px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle3 {
+            height: 200px;
+            width: 200px;
+            margin: 10px auto;
+            padding: 30px;
+        }
+        .cirlep3 {
+            font-size: 28px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .squarep3 {
+            font-size: 22px;
+        }
+        .large-4 {
+            width: 400px!important;
+        }
+        p {
+            font-size: 17px;
+        }
+        .alink {
+            font-size: 0.875rem;
+        }
+        .h2font {
+            font-size: 42px;
+        }
+        .zigPT {
+            padding-top: 110px;
+        }
+        .solution-item .cta-right .title {
+            float: left;
+        }
+        .zigPT1{
+            padding-top: 185px;
+        }
+        .zigPT2{
+            padding-top: 150px;
+        }
+        img {
+            max-width: 100%;
+        }
+        #oSection2 .row {
+           /* margin: 0 auto;*/
+        }
+        .section5Res {
+            margin-bottom: 20px;
+            width: 90px;
+        }
+        .section5Txt {
+            color: #68696B;
+            font-size: 19px;
+        }
+        .section3Block {
+            height: 350px;
+        }
+        #videoBg {
+            background-image: url('https://cdn.sonicwall.com/sonicwall.com/media/images/2018-cyber-threat-report/top-banner_preview.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 800px;
+            margin-bottom: 0px;
+        }
+        .brClass {
+            display:block;
+        }
+        .section2big {
+            width: 100px;
+            display: block;
+        }
+        .section2small {
+            display: none;
+        }
+        #reportThumb {
+            margin-top: 100px;
+        }
+        .reportvideo {
+            margin-top: 200px;
+            margin-left: -50px;
+        }
+        #divRightScroll {
+            position:fixed;
+            top:700px;
+            right:0;
+        }
+        .divRightScrollIMG {
+            width: 40px;
+        }
+        .scrollA {
+            position: absolute;
+            display: block;
+            height: 120px;
+            width: 200px;
+            left: 660px;
+            top: 600px;
+            z-index: 1000;
+        }
+    }
+    @media print, screen and (min-width: 70em){
+        iframe{border:6px solid #fff;}
+        .square1 {
+            margin-top: 0px;
+        }
+        .square2 {
+            margin-top: 0px;
+        }
+        .square3 {
+            margin-top: 0px;
+        }
+        h1 {
+            font-size: 38px;
+        }
+        h3 {
+            font-size: 28px;
+        }
+        .block {
+            padding: 20px;
+        }
+        .thumbS1 {
+            max-width: 480px;
+        }
+        .pfont1 {
+            font-size: 35px;
+        }
+        .quote1{
+            font-size: 30px;
+            color: #062a3e;
+        }
+        .quote2{
+            font-size: 23px;
+            color: #062a3e;
+        }
+        #bgimg {
+            padding: 60px 100px 60px 100px;
+        }
+        .iconList {
+            width: 10%;
+            padding: 10px;
+        }
+        .aimg {
+            width: 70%;
+            margin: 10px;
+        }
+        .square1 {
+            height: 240px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle1 {
+            height: 200px;
+            width: 200px;
+            margin: 10px auto;
+            padding: 30px;
+        }
+        .cirlep1 {
+            font-size: 37px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .squarep1 {
+            font-size: 22px;
+        }
+        .square2 {
+            height: 240px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle2 {
+            height: 200px;
+            width: 200px;
+            margin: 10px auto;
+            padding: 30px;
+        }
+        .cirlep2 {
+            font-size: 37px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .squarep2 {
+            font-size: 22px;
+        }
+        .square3 {
+            height: 240px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle3 {
+            height: 200px;
+            width: 200px;
+            margin: 10px auto;
+            padding: 30px;
+        }
+        .cirlep3 {
+            font-size: 37px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .squarep3 {
+            font-size: 22px;
+        }
+        .large-4 {
+            width: 400px!important;
+        }
+        p {
+            font-size: 17px;
+        }
+        .alink {
+            font-size: 0.875rem;
+        }
+        .h2font {
+            font-size: 42px;
+        }
+        .zigPT {
+            padding-top: 110px;
+        }
+        .solution-item .cta-right .title {
+            float: left;
+        }
+        .zigPT1{
+            padding-top: 185px;
+        }
+        .zigPT2{
+            padding-top: 150px;
+        }
+        img {
+            max-width: 100%;
+        }
+        #oSection2 .row {
+            /*margin: 0 auto;*/
+        }
+        .section5Res {
+            margin-bottom: 20px;
+            width: 90px;
+        }
+        .section5Txt {
+            color: #68696B;
+            font-size: 19px;
+        }
+        .section3Block {
+            height: 320px;
+        }
+        #videoBg {
+            background-image: url('https://cdn.sonicwall.com/sonicwall.com/media/images/2018-cyber-threat-report/top-banner_preview.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 800px;
+            margin-bottom: 0px;
+        }
+
+        .brClass {
+            display:none;
+        }
+        .section2big {
+            width: 100px;
+            display: block;
+        }
+        .section2small {
+            display: none;
+        }
+        .scrollA {
+            position: absolute;
+            display: block;
+            height: 120px;
+            width: 200px;
+            left: 660px;
+            top: 600px;
+            z-index: 1000;
+        }
+        #reportThumb {
+            margin-top: 100px;
+        }
+        .reportvideo {
+            margin-top: 125px;
+            margin-left: -50px;
+        }
+        #divRightScroll {
+            position:fixed;
+            top:380px;
+            right:0;
+        }
+        .divRightScrollIMG {
+            width: 40px;
+        }
+    }
+    @media print, screen and (min-width: 85em){
+        iframe{border:6px solid #fff;}
+        .square1 {
+            margin-top: 0px;
+        }
+        .square2 {
+            margin-top: 0px;
+        }
+        .square3 {
+            margin-top: 0px;
+        }
+        .section3BlockMT {
+            margin-top: 0px;
+        }
+        h1 {
+            font-size: 47px;
+        }
+        h3 {
+            font-size: 33px;
+        }
+        .block {
+            padding: 30px;
+        }
+        .thumbS1 {
+            max-width: 480px;
+        }
+        .pfont1 {
+            font-size: 35px;
+        }
+        .quote1{
+            font-size: 30px;
+            color: #062a3e;
+        }
+        .quote2{
+            font-size: 23px;
+            color: #062a3e;
+        }
+        #bgimg {
+            padding: 60px 200px 60px 200px;
+        }
+        .iconList {
+            width: 10%;
+            padding: 10px;
+        }
+        .aimg {
+            width: 70%;
+            margin: 10px;
+        }
+        .square1 {
+            height: 240px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle1 {
+            height: 200px;
+            width: 200px;
+            margin: 10px auto;
+            padding: 30px;
+        }
+        .cirlep1 {
+            font-size: 45px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .squarep1 {
+            font-size: 28px;
+        }
+        .square2 {
+            height: 240px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle2 {
+            height: 200px;
+            width: 200px;
+            margin: 10px auto;
+            padding: 30px;
+        }
+        .cirlep2 {
+            font-size: 45px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .squarep2 {
+            font-size: 28px;
+        }
+        .square3 {
+            height: 240px!important;
+            opacity:1;
+            filter:alpha(opacity:100);
+        }
+        .circle3 {
+            height: 200px;
+            width: 200px;
+            margin: 10px auto;
+            padding: 30px;
+        }
+        .cirlep3 {
+            font-size: 45px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .squarep3 {
+            font-size: 28px;
+        }
+        .large-4 {
+            width: 500px!important;
+        }
+        p {
+            font-size: 21px;
+        }
+        .alink {
+            font-size: 0.875rem;
+        }
+        .h2font {
+            font-size: 50px;
+        }
+        .zigPT {
+            padding-top: 110px;
+        }
+        .solution-item .cta-right .title {
+            float: left;
+        }
+        .zigPT1{
+            padding-top: 185px;
+        }
+        .zigPT2{
+            padding-top: 150px;
+        }
+        img {
+            max-width: 100%;
+        }
+        #oSection2 .row {
+           /* max-width: 1500px;
+            margin: 0 auto;*/
+        }
+        .section5Res {
+            margin-bottom: 20px;
+            width: 135px;
+        }
+        .section5Txt {
+            color: #68696B;
+            font-size: 22px;
+        }
+        .section3Block {
+            height: 300px;
+            width: 650px;
+        }
+        #videoBg {
+            background-image: url('https://cdn.sonicwall.com/sonicwall.com/media/images/2018-cyber-threat-report/top-banner_preview.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 800px;
+            margin-bottom: 0px;
+        }
+        .brClass {
+            display:none;
+        }
+        .section2big {
+            width: 100px;
+            display: block;
+        }
+        .section2small {
+            display: none;
+        }
+        .section3Left {
+            width: 650px;
+        }
+        .scrollA {
+            position: absolute;
+            display: block;
+            height: 200px;
+            width: 200px;
+            left: 500px;
+            top: 650px;
+            z-index: 1000;
+        }
+        #reportThumb {
+            margin-top: 100px;
+        }
+        .reportvideo {
+            margin-top: 125px;
+            margin-left: -50px;
+        }
+        #divRightScroll {
+            position:fixed;
+            top:500px;
+            right:0;
+        }
+        .divRightScrollIMG {
+            width: 40px;
+        }
+    }
+   /* ========================== Added by Sunny ===========================*/
+    .text-align-r{text-align:right;}
+    .text-align-l{text-align:left;}
+    .max-width-expanded{max-width: 112rem;}
+    #bgimg{padding-left: unset !important;padding-right: unset !important;}
+    @media print, screen and (min-width: 40em){.row .row{margin-right: 0; margin-left: 0;}}
+    @media print, screen and (min-width: 20em){.row .row{margin-right: 0; margin-left: 0;}}
+    .h2font,.pfont,.pfont1,.pfont{padding-left:0.9375rem; }
+
+</style>
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        TR_Page_Init();
+        /* Added by Sunny */
+        $('#oSection2 > div').addClass('expanded');
+        $('#bgimg').addClass('expanded');
+        $('#bgimg > div').removeClass('small-12  columns');
+        $('.section-item.generic-copy').eq(1).css({"padding-bottom":'0px'});
+        $('.section-item.generic-copy').eq(2).css({"padding":'0px'});
+
+        /* end */
+    });
+
+    TR_Page_Init = function(){
+        var oBtnSubmit=document.getElementById('p_lt_ctl02_pageplaceholder_p_lt_ctl01_ModuleRepeater_repItems_ctl02_ctl00_ctl00_ctl00_ctl00_BizForm_btnOK');
+        oBtnSubmit.value="SUBMIT";
+        var oDivBg=document.getElementsByClassName('solution-item firewall-group expanded');
+        var oForm=document.getElementsByClassName('form');
+        oForm[0].id='bgimg';
+        var oBg=document.getElementsByClassName('section-item generic-copy');
+        oBg[0].id='oSection2';
+        var oDivBg0=document.getElementsByClassName('solution-item firewall-group expanded')[0];
+        oDivBg0.id='videoBg';
+        // update 0308 slide right to left
+        var oReportThumb=document.getElementById('reportThumb');
+        var windowWidth=$(window).width();
+        if(windowWidth > 620){
+            startMove(oReportThumb, 'left', 150);
+        }
+        else {
+            startMove(oReportThumb, 'left', 50);
+        }
+        oReportThumb.style.display='block';
+        //update 0308 video shows 5 seconds after PDF
+        setTimeout(function(){
+            $('#videoAuto').animate({
+                width: '100%',
+                height: '100%',
+                opacity: '1'
+            }, 3000)
+
+        }, 500)
+
+        //right scrollTop button
+        $('#divRightScroll').click(function(){
+            $('html,body').animate({scrollTop:0},'slow');
+        });
+    }
+
+    Start_Counter = true;
+    window.onscroll=function(){
+        //section start count after visible
+        var wHeight,tTop,s2Top;
+        var oSection2=$("#oSection2");
+        wHeight=$(window).height();
+        tTop=$(this).scrollTop();   //页面滚动的高度  
+        s2Top=oSection2.offset().top;
+        if(wHeight+tTop>s2Top){
+            if(Start_Counter){
+                Counter_Attacks(9320400193,20000, 'Num-MA');
+                Counter_Ransomware();
+                //Counter_Attacks(101,2000, 'Num-RV');
+                Counter_RSC();
+                //Counter_Attacks(2855,200, 'Num-RSC');
+                Start_Counter = false;
+            }
+
+        }
+    }
+
+    function getStyle(obj,name){
+        if(obj.currentStyle){
+            return obj.currentStyle[name];
+        }
+        else {
+            return getComputedStyle(obj, false)[name];
+        }
+    }
+
+    function startMove(obj, attr, iTarget){
+        clearInterval(obj.timer);
+        obj.timer=setInterval(function(){
+            var cur=0;
+            if(attr=='opacity'){
+                cur=Math.round(parseFloat(getStyle(obj, attr))*100);
+            }
+            else{
+                cur=parseInt(getStyle(obj,attr));
+            }
+            var speed=(iTarget-cur)/6;
+            speed=speed>0?Math.ceil(speed):Math.floor(speed);
+            if(cur==iTarget){
+                clearInterval(obj.timer);
+            }
+            else{
+                if(attr=='opacity'){
+                    var alpha=cur+speed;
+                    obj.style.filter='alpha(opacity:'+alpha+')';
+                    obj.style.opacity=alpha/100;
+                }
+                else{
+                    obj.style[attr]=cur+speed+'px';
+                }
+            }
+        }, 50);
+    }
+
+
+
+    Counter_Attacks = function(Total, seconds, ID){
+        requestAnimationFrame(function() {
+            startTime = new Date().getTime();
+            change(startTime);
+        });
+
+        change = function(startTime) {
+            var p = Math.min(1.0, (new Date().getTime() - startTime) / seconds);
+            var nums = (Total * p).toFixed(0);
+            counter = nums.toString();
+            counter = counter.replace(/,/g, '').replace(/\d+?(?=(?:\d{3})+$)/g, function(s){
+                return s +',';
+            });
+            $("#" + ID).text(counter);
+
+            if (p < 1.0) {//
+                requestAnimationFrame(function() {
+                    change(startTime);
+                });
+            } else {
+                cancelAnimationFrame(change);
+            }
+        }
+
+    }
+
+    Counter_Ransomware = function(){
+        var num = 0;
+        var t = setTimeout(timedCount(num), 1);
+        function timedCount(num){
+            num++;
+            counter = num.toString();
+            counter =counter.replace(/,/g, '').replace(/\d+?(?=(?:\d{3})+$)/g, function(s){
+                return s +',';
+            });
+            $("#Num-RV").text(counter);
+            if (num<101) {
+                var t = setTimeout(function(){timedCount(num)},1);
+            }
+        }
+
+    }
+
+    Counter_RSC = function(){
+        var num = 0;
+        var t = setTimeout(timedCount(num), 1);
+        function timedCount(num){
+            num++;
+            counter = num.toString();
+            counter =counter.replace(/,/g, '').replace(/\d+?(?=(?:\d{3})+$)/g, function(s){
+                return s +',';
+            });
+            $("#Num-RSC").text(counter);
+            if (num<2855) {
+                var t = setTimeout(function(){timedCount(num)},1);
+            }
+        }
+    }
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex test</title>
+    <style>
+        .box{border: 1px solid #000;height: 200px;width: 100px;}
+        .flex{display: flex;flex-direction: row;width: 1500px;border: 1px solid grey;}
+
+
+        @media print, screen and (min-width: 62em){
+            #main-menu .sub-menu .sub-menu-3>li{
+                /* min-width: 200px; */
+            }
+        }
+        @media print, screen and (min-width: 85.375em){
+            #main-menu .sub-menu .sub-menu-3 > li {
+                /* max-width: 310px; */
+                /* min-width: 250px;*/
+                width: 33.33%;
+            }
+            #main-menu .sub-menu .sub-menu-3 li:nth-child(1) ul:before{
+                left: 66%;
+            }
+            #main-menu .sub-menu .sub-menu-3 li:nth-child(1) ul:after{
+                left: 33%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="flex">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+    <div class="box box5">box5</div>
+    EXECUTIVE BRIEF: 4 OBSTACLES TO ATTAINING PUBLIC/PRIVATE CLOUD SECURITY
+    Executive Brief: 4 Obstacles to Attaining Public/Private Cloud Security
+</div>
+</body>
+</html>
