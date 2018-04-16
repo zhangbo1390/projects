@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+</head>
+<body>
+<div class="container">
+    <div class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</div>
+    You can use the mark tag to<mark> highlight </mark>text
+    <table class="table table-hover">
+        <tr class="active">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+        </tr>
+        <tr class="info">
+            <td>Mark</td>
+            <td>Mark</td>
+            <td>Mark</td>
+        </tr>
+        <tr>
+            <td>Jacob</td>
+            <td>Jaob</td>
+            <td>Jacob</td>
+        </tr>
+    </table>.
+    <form action="" class="form-inline">
+        <div class="form-group">
+            <label for="">username</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">password</label>
+            <input type="password" class="form-control">
+        </div>
+    </form>
+    <button class="btn btn-info btn-block">button</button>
+    <p class="text-muted bg-danger">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+    <p class="text-danger bg-info">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+    <button class="close pull-left"> <span aria-hidden="true">&times;</span></button>
+    <div class="clearfix"></div>
+    <div class="alert alert-warning">
+        <span class="glyphicon glyphicon-exclamation-sign"></span>
+        Enter a valid email address
+    </div>
+    <div class="row">
+        <div class="col-xs-4 " style="background: #ddd;height: 20px;"></div>
+        <div class="col-xs-4  col-md-offset-4" style="background: #ccc;height: 20px;"></div>
+    </div>
+    <div class="alert alert-warning">
+        <span class="close" aria-label="close">&times;</span>
+        <p><strong>Well done!</strong> You successfully read this important alert message.</p>
+        <p><strong>Well done!</strong> You successfully read this important alert message.</p>
+
+    </div>
+    <ul class="nav nav-tabs nav-justified">
+        <li class="active"><a href="">home</a></li>
+        <li><a href="">profile</a></li>
+        <li><a href="">messages</a></li>
+    </ul>
+    <button class="btn btn-info btn-lg" data-toggle="modal" data-target="#modal">Launch demo modal</button>
+    <div id="modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" > <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">close</button>
+                    <button class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <ul>
+        <li>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</li>
+        <li>
+            <ul>
+                <li>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</li>
+                <li>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</li>
+                <li>
+                    <ul>
+                        <li>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ol>
+        <li>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</li>
+        <li>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</li>
+        <li>Duis mollis, est non commodo luctus, nisi erat porttitor ligula</li>
+    </ol>
+    <dl class="dl-horizontal">
+        <dt title="Duis mollis, est non commodo luctus, nisi erat porttitor ligula">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</dt>
+        <dd>Duis mollis, est non commodo luctus, nisi erat porttitor ligulaDuis mollis, est non commodo luctus, nisi erat porttitor ligula</dd>
+        <dt title="Duis mollis, est non commodo luctus, nisi erat porttitor ligula">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</dt>
+        <dd>Duis mollis, est non commodo luctus, nisi erat porttitor ligulaDuis mollis, est non commodo luctus, nisi erat porttitor ligula</dd>
+    </dl>
+    <code>
+        &lt;div&gt;code content&lt;/div&gt;
+    </code>
+    <code>
+        &lt;div&gt;code content&lt;/div&gt;
+    </code>
+    <kbd>
+        &lt;div&gt;kbd content&lt;/div&gt;
+    </kbd>
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr class="active">
+                <th>head one</th>
+                <th>head two</th>
+                <th>head three</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="success">
+                <td>body one</td>
+                <td>body two</td>
+                <td>body three</td>
+            </tr>
+            <tr class="info">
+                <td>body one</td>
+                <td>body two</td>
+                <td>body three</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="warning">
+                <td>footer one</td>
+                <td>footer two</td>
+                <td>footer three</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <thead>
+            <tr class="danger">
+                <th>head one</th>
+                <th>head two</th>
+                <th>head three</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>body one</td>
+                <td>body two</td>
+                <td>body three</td>
+            </tr>
+            <tr>
+                <td>body one</td>
+                <td>body two</td>
+                <td>body three</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td>footer one</td>
+                <td>footer two</td>
+                <td>footer three</td>
+            </tr>
+            </tfoot>
+
+        </table>
+    </div>
+    <form action="" class="form-inline">
+        <fieldset>
+            <legend>用户登录</legend>
+            <div class="form-group">
+                <label for="">用户名</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">密码</label>
+                <input type="password" class="form-control">
+            </div>
+            <div class="checkbox">
+                <label for=""><input type="checkbox" checked>记住密码</label>
+
+            </div>
+            <button class="btn btn-default">登录</button>
+        </fieldset>
+        <select name="" id="" multiple>
+            <option value="01">01</option>
+            <option value="02">02</option>
+        </select>
+    </form>
+    <div class="checkbox">
+        <label for=""> <input type="checkbox">是否想赚大钱？</label>
+    </div>
+    <div class="radio">
+        <label for=""> <input type="radio">真的想赚大钱？</label>
+    </div>
+    <div class="radio">
+        <label for=""> <input type="radio">确定想赚大钱？</label>
+    </div>
+    <div class="checkbox checkbox-inline">
+        <label for="" class=""><input type="checkbox">是否想赚大钱？ </label>
+        <label for="" class=""><input type="checkbox">是否想赚大钱？ </label>
+    </div>
+    <div class="radio radio-inline">
+        <label for="" class=""> <input type="radio">真的想赚大钱?</label>
+        <label for="" class=""> <input type="radio">真的想赚大钱?</label>
+    </div>
+    <input type="text" class="form-control" disabled placeholder="please input your name">
+    <form action="" class="form-inline">
+        <fieldset disabled>
+            <legend>
+                <input type="text">
+            </legend>
+            <input type="text" placeholder="disabled input">
+            <select name="" id="select">
+                <option value="01">请选择</option>
+                <option value="02">请选择</option>
+            </select>
+            <div class="checkbox">
+                <label for=""> <input type="checkbox">记住密码</label>
+            </div>
+            <button class="btn btn-default">提交</button>
+        </fieldset>
+    </form>
+    <div class="form-group has-warning has-feedback">
+        <label for="" class="control-label sr-only">输入长度不够！</label>
+        <input type="text" class="form-control">
+        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+    </div>
+    <span class="help-block">自己独占一行或多行的块级帮助文本</span>
+    <button class="btn btn-info">button <span class="badge">3</span> <a class="close">&times;</a> <span class="caret"></span></button>
+    <button class="btn btn-default text-hide active">button</button>
+    <div class="btn-toolbar">
+        <div class="btn-group">
+            <a href="" class="btn btn-default"> <span class="glyphicon glyphicon-adjust"></span></a>
+            <a href="" class="btn btn-default"> <span class="glyphicon glyphicon-align-center"></span></a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-default" data-toggle="dropdown">下拉菜单 <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">home</a></li>
+            <li><a href="#">info</a></li>
+            <li><a href="#">help</a></li>
+            <li><a href="#">contect</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-xs-4" style="background: red;height: 50px;"></div>
+        <div class="col-xs-8" style="">
+            <div class="btn-group btn-group-vertical">
+                <button class="btn btn-default">首页</button>
+                <button class="btn btn-default">个人简介</button>
+                <button class="btn btn-default">作品</button>
+                <div class="btn-group">
+                    <button class="btn btn-default" data-toggle="dropdown" >图书<span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="dropdown">
+                        <li><a href="#">javascript编程精解</a></li>
+                        <li><a href="#">javascript设计模式</a></li>
+                        <li><a href="#">javascript启示录</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-group btn-group-justified">
+        <a href="" class="btn btn-default" role="button">左边</a>
+        <a href="" class="btn btn-default" role="button">中间</a>
+        <a href="" class="btn btn-default" role="button">右边</a>
+    </div>
+    <div class="btn-group dropup">
+        <button class="btn btn-danger">下拉菜单</button>
+        <button class="btn btn-danger" data-toggle="dropdown"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">javascript编程精解</a></li>
+            <li><a href="#">javascript设计模式</a></li>
+            <li><a href="#">javascript启示录</a></li>
+        </ul>
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <input type="text" class="form-control" placeholder="count">
+        <span class="input-group-addon">.00</span>
+        <input type="text" class="form-control" placeholder="count">
+        <span class="input-group-addon">.00</span>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="input-group">
+                <span class="input-group-addon"><input type="checkbox"></span>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <span class="input-group-addon"><input type="radio" ></span>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <div class="input-group-btn">
+            <button class="btn btn-default">Go!</button>
+        </div>
+        <input type="text" class="form-control">
+    </div>
+    <div class="input-group ">
+        <input type="text" class="form-control">
+        <div class="input-group-btn">
+            <button class="btn btn-default" data-toggle="dropdown">下拉菜单 <span class="caret"></span></button>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="#">javascript编程精解</a></li>
+                <li><a href="#">javascript设计模式</a></li>
+                <li><a href="#">javascript启示录</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <ul class="nav nav-tabs nav-stacked">
+        <li class="active"><a href="#">javascript编程精解</a></li>
+        <li><a href="#">javascript设计模式</a></li>
+        <li><a href="#">javascript启示录</a></li>
+    </ul>
+    <ul class="nav nav-pills nav-stacked ">
+        <li class="active"><a href="#">javascript编程精解</a></li>
+        <li><a href="#">javascript设计模式</a></li>
+        <li class="nav-divider"></li>
+        <li><a href="#" style="height: 2rem">javascript启示录</a></li>
+    </ul>
+    <ul class="nav nav-tabs">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Messages</a></li>
+        <li class="dropdown">
+            <a href="#"  data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Messages</a></li>
+            </ul>
+        </li>
+    </ul>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">Brand</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Messages</a></li>
+        </ul>
+    </nav>
+    <nav class="navbar navbar-default">
+        <div class="navbar-brand">
+            <a href="#">Brand</a>
+        </div>
+        <form action="" class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="search..">
+                <button class="btn btn-default">search</button>
+            </div>
+        </form>
+    </nav>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="navbar-brand">
+            <a href="#" class="navbar-link">Brand</a>
+        </div>
+        <form action="" class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="search..">
+                <button class="navbar-btn">search</button>
+            </div>
+        </form>
+    </nav>
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#myCollapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myCollapse">
+            <ul class="nav navbar-nav" >
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Messages</a></li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown">dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Messages</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <ul class="breadcrumb">
+        <li><a href="#">home</a></li>
+        <li><a href="#">introduce</a></li>
+        <li class="active"><a href="#">myself</a></li>
+    </ul>
+    <ul class="pagination">
+        <li><a href="#"><<</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">>></a></li>
+    </ul>
+    <ul class="pager">
+        <li class="previous"><a href="#">上一页</a></li>
+        <li class="next"><a href="#">下一页</a></li>
+    </ul>
+    <h1>10个最好的JavaScript动画库和开发框架 <span class="label label-default">label</span></h1>
+    <h2>10个最好的JavaScript动画库和开发框架 <span class="label label-danger">label</span></h2>
+    <h3>10个最好的JavaScript动画库和开发框架 <span class="label label-info">label</span></h3>
+    <h4>10个最好的JavaScript动画库和开发框架 <span class="label label-primary">label</span></h4>
+    <h5>10个最好的JavaScript动画库和开发框架 <span class="label label-success">label</span></h5>
+    <h6>10个最好的JavaScript动画库和开发框架 <span class="label label-warning">label</span></h6>
+    <h6>10个最好的JavaScript动画库和开发框架 <span class="badge">badge</span></h6>
+    <div class="jumbotron">
+        <h1>Hello World</h1>
+        <p>10个最好的JavaScript动画库和开发框架10个最好的JavaScript动画库和开发框架10个最好的JavaScript动画库和开发框架10个最好的JavaScript动画库和开发框架</p>
+        <a href="javascript:void (0)" class="btn btn-default">learn more</a>
+    </div>
+    <div class="page-header">
+        <h1>page-header <small>Subtext for header</small></h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="1b.jpg" alt="" data-src="1b.jpg">
+            </a>
+
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="1b.jpg" alt="" data-src="1b.jpg">
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div href="#" class="thumbnail">
+                <img src="1b.jpg" alt="" data-src="1b.jpg">
+                <div class="caption">
+                    <h2>Thumbnail label</h2>
+                    <p>可以在.caption样式的元素容器内，添加任意风格的元素</p>
+                    <p>
+                        <a href="#" class="btn btn-default">Button</a>
+                        <a href="#" class="btn btn-default">Button</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="1b.jpg" alt="" data-src="1b.jpg">
+            </a>
+        </div>
+    </div>
+    <div class="alert alert-warning alert-dismissable">
+        <button class="close" data-dismiss="alert" aria-label="close">&times;</button>
+        <strong>Warning!</strong> <a href="#" class="alert-link">Best check yo self, </a>you're not looking too good.
+    </div>
+    <div class="progress progress-striped active">
+        <div class="progress-bar" style="width: 60%;"></div>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item active"> <span class="badge">12</span><span class="glyphicon glyphicon-chevron-right"></span> <h2 class="list-group-item-heading">list-group-item-heading</h2>JavaScript编程精解</li>
+        <li class="list-group-item list-group-item-danger">JavaScript编程精解</li>
+        <li class="list-group-item">JavaScript编程精解</li>
+        <li class="list-group-item">JavaScript编程精解</li>
+        <li class="list-group-item">JavaScript编程精解</li>
+    </ul>
+    <div class="panel panel-danger">
+        <div class="panel-heading">panel head</div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="well">
+        <p>Some default panel. </p>
+        <blockquote>注意，这里是引用内容！</blockquote>
+    </div>
+
+</div>
+<br><br>
+<script src="../jquery-1.11.0.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap-js</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body{background: #eeeeee;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-tabs" id="navTabs">
+        <li class="active"><a href="#Home" data-toggle="tab">Home</a></li>
+        <li><a href="#Profile" data-toggle="tab">Profile</a></li>
+        <li><a href="#Message" data-toggle="tab">Message</a></li>
+        <li><a href="#Music" data-toggle="tab">Music</a></li>
+    </ul>
+    <br>
+    <div class="tab-content">
+        <div class="tab-pane active" id="Home">Home</div>
+        <div class="tab-pane" id="Profile">Profile</div>
+        <div class="tab-pane" id="Message">Message</div>
+        <div class="tab-pane" id="Music">Music</div>
+    </div>
+    <hr>
+
+    <ul class="nav nav-pills" id="tabPills">
+        <li class="active"><a href="#Sport" data-toggle="tab">Sport</a></li>
+        <li><a href="#News" data-toggle="tab">News</a></li>
+        <li><a href="#Movie" data-toggle="tab">Movie</a></li>
+        <li><a href="#Test" data-toggle="tab">Test</a></li>
+    </ul>
+    <br>
+    <div class="tab-content">
+        <div class="tab-pane active" id="Sport">Sport</div>
+        <div class="tab-pane" id="News">News</div>
+        <div class="tab-pane" id="Movie">Movie</div>
+        <div class="tab-pane" id="Test">Test</div>
+    </div>
+    <hr>
+   <!-- 模态框-->
+    <div class="h1 page-header">模态框</div>
+    <button class="btn btn-info btn-lg"  data-target="#myModal" id="modalBtn">Launch demo modal</button>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal"> <span>&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <h4>Test in a modal</h4>
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                    <h4>Popover in a modal</h4>
+                    <p>This link and that link should have tooltips on hover.</p>
+                    <hr>
+                    <h4>Overflowing text to show scroll behavior</h4>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-default">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" data-toggle="modal" data-target=".modal-lg-eg" id="lgModalBtn">大模态框</button>
+    <div class="modal fade modal-lg-eg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal"> <span>&times;</span></button>
+                    <h4>Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    modal-body
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" data-toggle="modal" data-target=".modal-sm-eg" id="smModalBtn">小模态框</button>
+    <div class="modal modal-sm-eg fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" >&times;</button>
+                    <h4>Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    modal-body
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="h1 page-header">alert提示框</div>
+    <div class="alert alert-warning" id="myAlert">
+        alert信息提示框
+        <span class="close" data-dismiss="alert" id="alertCB">&times;</span>
+    </div>
+    <hr>
+    <div class="h1 page-header">button按钮</div>
+    <button class="btn btn-primary active" data-completed-text="下载完成" data-loading-text="下载中...." id="downLoad">点击下载</button>
+    <!-- 手风琴-->
+    <hr>
+    <div class="h1 page-header">collapse</div>
+    <button class="btn btn-default" data-toggle="collapse" data-target="#collapse" id="collapseBtn">Button on collapse</button>
+    <div class="collapse" id="collapse">
+        <div class="well">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+    </div>
+    <hr>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading" id="headingOne">
+                <div class="panel-title">
+                    <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion">Collapsible Group Item #1</a>
+                </div>
+            </div>
+            <div class="panel-collapse collapse in" id="collapseOne">
+                <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" id="headingTwo">
+                <div class="panel-title">
+                    <a href="#collapseTwo" data-toggle="collapse" data-parent="#accordion">Collapsible Group Item #2</a>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="collapseTwo">
+                <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- 轮播图-->
+    <br>
+    <div class="row">
+        <div class="carousel slide col-md-6" id="carousel-generic" data-interval="2000" data-wrap="true">
+            <ul class="carousel-indicators">
+                <li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-generic" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="1b.jpg" alt="">
+                    <div class="carousel-caption">caption1</div>
+                </div>
+                <div class="item">
+                    <img src="1b.jpg" alt="">
+                    <div class="carousel-caption">caption2</div>
+                </div>
+                <div class="item">
+                    <img src="1b.jpg" alt="">
+                    <div class="carousel-caption">caption3</div>
+                </div>
+            </div>
+            <a href="#carousel-generic" class="left carousel-control" data-slide="prev" id="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a href="#carousel-generic" class="right carousel-control" data-slide="next" id="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+    <!--下拉菜单-->
+    <br>
+    <div class="h1 page-header">下拉菜单</div>
+    <div class="dropdown" id="dropdown">
+        <button class="btn btn-default dropdown-toggle"  data-toggle="dropdown" id="dropdownMenu">下拉菜单
+            <span class="caret"></span>
+        </button>
+        <ul id="dropdownItems" class="dropdown-menu">
+            <li class="active"><a href="javascript:void (0)">menu1</a></li>
+            <li><a href="javascript:void (0)">menu2</a></li>
+            <li><a href="javascript:void (0)">menu3</a></li>
+            <li><a href="javascript:void (0)">menu4</a></li>
+        </ul>
+    </div>
+    <br>
+    <div class="h1 page-header">滚动监听</div>
+    <nav class="navbar navbar-default" id="navbarSpy">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#MyCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Project Name</a>
+            </div>
+            <div id="MyCollapse" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#fat">@fat</a></li>
+                    <li><a href="#mdo">@mdo</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">dropdownSpy<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#one">one</a></li>
+                            <li><a href="#two">two</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#three">three</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--data-spy="scroll" data-target="#navbarSpy"-->
+    <div style="height: 200px;overflow: auto;margin-top: 10px;position: relative;border: 1px solid #ccc;" id="scrollContent">
+        <h4 id="fat">@fat</h4>
+        <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+        <h4 id="mdo">@mdo</h4>
+        <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+        <h4 id="one">one</h4>
+        <p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex in, sustainable delectus consectetur fanny pack iphone.</p>
+        <h4 id="two">two</h4>
+        <p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
+        <h4 id="three">three</h4>
+        <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+        <p>Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.</p>
+    </div>
+    <!--工具提示-->
+    <!--
+    data-animation:boolean 提示工具使用 CSS 渐变滤镜效果。
+    data-html:boolean 向提示工具插入 HTML
+    data-original-title	如果未指定 title 属性，则 title 选项是默认的 title 值。
+    data-trigger	定义如何触发提示工具： click| hover | focus | manual。
+    data-delay	延迟显示和隐藏提示工具的毫秒数
+    delay:
+    { show: 500, hide: 100 }
+    -->
+    <div class="h1 page-header">工具提示</div>
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="tooltip on left" data-delay="1000" data-trigger="click">tooltip on left</button>
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="tooltip on top">tooltip on top</button>
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="tooltip on right">tooltip on right</button>
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="tooltip on bottom">tooltip on bottom</button>
+    <a href="#" data-toggle="tooltip" title="some tooltip title" >hover over me !</a>
+    <div class="tooltip right">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">some tooltip title!!!!</div>
+    </div>
+    <button type="button" class="btn btn-default" data-toggle="popover" data-placement="top" title="popover title" data-content="popover content" data-trigger="hover">popover on top</button>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+<script src="../jquery-1.11.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    $(function(){
+        //$(document).off('.data-api');
+        $('#navTabs a').hover(function(){
+            $(this).tab('show');
+        });
+        $('#tabPills a').click(function(){
+            $(this).tab('show');
+        });
+        $('#smModalBtn').click(function(){
+            $('.modal-sm-eg').modal();
+        });
+        $('#lgModalBtn').click(function(){
+            $('.modal-lg-eg').modal();
+        });
+        $('#modalBtn').click(function(){
+            $('#myModal').modal();
+        });
+        $('#alertCB').click(function(){
+            $('#myAlert').alert();
+        });
+        $('#downLoad').click(function(){
+            $(this).button('loading');
+            setTimeout(function(){
+                $('#downLoad').button('completed')
+            },1000)
+        });
+        $('#collapseBtn').click(function(){
+            $('#collapse').collapse('toggle');
+        });
+
+        /*$('.carousel').carousel({
+            interval:2000
+        });
+        $('#prev').click(function(){
+            $('.carousel').carousel('prev');
+        });
+        $('#next').click(function(){
+            $('.carousel').carousel('next');
+        });*/
+        //$('.carousel-indicators li')
+        /*下拉菜单*/
+        $('.dropdown-toggle').dropdown();
+        $('#dropdown').on('show.bs.dropdown',function(){
+            alert('show.bs.dropdown');
+        }).on('shown.bs.dropdown',function(){
+            alert('shown.bs.dropdown');
+        }).on('hide.bs.dropdown',function(){
+            alert('hide.bs.dropdown');
+        }).on('hidden.bs.dropdown',function(){
+            alert('hidden.bs.dropdown');
+        });
+        /*滚动监听*/
+        $('#scrollContent').scrollspy({
+            target:'#navbarSpy'
+        });
+        /*工具提示*/
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
+
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

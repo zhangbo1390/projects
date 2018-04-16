@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深入理解Bootstrap之js篇</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+    <style>
+        .panel-body{padding: 0;}
+        .pagination.square{margin-top: 5px;}
+        .pagination.square li a{margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 0;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <button class="btn btn-default" data-toggle="modal" data-target=".popup">模态框</button>
+    <div class="modal popup fade" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="alert-dismissable close" aria-label="close" data-dismiss="modal" aria-hidden="true">&times;</span>
+                    <h2 class="modal-title">modal title</h2>
+                </div>
+                <div class="modal-body">
+                    <p>这里是弹窗里的具体内容………</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default">取消</button>
+                    <button class="btn btn-success" data-dismiss="modal">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="alert alert-warning">
+        <span   class="close" data-dismiss="alert" aria-label="close">&times;</span>warning!
+    </div>-->
+    <div class="navbar navbar-default">
+        <a href="#" class="navbar-brand">Brand</a>
+        <ul class="nav navbar-nav" role="navigation">
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown">Home <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Home-1</a></li>
+                    <li><a href="#">Home-2</a></li>
+                    <li><a href="#">Home-3</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown">Contact <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Contact-1</a></li>
+                    <li><a href="#">Contact-2</a></li>
+                    <li><a href="#">Contact-3</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown">Product <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Product-1</a></li>
+                    <li><a href="#">Product-2</a></li>
+                    <li><a href="#">Product-3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <a href="#" data-toggle="tooltip" title="this is a tooltip" data-placement="left">tooltip</a>
+    <a href="#" data-toggle="popover" title="this is a popover title" data-content="this is a popover content" class="btn btn-success">点击出现弹出框</a>
+    <div class="alert alert-warning fade in">
+        <span class="close" data-dismiss="alert">&times;</span>
+        <h4>警告框标题</h4>
+        <p>警告框内容！</p>
+        <button class="btn btn-primary close" data-dismiss="alert">关闭</button>
+    </div>
+    <button class="btn btn-success" data-loading-text="拼命加载中。。。" data-complete-text="加载完毕" data-toggle="button">点击加载</button>
+
+    <button class="btn btn-danger" data-toggle="collapse" data-target="#demo">点击出发折叠</button>
+    <div class="collapse" id="demo">默认隐藏折叠区域则有所不同，触发元素要添加一个.collapsed样式，而且折叠区域的.in样式也要去除。</div>
+
+    <div class="panel-group " id="accordion">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#panel-collapse01" data-toggle="collapse" data-parent="#accordion">触发元素#1</a>
+                </h4>
+            </div>
+            <div class="collapse fade in" id="panel-collapse01">
+                <div class="panel-body">
+                    使用panel的panel-title作为触发元素，使用panel-body的父元素作为折叠区域。 <br>
+                    使用一个panel-group样式的元素包含多个panel，从而实现手风琴效果。 <br>
+                    每个panel里的触发元素都要指定data-parent属性（这是重复工作，希望作者改进一下）。 <br>
+                    data-parent属性的值（本例是accordion）对应panel-group样式元素的id（或者样式选择符也行）。在源码分析的时候记住这几点就行了。
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#panel-collapse02" data-toggle="collapse" data-parent="#accordion">触发元素#2</a>
+                </h4>
+            </div>
+            <div id="panel-collapse02" class="collapse">
+                <div class="panel-body">
+                    使用panel的panel-title作为触发元素，使用panel-body的父元素作为折叠区域。 <br>
+                    使用一个panel-group样式的元素包含多个panel，从而实现手风琴效果。 <br>
+                    每个panel里的触发元素都要指定data-parent属性（这是重复工作，希望作者改进一下）。 <br>
+                    data-parent属性的值（本例是accordion）对应panel-group样式元素的id（或者样式选择符也行）。在源码分析的时候记住这几点就行了。
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="#panel-collapse03" data-toggle="collapse" data-parent="#accordion">触发元素#3</a>
+                </h4>
+            </div>
+            <div id="panel-collapse03" class="collapse">
+                <div class="panel-body">
+                    使用panel的panel-title作为触发元素，使用panel-body的父元素作为折叠区域。 <br>
+                    使用一个panel-group样式的元素包含多个panel，从而实现手风琴效果。 <br>
+                    每个panel里的触发元素都要指定data-parent属性（这是重复工作，希望作者改进一下）。 <br>
+                    data-parent属性的值（本例是accordion）对应panel-group样式元素的id（或者样式选择符也行）。在源码分析的时候记住这几点就行了。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel slide" id="carousel-container" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="banner1.png" alt="">
+                <div class="carousel-caption">
+                    <h4>title1</h4>
+                </div>
+            </div>
+            <div class="item"><img src="banner2.png" alt=""></div>
+            <div class="item"><img src="banner3.png" alt=""></div>
+        </div>
+        <ul class="carousel-indicators">
+            <li data-slide-to="0" data-target="#carousel-container" class="active"></li>
+            <li data-slide-to="1" data-target="#carousel-container"></li>
+            <li data-slide-to="2" data-target="#carousel-container"></li>
+        </ul>
+        <a href="#carousel-container" class="left carousel-control" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a href="#carousel-container" class="right carousel-control" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div data-spy="affix"></div>
+    <br>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="pull-left">
+                <button class="btn btn-default">New</button>
+                <button class="btn btn-success">Disable</button>
+                <button class="btn btn-danger">Delete</button>
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-success">Filter By Disabled <span class="caret"></span></button>
+                <button class="btn btn-default">Sort By FirstName <span class="caret"></span></button>
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Birthday</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>Sunny</td>
+                        <td>1990-07-01</td>
+                        <td>xbzhang@sonicwall.com</td>
+                        <td>13818225694</td>
+                        <td>
+                            <button class="btn btn-info"> <span class="glyphicon glyphicon-list"></span>Info</button>
+                            <button class="btn btn-success"> <span class="glyphicon glyphicon-user"></span>Role</button>
+                            <button class="btn btn-danger">More<span class="caret"></span></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>Sunny</td>
+                        <td>1990-07-01</td>
+                        <td>xbzhang@sonicwall.com</td>
+                        <td>13818225694</td>
+                        <td>
+                            <button class="btn btn-info"> <span class="glyphicon glyphicon-list"></span>Info</button>
+                            <button class="btn btn-success"> <span class="glyphicon glyphicon-user"></span>Role</button>
+                            <button class="btn btn-danger">More<span class="caret"></span></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>Sunny</td>
+                        <td>1990-07-01</td>
+                        <td>xbzhang@sonicwall.com</td>
+                        <td>13818225694</td>
+                        <td>
+                            <button class="btn btn-info"> <span class="glyphicon glyphicon-list"></span>Info</button>
+                            <button class="btn btn-success"> <span class="glyphicon glyphicon-user"></span>Role</button>
+                            <button class="btn btn-danger">More<span class="caret"></span></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>Sunny</td>
+                        <td>1990-07-01</td>
+                        <td>xbzhang@sonicwall.com</td>
+                        <td>13818225694</td>
+                        <td>
+                            <button class="btn btn-info"> <span class="glyphicon glyphicon-list"></span>Info</button>
+                            <button class="btn btn-success"> <span class="glyphicon glyphicon-user"></span>Role</button>
+                            <button class="btn btn-danger">More<span class="caret"></span></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            <ul class="pagination square">
+                <li class="disabled"><a href="#">prev</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li class="disabled"><a href="#">...</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">8</a></li>
+                <li><a href="#">9</a></li>
+                <li><a href="#">next</a></li>
+            </ul>
+
+    </div>
+    <input type="text" value="1016/08/09" id="datetimepicker">
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+</div>
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-datetimepicker.js"></script>
+<script>
+    $(function(){
+       $('#modal').on('show.bs.modal',function(e){
+           alert('show.bs.modal');
+       });
+        $('#modal').on('shown.bs.modal',function(e){
+            alert('shown.bs.modal');
+        });
+        $('#modal').on('hide.bs.modal',function(e){
+            alert('hide.bs.modal');
+        });
+        $('#modal').on('hidden.bs.modal',function(e){
+            alert('hidden.bs.modal')
+        });
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
+        $('[data-toggle="button"]').on('click',function(){
+            var btn = $(this);
+            btn.button('loading');
+            setTimeout(function(){
+                btn.button('complete');
+            },3000)
+        });
+        $('[data-spy="affix"]').affix();
+        $('#datetimepicker').datetimepicker({
+            format: 'yyyy-mm-dd hh:ii'
+        })
+    })
+</script>
+</body>
+</html>
