@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <title>登录</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 全屏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- 状态栏-->
+    <meta http-equiv="Pragma" content="no-cache">
+    <!--网站图标-->
+    <!--<link href="img/favicon.ico" rel="shortcut icon" type="images/x-icon">-->
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body class="login">
+
+<div class="login-content">
+    <div class="logo"><img src="img/logo.png" alt=""></div>
+    <div class="login-title text-white text-center"><h1>智能信用卡管家</h1></div>
+
+    <div class="login-form">
+        <form>
+            <div class="grid-x">
+                <div class="small-1 cell"></div>
+                <div class="small-4 cell">
+                    <label for="user-name" class="text-left middle text-white">登录名：</label>
+                </div>
+                <div class="small-6 cell">
+                    <input type="tel" id="user-name" placeholder="13761712181">
+                </div>
+                <div class="small-1 cell"></div>
+            </div>
+
+            <div class="grid-x mt-4">
+                <div class="small-1 cell"></div>
+                <div class="small-4 cell">
+                    <label for="password" class="text-left middle text-white">登录密码：</label>
+                </div>
+                <div class="small-6 cell">
+                    <input type="password" id="password" placeholder="请输入登录密码">
+                </div>
+                <div class="small-1 cell"></div>
+            </div>
+
+            <div class="grid-x mt-4">
+                <div class="small-1 cell line-h-3"></div>
+                <div class="small-5 cell line-h-3"><a href="" class="register text-white">快速注册</a></div>
+                <div class="small-5 cell line-h-3"><a href="" class="forget-pass text-white text-right">忘记密码</a></div>
+                <div class="small-1 cell line-h-3"></div>
+            </div>
+
+            <div class="grid-x mt-4">
+                <div class="small-1 cell "></div>
+                <div class="small-10 cell ">
+                    <input type="submit" class="button expanded text-white blue login-button" value="登录">
+                </div>
+                <div class="small-1 cell"></div>
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/foundation.js"></script>
+<script src="js/app.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=640){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+</body>
+</html>

@@ -1,0 +1,684 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="SWfoundation.css"/>
+    <style>
+        @font-face {
+            font-family: 'fontello';
+            src: url('./font/fontello.eot');
+            src: url('./font/fontello.eot') format('embedded-opentype'),
+            url('./font/fontello.woff') format('woff'),
+            url('./font/fontello.ttf') format('truetype'),
+            url('./font/fontello.svg') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .avia-font-entypo-fontello{font-family: "fontello";}
+        .wireless-section{padding-top: 50px;padding-bottom: 50px;border-top-style: solid; border-top-width: 1px;
+            border-top-color: #e1e1e1;overflow: hidden;}
+        #section_1{border: none;}
+        .section-title,.section-1-product img,.wireless-section-cta,.iconlist.avia-font-entypo-fontello{
+            transition:all 1s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            -webkit-transition:all 1s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            -moz-transition:all 1s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            -o-transition:all 1s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            -ms-transition:all 1s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        }
+        .section-title{
+            font-size: 44px;
+            line-height: 46px;
+            margin: 0;
+            z-index: auto;
+            padding: 0;
+            border-width: 0;
+            border-radius: 0;
+            letter-spacing: 0;
+            color: #7d7474 !important;
+            text-transform: capitalize;
+            opacity: 0;
+            transition-delay:2s;
+            -webkit-transition-delay:2s;
+            -moz-transition-delay:2s;
+            -o-transition-delay:2s;
+            -ms-transition-delay:2s;
+        }
+
+        #section_1 .section-1-product img{
+            position: relative;
+            left: -700px;
+            opacity: 0;
+            transition-delay:1s;
+            -webkit-transition-delay:1s;
+            -moz-transition-delay:1s;
+            -o-transition-delay:1s;
+            -ms-transition-delay:1s;
+        }
+        #section_1.start-animation .section-title{
+            opacity: 1;
+        }
+
+        #section_1.start-animation .section-1-product img{
+            left: 0;
+            opacity: 1;
+        }
+
+        .section-1-cta{text-align: center;}
+
+        .wireless-section-cta{
+            font-weight: 400;
+            padding: 15px 60px;
+            font-family: Nunito;
+            font-size: 18px;
+            background: rgb(255, 121, 26);
+            color: rgb(0, 0, 0);
+            border-radius: 50px;
+            margin: 0;
+            z-index: auto;
+            border-width: 0;
+            letter-spacing: 0;
+            position: relative;
+            opacity: 0;
+            -webkit-transition-delay:1s;
+            -moz-transition-delay:1s;
+            -o-transition-delay:1s;
+            -ms-transition-delay:1s;
+        }
+        #section_1  .wireless-section-cta{right: -946px;}
+        #section_1.start-animation .wireless-section-cta{
+            right: 0;
+            opacity: 1;
+        }
+
+        .section-scope{
+            margin: 0;
+            padding: 0 0 30px 0;
+            list-style-type: none;
+            list-style-position: outside;
+            clear: both;
+            position: relative;
+            min-height: 60px;
+        }
+        .iconlist{
+            width: 88px;
+            height: 88px;
+            line-height: 84px;
+            font-size: 30px;
+            text-align: center;
+            border-radius: 500px;
+            position: relative;
+            float: left;
+            margin-right: 30px;
+            margin-left: 2px;
+            z-index: 5;
+            color: #fff;
+            border-width: 4px;
+            border-style: solid;
+            border-color: #ff791a !important;
+            background-color: #7f7f7f !important;
+        }
+        .iconlist.avia-font-entypo-fontello{
+            -webkit-transform: scale(0.5);
+            -moz-transform: scale(0.5);
+            -ms-transform: scale(0.5);
+            -o-transform: scale(0.5);
+            transform: scale(0.5);
+            opacity: 0.1;
+        }
+
+        .start-animation .iconlist.avia-font-entypo-fontello{
+            -webkit-animation: avia_appear 1s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275); /* Safari 4+ */
+            animation:         avia_appear 1s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275); /* IE 10+ */
+            opacity: 1;
+            -webkit-transform:scale(1);
+            -ms-transform:scale(1);
+            transform:scale(1);
+        }
+
+
+        .iconlist span{}
+
+        .section-content{
+            overflow: hidden;
+            min-height: 1.5em;
+            padding-bottom: 4px;
+        }
+        .section-content .section-content-header{}
+        .section-content-header .section-content-title{
+            font-weight: bold;
+            text-transform: uppercase;
+            top: 4px;
+            margin-bottom: 0;
+            position: relative;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 22px;
+            padding-bottom: 8px;
+        }
+        .section-content ul{
+            margin: 4px 0 5px 30px;
+        }
+        .section-content ul li{
+            font-family: Nunito;
+            color: #7d7d7d !important;
+            line-height: 1.65em;
+            font-size: 16px;
+        }
+
+        .iconlist-timeline{
+            border-color: #e1e1e1;
+            position: absolute;
+            top: 1%;
+            left: 45px;
+            width: 1px;
+            height: 99%;
+            border-right-width: 1px;
+            border-right-style: dashed;
+        }
+        .iconlist-timeline{height: 0%;}
+        .start-animation .iconlist-timeline{
+            -webkit-animation: timeline_slide_down 1s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            animation: timeline_slide_down 1s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            height: 100%;
+        }
+        /*===================== section 2 =========================*/
+        #section_2 .section-1-product img{
+            position: relative;
+            opacity: 0;
+            transform: rotate(-20deg) translate(200px);
+            transition-delay:1s;
+            -webkit-transition-delay:.5s;
+            -moz-transition-delay:.5s;
+            -o-transition-delay:.5s;
+            -ms-transition-delay:.5s;
+
+        }
+        #section_2.start-animation .section-title{opacity: 1;}
+        #section_2.start-animation .section-1-product img{
+            left: 0;
+            opacity: 1;
+            transform: rotate(0deg) translate(0px);
+        }
+        #section_2  .wireless-section-cta{left: -946px;}
+        #section_2.start-animation .wireless-section-cta{
+            left: 0;
+            opacity: 1;
+        }
+
+
+        /*===================== section 3 =========================*/
+        #section_3.start-animation .section-title{opacity: 1;}
+        #section_3 .section-1-product{
+            overflow: hidden;
+            position: relative;
+        }
+
+        #section_3 .section-1-product img{
+            position: relative;
+            opacity: 0;
+            transform: translate(50%);
+            transition-delay:.5s;
+            -webkit-transition-delay:.5s;
+            -moz-transition-delay:.5s;
+            -o-transition-delay:.5s;
+            -ms-transition-delay:.5s;
+
+        }
+        #section_3.start-animation .section-1-product img{
+            opacity: 1;
+            transform: translate(0%);
+        }
+        #section_3 .section-1-cta{
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            margin-left: -108px;
+        }
+        #section_3  .wireless-section-cta{transform: translate(100%);-webkit-transform: translate(100%);}
+        #section_3.start-animation .wireless-section-cta{
+            transform: translate(0%);
+            -webkit-transform: translate(0%);
+            opacity: 1;
+        }
+
+
+
+        #scroll_top{
+            background: #191919;
+            color: #eeeeee;
+            position: fixed;
+            border-radius: 2px;
+            height: 50px;
+            width: 50px;
+            line-height: 50px;
+            text-decoration: none;
+            text-align: center;
+            opacity: 0;
+            right: 50px;
+            bottom: 50px;
+            z-index: 1030;
+            visibility: hidden;
+            -webkit-transition: all .3s ease-out;
+            -moz-transition: all .3s ease-out;
+            -ms-transition: all .3s ease-out;
+            -o-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+            cursor: pointer;
+        }
+        #scroll_top:hover{
+            background-color: #f8f8f8;
+            color: #d63e2d;
+            border: 1px solid #e1e1e1;
+        }
+        #scroll_top.pop{
+            opacity: 0.7;
+            visibility: visible;
+        }
+
+
+
+
+
+
+        /*====================== animations ========================*/
+
+        /*pop up animation*/
+        @-webkit-keyframes avia_appear {
+            0%   { -webkit-transform:scale(0.5); opacity: 0.1;  }
+            100% { -webkit-transform:scale(1); opacity: 1; }
+        }
+        @keyframes avia_appear {
+            0%   { transform:scale(0.5); opacity: 0.1;  }
+            100% { transform:scale(1); opacity: 1;  }
+        }
+
+        /*slide down (height increase) animation*/
+        @-webkit-keyframes timeline_slide_down {
+            0%   { height:0%; }
+            100% { height:100%; }
+        }
+        @keyframes timeline_slide_down {
+            0%   { height:0%; }
+            100% { height:100%; }
+        }
+
+        /*fade in animation*/
+        @-webkit-keyframes fadein {
+            0%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes fadein {
+            0%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /*rotate animation*/
+        @-webkit-keyframes rotate {
+            0% {-webkit-transform: rotate(-20deg);}
+            100% {-webkit-transform: rotate(0deg);}
+        }
+        @keyframes rotate {
+            0% {transform: rotate(-20deg);}
+            100% {transform: rotate(0deg);}
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="row wireless-section" id="section_1">
+    <div class="columns small-12 medium-6 large-7 section-1-left">
+        <h3 class="section-title">SonicWave Wireless Security Series</h3>
+        <div class="section-1-product">
+            <img src="https://cdn.sonicwall.com/sonicwall.com/media/images/sonicwave-432i-straight.png" alt=""/>
+        </div>
+        <div class="section-1-cta">
+            <a href="#" class="button link wireless-section-cta">LEARN MORE</a>
+        </div>
+    </div>
+    <div class="columns small-12 medium-6 large-5 section-1-right">
+        <ul class="section-1-right-list">
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-lamp">&#xe801;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Superior user experience</h4>
+                    </div>
+                    <ul>
+                        <li><span>802.11ac Wave 2</span></li>
+                        <li><span>4×4 MU-MIMO</span></li>
+                        <li><span>2.5 BgE port</span></li>
+                        <li><span>Band steering</span></li>
+                        <li><span>Beamforming</span></li>
+                        <li><span>AirTime Fairness</span></li>
+                        <li><span>Access point dynamic VLANs</span></li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-get-pocket">&#xf265;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Comprehensive threat prevention</h4>
+                    </div>
+                    <ul>
+                        <li><span>Deeep&nbsp;packet inspection technology</span></li>
+                        <li>SSL/TLS decryption and inspection</li>
+                        <li>Dedicated third scanning radio</li>
+                        <li>Virtual access point segmentation</li>
+                        <li>Wireless intrusion detection and prevention</li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-list-nested">&#xe803;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Simplified deployment and centralized management</h4>
+                    </div>
+                    <ul>
+                        <li><span>Auto-detection and provisioning</span></li>
+                        <li><span>Wireless signal analysis tools</span></li>
+                        <li><span>Single-pane-of-glass management</span></li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-bitcoin">&#xe802;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Low total cost of ownership</h4>
+                    </div>
+                    <ul>
+                        <li>Integrated<span> wireless access controller</span></li>
+                        <li><span>Green AP </span></li>
+                        <li><span>Indoor and outdoor models</span></li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row wireless-section" id="section_2">
+    <div class="columns small-12 medium-6 large-5 section-1-left">
+        <ul class="section-1-right-list">
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-lamp">&#xe801;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Superior user experience</h4>
+                    </div>
+                    <ul>
+                        <li><span>802.11ac Wave 2</span></li>
+                        <li><span>4×4 MU-MIMO</span></li>
+                        <li><span>2.5 BgE port</span></li>
+                        <li><span>Band steering</span></li>
+                        <li><span>Beamforming</span></li>
+                        <li><span>AirTime Fairness</span></li>
+                        <li><span>Access point dynamic VLANs</span></li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-get-pocket">&#xf265;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Comprehensive threat prevention</h4>
+                    </div>
+                    <ul>
+                        <li><span>Deeep&nbsp;packet inspection technology</span></li>
+                        <li>SSL/TLS decryption and inspection</li>
+                        <li>Dedicated third scanning radio</li>
+                        <li>Virtual access point segmentation</li>
+                        <li>Wireless intrusion detection and prevention</li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-list-nested">&#xe803;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Simplified deployment and centralized management</h4>
+                    </div>
+                    <ul>
+                        <li><span>Auto-detection and provisioning</span></li>
+                        <li><span>Wireless signal analysis tools</span></li>
+                        <li><span>Single-pane-of-glass management</span></li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-bitcoin">&#xe802;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Low total cost of ownership</h4>
+                    </div>
+                    <ul>
+                        <li>Integrated<span style="font-family: Nunito;"> wireless access controller</span></li>
+                        <li><span style="font-family: Nunito;">Green AP </span></li>
+                        <li><span style="font-family: Nunito;">Indoor and outdoor models</span></li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+
+
+        </ul>
+    </div>
+    <div class="columns small-12 medium-6 large-7 section-1-right">
+        <h3 class="section-title">SonicPoint Wireless Security Series</h3>
+        <div class="section-1-product">
+            <img src="https://cdn.sonicwall.com/sonicwall.com/media/images/sonicwave-432e.png" alt=""/>
+        </div>
+        <div class="section-1-cta">
+            <a href="#" class="button link wireless-section-cta">LEARN MORE</a>
+        </div>
+    </div>
+</div>
+
+<div class="row wireless-section" id="section_3">
+    <div class="columns small-12 medium-6 large-5 section-1-left">
+        <ul class="section-1-right-list">
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-lamp">&#xe801;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Superior user experience</h4>
+                    </div>
+                    <ul>
+                        <li><span>802.11ac Wave 2</span></li>
+                        <li><span>4×4 MU-MIMO</span></li>
+                        <li><span>2.5 BgE port</span></li>
+                        <li><span>Band steering</span></li>
+                        <li><span>Beamforming</span></li>
+                        <li><span>AirTime Fairness</span></li>
+                        <li><span>Access point dynamic VLANs</span></li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-get-pocket">&#xf265;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Comprehensive threat prevention</h4>
+                    </div>
+                    <ul>
+                        <li><span>Deeep&nbsp;packet inspection technology</span></li>
+                        <li>SSL/TLS decryption and inspection</li>
+                        <li>Dedicated third scanning radio</li>
+                        <li>Virtual access point segmentation</li>
+                        <li>Wireless intrusion detection and prevention</li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-list-nested">&#xe803;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Simplified deployment and centralized management</h4>
+                    </div>
+                    <ul>
+                        <li><span>Auto-detection and provisioning</span></li>
+                        <li><span>Wireless signal analysis tools</span></li>
+                        <li><span>Single-pane-of-glass management</span></li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello">
+                    <span class="icon-bitcoin">&#xe802;</span>
+                </div>
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Low total cost of ownership</h4>
+                    </div>
+                    <ul>
+                        <li>Integrated<span style="font-family: Nunito;"> wireless access controller</span></li>
+                        <li><span style="font-family: Nunito;">Green AP </span></li>
+                        <li><span style="font-family: Nunito;">Indoor and outdoor models</span></li>
+                    </ul>
+                </div>
+                <div class="iconlist-timeline"></div>
+            </li>
+
+
+        </ul>
+    </div>
+    <div class="columns small-12 medium-6 large-7 section-1-right">
+        <h3 class="section-title">SonicPoint Wireless Security Series</h3>
+        <div class="section-1-product">
+            <img src="https://test.sonicwall.com/sonicwall.com/media/images/sonicwave-432i-half.png" alt=""/>
+            <div class="section-1-cta">
+                <a href="#" class="button link wireless-section-cta">LEARN MORE</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<p id="scroll_top" class="avia-font-entypo-fontello"><span class="icon-up-open">&#xe800;</span></p>
+
+<script src="jquery.js"></script>
+<script>
+    $(function(){
+        scroll_top_fade();
+        add_start_animation();
+        setTimeout(function(){
+            $(document).scrollTop(0);
+        },20)
+    });
+
+    function scroll_top_fade(){
+        var     win = $(window),
+                timeo = false,
+                scroll_top = $('#scroll_top'),
+                set_status = function(){
+                    var st = win.scrollTop();
+                    if(st < 500)
+                    {
+                        scroll_top.removeClass('pop');
+                    }
+                    else if(!scroll_top.is('pop'))
+                    {
+                        scroll_top.addClass('pop');
+                    }
+                };
+        win.on( 'scroll', function(){
+            window.requestAnimationFrame( set_status );
+        });
+        set_status();
+        scroll_top.on('click',function(){
+            $('html,body').animate({scrollTop:'0px'},'slow');
+        });
+
+    }
+
+    function add_start_animation(){
+        var $section1 =  $('#section_1'),
+             $section2 = $('#section_2'),
+             $section3 =  $('#section_3'),
+             $section2_st = $section2.offset().top,
+             $section1_h =$section1.height(),
+             $section2_h = $section2.height(),
+             win = $(window),
+                section2_set_status = function(){
+                    var $st = win.scrollTop();
+                    if($st<500){
+                        $section2.removeClass('start-animation');
+                    }
+                    else if(!$section2.is('start-animation')){
+                        $section2.addClass('start-animation');
+                    }
+                },
+                section3_set_status = function(){
+                    var $st = win.scrollTop();
+                    if($st<500 + $section2_h){
+                        $section3.removeClass('start-animation');
+                    }
+                    else if(!$section3.is('start-animation')){
+                        $section3.addClass('start-animation');
+
+                    }
+                };
+
+        $section1.addClass('start-animation');
+        win.on( 'scroll', function(){
+            window.requestAnimationFrame( section2_set_status );
+            window.requestAnimationFrame( section3_set_status );
+        });
+        section2_set_status();
+        section3_set_status();
+    }
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

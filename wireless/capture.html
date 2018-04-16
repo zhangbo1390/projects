@@ -1,0 +1,552 @@
+<html>
+<head>
+    <link rel="stylesheet" href="SWfoundation.css"/>
+    <style>
+        .text-normal{font-style: normal;}
+        .font-red{color: #d63e2d;}
+        .capture-container{
+            max-width: 1310px;
+            margin: 0 auto;
+            width: 90%;
+        }
+        header{
+            background: #494949;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .capture-title{
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0;
+            margin: 0;
+            font-size: 23px !important;
+            line-height: 18px !important;
+            color: #ff791a !important;
+            margin-bottom: 1.5em !important;
+        }
+        .capture-head p{color: #c9c9c9;font-size: 1.3rem;text-align: left}
+
+        .wireless-section{padding-top: 50px;padding-bottom: 50px;border-top-style: solid; border-top-width: 1px; border-top-color: #e1e1e1;}
+        #section_1{border: none;}
+        .section-1-product{
+            overflow: hidden;
+            position: relative;
+            opacity: 0;
+            text-align: center;
+
+        }
+        .section-1-product img{}
+        .section-1-cta{
+            text-align: center;
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            margin-left: -108px;
+
+        }
+        .wireless-section-cta{
+            font-weight: 400;
+            padding: 15px 60px;
+            font-family: Nunito;
+            font-size: 18px;
+            background: rgb(255, 121, 26);
+            color: rgb(0, 0, 0);
+            border-radius: 50px;
+            margin: 0;
+            z-index: auto;
+            border-width: 0;
+            letter-spacing: 0;
+            opacity: 0;
+            -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+            transition: background-color 0.25s ease-out, color 0.25s ease-out;
+        }
+        .start-animation .section-1-product{
+            -webkit-animation: right-to-left 1.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275); /* Safari 4+ */
+            animation:         right-to-left 1.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275); /* IE 10+ */
+            opacity: 1;
+        }
+        .start-animation .wireless-section-cta{
+            -webkit-animation: bottom-to-top .8s  1 1s ease-in-out; /* Safari 4+ */
+            animation:         bottom-to-top .8s 1 1s ease-in-out; /* IE 10+ */
+            transition-property: opacity ;
+            -webkit-transition-property: opacity ;
+            transition-delay: 1s;
+            -webkit-transition-delay: 1s;
+            opacity: 1;
+        }
+
+        .section-scope{
+            margin: 0;
+            padding: 0 0 30px 0;
+            list-style-type: none;
+            list-style-position: outside;
+            clear: both;
+            position: relative;
+            min-height: 60px;
+        }
+        .iconlist{
+            width: 88px;
+            height: 88px;
+            line-height: 84px;
+            font-size: 30px;
+            text-align: center;
+            border-radius: 500px;
+            position: relative;
+            float: left;
+            margin-right: 30px;
+            margin-left: 2px;
+            z-index: 5;
+            color: #fff;
+            border-width: 4px;
+            border-style: solid;
+            border-color: #ff791a !important;
+            opacity: 0;
+
+        }
+        .iconlist-left{
+            border-color: #7f7f7f !important;
+        }
+        .start-animation .iconlist{
+            -webkit-animation: icon_appear 1s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            animation: icon_appear 1s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            opacity: 1;
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+        .iconlist p{
+           /* display: block;*/
+            width: 100%;
+            height: 100% !important;
+            background-repeat: no-repeat;
+            margin-bottom:0!important;
+        }
+        .icon-ccsc{background-image: url("https://sonicwall-web.s3-accelerate.amazonaws.com/sonicwall.com/media/images/ccsc.png");}
+        .icon-ccp{background-image: url("https://sonicwall-web.s3-accelerate.amazonaws.com/sonicwall.com/media/images/ccp.png");}
+        .icon-nsa{background-image: url("https://sonicwall-web.s3-accelerate.amazonaws.com/sonicwall.com/media/images/nsa.png");}
+        .icon-nsv{background-image: url("https://sonicwall-web.s3-accelerate.amazonaws.com/sonicwall.com/media/images/nsv.png");}
+        .icon-waf{background-image: url("https://sonicwall-web.s3-accelerate.amazonaws.com/sonicwall.com/media/images/waf.png");}
+
+
+        .section-content{
+            overflow: hidden;
+            min-height: 1.5em;
+            padding-bottom: 4px;
+        }
+        .section-content .section-content-header{}
+        .section-content-header .section-content-title{
+            font-weight: bold;
+            text-transform: uppercase;
+            top: 4px;
+            margin-bottom: 0;
+            position: relative;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 22px;
+            padding-bottom: 8px;
+        }
+        .section-content ul{
+            margin: 4px 0 5px 30px;
+        }
+        .section-content ul li{
+            color: #7d7d7d !important;
+            line-height: 1.65em;
+            font-size: 16px;
+        }
+
+        .header-container{ margin-bottom: 0;}
+        .solution-item{
+            padding-top: 0;
+            padding-bottom: 0;
+            margin: 0 auto;
+        }
+        .solution-item.firewall-group.expanded{background: #494949;}
+
+        /* scroll top button */
+        #scroll_top{
+            background: #191919;
+            color: #eeeeee;
+            position: fixed;
+            border-radius: 2px;
+            height: 50px;
+            width: 50px;
+            line-height: 50px;
+            text-decoration: none;
+            text-align: center;
+            opacity: 0;
+            right: 50px;
+            bottom: 50px;
+            z-index: 1030;
+            visibility: hidden;
+            -webkit-transition: all .3s ease-out;
+            -moz-transition: all .3s ease-out;
+            -ms-transition: all .3s ease-out;
+            -o-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+            cursor: pointer;
+        }
+        #scroll_top:hover{
+            background-color: #f8f8f8;
+            color: #d63e2d;
+            border: 1px solid #e1e1e1;
+        }
+        #scroll_top.pop{
+            opacity: 0.7;
+            visibility: visible;
+        }
+
+        .solution-item.firewall-group.expanded:nth-child(2n){background: #f2f2f2;}
+        .solution-item.firewall-group.expanded:nth-child(5),.solution-item.firewall-group.expanded:nth-child(7){background: #fff;}
+        a.button.link.wireless-section-cta:hover{background: rgb(210, 99, 21);color: #000;}
+
+
+
+
+        /*====================== animations ========================*/
+
+        /*pop up animation*/
+        @-webkit-keyframes icon_appear {
+            0%   { -webkit-transform:scale(0.5); opacity: 0.1;  }
+            100% { -webkit-transform:scale(1); opacity: 1; }
+        }
+        @keyframes icon_appear {
+            0%   { transform:scale(0.5); opacity: 0.1;  }
+            100% { transform:scale(1); opacity: 1;  }
+        }
+
+        /*fade in animation*/
+
+        @-webkit-keyframes left-to-right {
+            0%   { -webkit-transform:translate(-10%,0); opacity: 0;  }
+            100% { -webkit-transform:translate(0,0); opacity: 1; }
+        }
+        @keyframes left-to-right {
+            0%   { transform:translate(-10%,0); opacity: 0;  }
+            100% { transform:translate(0,0); opacity: 1; }
+        }
+
+        @-webkit-keyframes right-to-left {
+            0%   { -webkit-transform:translate(10%,0); opacity: 0;  }
+            100% { -webkit-transform:translate(0,0); opacity: 1; }
+        }
+        @keyframes right-to-left {
+            0%   { transform:translate(10%,0); opacity: 0;  }
+            100% { transform:translate(0,0); opacity: 1; }
+        }
+
+        @-webkit-keyframes bottom-to-top {
+            0%   { -webkit-transform:translate(0,50%); opacity: 0;  }
+            100% { -webkit-transform:translate(0,0); opacity: 1; }
+        }
+        @keyframes bottom-to-top {
+            0%   { transform:translate(0,50%); opacity: 0;  }
+            100% { transform:translate(0,0); opacity: 1; }
+        }
+
+        @-webkit-keyframes top-to-bottom {
+            0%   { -webkit-transform:translate(0, -10%); opacity: 0;  }
+            100% { -webkit-transform:translate(0,0); opacity: 1; }
+        }
+        @keyframes top-to-bottom {
+            0%   { transform:translate(0, -10%); opacity: 0;  }
+            100% { transform:translate(0,0); opacity: 1; }
+        }
+
+        @-webkit-keyframes fadein {
+            0%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes fadein {
+            0%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="header-container" style="height: 154px;"></div>
+
+
+
+
+<header id="header">
+    <div class="capture-container">
+        <h3 class="capture-title">The Next Gen Capture Cloud Platform</h3>
+
+        <div class="capture-head">
+            <p>The SonicWall <i class="text-normal font-red">Capture Cloud Platform</i> combines the global security intelligence of the <i class="text-normal font-red">Capture Threat Network</i> with the cloud-based management, reporting and analytics of the <i class="text-normal font-red">Capture Cloud Security Center</i> and the advanced threat prevention of the multi-engine <i class="text-normal font-red">Capture ATP</i> sandbox. This approach enables our complete portfolio of high-performance hardware, virtual appliances and clients to harness the power of the cloud. To help you stay ahead in the cyber arms race, we have enhanced our solution to include five key new capabilities.</p>
+        </div>
+    </div>
+</header>
+
+
+
+<div class="row wireless-section expanded" id="section_1">
+    <div class="columns small-12 medium-6 large-7 section-1-left">
+        <div class="section-1-product">
+            <img alt="" src="https://sonicwall-web.s3-accelerate.amazonaws.com/sonicwall.com/media/images/csc_services.png" />
+            <div class="section-1-cta"><a class="button link wireless-section-cta" href="/products/firewalls/security-services/capture-advanced-threat-protection">LEARN MORE</a></div>
+        </div>
+
+    </div>
+
+    <div class="columns small-12 medium-6 large-5 section-1-right">
+        <ul class="section-1-right-list">
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello"><p class="icon-ccsc"></p></div>
+
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Capture Security Center</h4>
+                    </div>
+
+                    <ul>
+                        <li>Unified security governance, compliance and risk management security program</li>
+                        <li>Improved efficiency and reduce cost via cloud administration and control</li>
+                        <li>Automated workflows and assurance of security operation compliance</li>
+                        <li>Reduced risk and fast response to security events</li>
+                        <li>Precision security control and policy decisions based on situation insights</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row wireless-section expanded" id="section_2">
+    <div class="columns small-12 medium-6 large-5 section-1-left">
+        <ul class="section-1-right-list">
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello iconlist-left"><p class="icon-ccp"></p></div>
+
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Capture Client</h4>
+                    </div>
+
+                    <ul>
+                        <li>Advanced attack detection using behavioral monitoring</li>
+                        <li>Highly accurate machine learning &amp; multi-layered heuristic-based techniques</li>
+                        <li>Unique roll-back capabilities (Capture Client Advanced only)</li>
+                        <li>Endpoint security enforcement</li>
+                        <li>DPI-SSL certificate management</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="columns small-12 medium-6 large-7 section-1-right">
+        <div class="section-1-product"><img alt="" src="https://sonicwall-web.s3-accelerate.amazonaws.com/sonicwall.com/media/images/captureclient_services.png" />
+            <div class="section-1-cta"><a class="button link wireless-section-cta" href="/products/capture-client">LEARN MORE</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="row wireless-section expanded" id="section_3">
+    <div class="columns small-12 medium-6 large-7 section-1-left">
+        <div class="section-1-product"><img alt="" src="https://sonicwall-web.s3-accelerate.amazonaws.com/sonicwall.com/media/images/nsv_services.png" />
+            <div class="section-1-cta"><a class="button link wireless-section-cta" href="/products/firewalls/nsv-series">LEARN MORE</a></div>
+        </div>
+    </div>
+
+    <div class="columns small-12 medium-6 large-5 section-1-right">
+        <ul class="section-1-right-list">
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello"><p class="icon-nsv"></p></div>
+
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">NS<i style="text-transform: lowercase">v</i> Series</h4>
+                    </div>
+
+                    <ul>
+                        <li>Automated breach prevention for public, private and hybrid cloud environments</li>
+                        <li>Cross virtual-machine attack and side-channel attack defense</li>
+                        <li>Common network-based intrusion, application and protocol protection</li>
+                        <li>Elimination of unauthorized access to protected virtual data store</li>
+                        <li>Prevention of service disruption of virtual ecosystem</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row wireless-section expanded" id="section_4">
+    <div class="columns small-12 medium-6 large-5 section-1-left">
+        <ul class="section-1-right-list">
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello iconlist-left"><p class="icon-nsa"></p></div>
+
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">NS<i style="text-transform: lowercase">a</i> Series</h4>
+                    </div>
+
+                    <ul>
+                        <li>Real-Time Deep Memory Inspection &amp; Reassembly-Free Deep Packet Inspection</li>
+                        <li>Cloud-based and on-box threat prevention featuring multi-engine sandboxing, anti-malware, intrusion prevention, web filtering and more</li>
+                        <li>High port density with 10-GbE, 5-GbE and 2.5-GbE ports</li>
+                        <li>Real-time TLS/SSL and SSH decryption and inspection</li>
+                        <li>Built-in wireless controller</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="columns small-12 medium-6 large-7 section-1-right">
+        <div class="section-1-product"><img alt="" src="https://sonicwall-web.s3-accelerate.amazonaws.com/sonicwall.com/media/images/nsa_series_services.png" />
+            <div class="section-1-cta"><a class="button link wireless-section-cta" href="/products/firewalls/mid-range">LEARN MORE</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="row wireless-section expanded" id="section_5">
+    <div class="columns small-12 medium-6 large-7 section-1-left">
+        <div class="section-1-product"><img alt="" src="https://sonicwall-web.s3-accelerate.amazonaws.com/sonicwall.com/media/images/waf_services.png" />
+            <div class="section-1-cta"><a class="button link wireless-section-cta" href="/products/firewalls/mid-range">LEARN MORE</a></div>
+        </div>
+    </div>
+
+    <div class="columns small-12 medium-6 large-5 section-1-right">
+        <ul class="section-1-right-list">
+            <li class="section-1-right-list-1 section-scope">
+                <div class="iconlist avia-font-entypo-fontello"><p class="icon-waf"></p></div>
+
+                <div class="section-content">
+                    <div class="section-content-header">
+                        <h4 class="section-content-title">Web Application Firewall</h4>
+                    </div>
+
+                    <ul>
+                        <li>Web application threat management</li>
+                        <li>Defense against OWASP top 10 web application security risks</li>
+                        <li>High speed, highly reliable and secure web app delivery</li>
+                        <li>Data leak prevention</li>
+                        <li>Application delivery acceleration</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="footer" style="height: 362px;"></div>
+<script src="jquery.js"></script>
+
+<p id="scroll_top" class="avia-font-entypo-fontello"><span class="icon-up-open">&#xe800;</span></p>
+
+
+<script>
+    $(function(){
+        scroll_top_fade();
+        /*start_animation();*/
+        $('.row.wireless-section.expanded').addClass('start-animation');
+        setTimeout(function(){
+            $(document).scrollTop(0);
+        },20);
+        /*$('.solution-item.firewall-group.expanded').eq(2).css('background','#fff');
+        $('.solution-item.firewall-group.expanded').eq(4).css('background','#fff');*/
+    });
+    function scroll_top_fade(){
+        var     win = $(window),
+                timeo = false,
+                scroll_top = $('#scroll_top'),
+                set_status = function(){
+                    var st = win.scrollTop();
+                    if(st < 500)
+                    {
+                        scroll_top.removeClass('pop');
+                    }
+                    else if(!scroll_top.is('pop'))
+                    {
+                        scroll_top.addClass('pop');
+                    }
+                };
+        win.on( 'scroll', function(){
+            window.requestAnimationFrame( set_status );
+        });
+        set_status();
+        scroll_top.on('click',function(){
+            $('html,body').animate({scrollTop:'0px'},'slow');
+        });
+
+    }
+
+    function start_animation(){
+        var    header = $('#header'),
+                header_h = header.height(),
+                section1 = $('#section_1'),
+                section1_h = section1.height(),
+                section2 = $('#section_2'),
+                section2_h = section2.height(),
+                section3 = $('#section_3'),
+                section3_h = section3.height(),
+                section4 = $('#section_4'),
+                section4_h = section4.height(),
+                section5 = $('#section_5'),
+                section5_h = section5.height(),
+                $win = $(window),
+                st = $win.scrollTop(),
+                section2_set_status = function(){
+                    st = $win.scrollTop();
+                    if(st < header_h){
+                        section2.removeClass('start-animation');
+                    }
+                    else if(!section2.is('start-animation')){
+                        section2.addClass('start-animation');
+                    }
+                },
+                section3_set_status = function(){
+                    st = $win.scrollTop();
+                    if(st <  section2.offset().top){
+                        section3.removeClass('start-animation');
+                    }
+                    else if(!section3.is('start-animation')){
+                        section3.addClass('start-animation');
+                    }
+                },
+                section4_set_status = function(){
+                    st = $win.scrollTop();
+                    if(st < section3.offset().top){
+                        section4.removeClass('start-animation');
+                    }
+                    else if(!section4.is('start-animation')){
+                        section4.addClass('start-animation');
+                    }
+                },
+                section5_set_status = function(){
+                    st = $win.scrollTop();
+                    if(st < section4.offset().top){
+                        section5.removeClass('start-animation');
+                    }
+                    else if(!section5.is('start-animation')){
+                        section5.addClass('start-animation');
+                    }
+                };
+        $win.on( 'scroll', function(){
+            window.requestAnimationFrame( section2_set_status);
+            window.requestAnimationFrame( section3_set_status);
+            window.requestAnimationFrame( section4_set_status);
+            window.requestAnimationFrame( section5_set_status);
+        });
+        section1.addClass('start-animation');
+        section2_set_status();
+        section3_set_status();
+        section4_set_status();
+        section5_set_status();
+    }
+</script>
+
+
+
+
+
+</body>
+</html>
+

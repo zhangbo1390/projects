@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <title>计划还款</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 全屏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- 状态栏-->
+    <meta http-equiv="Pragma" content="no-cache">
+    <!--网站图标-->
+    <!--<link href="img/favicon.ico" rel="shortcut icon" type="images/x-icon">-->
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body class="card-swiping">
+<header>
+    <div class="top-bar">
+        <p class="text-center text-white top-title">计划还款<span class="fontello-icon icon-mail">&#xe804;</span></p>
+    </div>
+    <div class="top-banner card-swiping-bg"></div>
+</header>
+
+<div class="tips">
+    <p class="tips-text text-white text-left">绑定自动代偿功能，将享受低利优惠。详情请......</p>
+</div>
+<div class="my-credit-card my-card">
+    <p class="text-white text-center font-32">我的信用卡(2)</p>
+</div>
+<div class="my-debit-card my-card">
+    <p class="text-center font-32">我的借记卡(1)</p>
+</div>
+<div class="card-panel">
+    <div class="card-panel-head">
+        <div class="card-logo text-right text-white">浦发银行</div>
+        <div class="card-info text-left text-white">尾号6608 <span class="card-user-name">陈**</span></div>
+        <div class="card-status text-center text-white">
+            待还款<a class="card-user-name set-status text-white" href="">计划设置</a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="card-panel-body">
+        <div class="limit-account card-panel-body-section border-right-gray">
+            <p>额度</p>
+            <p>50000.00</p>
+        </div>
+        <div class="bill-date card-panel-body-section border-right-gray">
+            <p>账单日期</p>
+            <p><span class="font-32">25</span>日</p>
+        </div>
+        <div class="repayment-date card-panel-body-section">
+            <p>还款日期</p>
+            <p><span class="font-32">13</span>日</p>
+        </div>
+    </div>
+</div>
+
+<div class="card-panel">
+    <div class="card-panel-head">
+        <div class="card-logo text-right text-white">浦发银行</div>
+        <div class="card-info text-left text-white">尾号6608 <span class="card-user-name">陈**</span></div>
+        <div class="card-status text-center text-white">
+            待还款<a class="card-user-name set-status text-white" href="">计划设置</a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="card-panel-body">
+        <div class="limit-account card-panel-body-section border-right-gray">
+            <p>额度</p>
+            <p>50000.00</p>
+        </div>
+        <div class="bill-date card-panel-body-section border-right-gray">
+            <p>账单日期</p>
+            <p><span class="font-32">25</span>日</p>
+        </div>
+        <div class="repayment-date card-panel-body-section">
+            <p>还款日期</p>
+            <p><span class="font-32">13</span>日</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer pos-bottom footer-nav">
+    <ul class="footer-nav-list grid-x">
+        <li class="small-2 cell"><a href="index.html" class="active"><i class="fontello-icon icon-home">&#xe823;</i><span>首页</span></a></li>
+        <li class="small-2 cell"><a href=""><i class="fontello-icon icon-address-card-o">&#xf2bc;</i><span>卡包</span></a></li>
+        <li class="small-2 cell"><a href=""><i class="fontello-icon icon-newspaper-1">&#xe8e3;</i><span>交易明细</span></a></li>
+        <li class="small-2 cell"><a href=""><i class="fontello-icon icon-list-alt">&#xe891;</i><span>分润明细</span></a></li>
+        <li class="small-2 cell"><a href=""><i class="fontello-icon icon-user-1">&#xe8b0;</i><span>个人中心</span></a></li>
+        <li class="small-2 cell"><a href=""><i class="fontello-icon icon-mail">&#xe804;</i><span>邮箱导入</span></a></li>
+    </ul>
+
+</div>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/foundation.js"></script>
+<script src="js/app.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=640){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+</body>
+</html>
