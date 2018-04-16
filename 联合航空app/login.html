@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>登录</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="layer/layer.css">
+</head>
+<body>
+    <div class="header">
+        <span class="back" onclick="javascript:window.history.back();"></span>
+        <span class="home" onclick="javascript:window.location.replace(&#39;http://m.flycua.com/h5/home.html&#39;)"></span>
+        会员登录
+    </div>
+    <div class="header-fillingWrap"></div>
+    <!--  登录类型  -->
+    <div class="tab-type">
+        <ul>
+            <li class="active"><a href="javascript:void (0)">普通登录</a></li>
+            <li><a href="javascript:void (0)">手机动态密码登录</a></li>
+        </ul>
+    </div>
+    <div class="login-item-list">
+        <form action="/sso/login.htm" id="NormalLoginForm" class="normal-login-form" method="post">
+            <div class="normal-login">
+                <div class="normal-login-wrap">
+                    <span class="login-input-tip">登录名：</span>
+                    <span class="login-input-info"><input type="text" placeholder="用户名\手机号" id="user"></span>
+                </div>
+                <div class="normal-login-wrap">
+                    <span class="login-input-tip">登录密码：</span>
+                    <span class="login-input-info"> <input type="password" placeholder="6-20位字母、数字和字符" id="pass"></span>
+                </div>
+                <div class="normal-login-wrap">
+                    <span class="login-input-tip">验证码</span>
+                    <span class="login-input-info" style="width: 2rem;"> <input type="text" placeholder="请输入验证码" onkeydown="return quickQueryCust(event);" id="identify"></span>
+                    <!--<span class="login-input-info" style="width: 2.2em;"> <input type="image" src="/sso/chineseVerifyCode.images"></span>-->
+                    <span class="login-input-info" style="width: 2.2rem;"> <input type="image" src="img/valid.png" onclick="javascript:changeVlidateImage(event);return false;"></span>
+                </div>
+                <div class="normal-login-btn">
+                    <a class="login-btn" id="login" href="javascript:void (0)">登录</a>
+                </div>
+                <div class="login-user-register">
+                    <a href="http://m.flycua.com/h5/register/list.html?returnUrl=http://www.flycua.com/member/member-login!loginJump.shtml" >立即注册</a>
+                    <a href="http://m.flycua.com/h5/getPassword/loginRegister/getPassword_1.html" >忘记密码？</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="fillingWrap"></div>
+    <div class="footer pos-bottom footer-nav">
+        <ul class="footer-nav-list">
+            <li><a href="index.html"><img class="icon-home" src="img/homepage.png">首页</a></li>
+            <li><a href="javascript:void (0)"><img class="icon-news" src="img/wifi.png">新闻</a></li>
+            <li><a href="javascript:void (0)"><img class="icon-serve" src="img/Microphone.png" style="width: 0.12rem;">24H客服</a></li>
+            <li><a href="myLianhang.html"><img class="icon-my" src="img/mine.png">我的联航</a></li>
+        </ul>
+    </div>
+    <div class="footer pos-bottom footer-copyright">© Copyright 2010 中国联合航空有限公司 京ICP备05075559号</div>
+    <script src="js/common.js"></script>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <script>
+        $(function(){
+
+            $('#login').on('click',function(){
+                console.log($('#user').val() == '');
+                if($('#user').val()  == ''){
+                    layer.alert('用户名不能为空');
+                }
+                /*if($('#pass').val()  == ''){
+                    layer.alert('密码不能为空');
+                }
+                if($('#identify').val()  == ''){
+                    layer.alert('验证码不能为空');
+                }*/
+            });
+
+        })
+    </script>
+</body>
+</html>

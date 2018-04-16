@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{width: 100px;height: 100px;background: red;}
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var oBox = document.getElementById('box');
+    oBox.addEventListener('touchstart',function(e){
+        console.log(e.touches);
+    },false);
+    oBox.addEventListener('touchmove',function(e){
+        console.log(e.targetTouches);
+    })
+
+</script>
+</body>
+</html>

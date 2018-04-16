@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #can{background: #9f6;margin:auto;  display: block;}
+    </style>
+</head>
+<body>
+<canvas id="can" width="500" height="500">
+    您的浏览器不支持canvas标签，建议您更换浏览器查看效果
+</canvas>
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    var imgInfo = cxt.createImageData(200,200);
+    for(var i=0;i<imgInfo.width*imgInfo.height;i++){
+        imgInfo.data[i*4] = Math.floor(Math.random()*255);
+        imgInfo.data[i*4+1] = Math.floor(Math.random()*255);
+        imgInfo.data[i*4+2] = Math.floor(Math.random()*255);
+        imgInfo.data[i*4+3] = 255;
+    }
+    cxt.putImageData(imgInfo,200,200);
+
+</script>
+</body>
+</html>

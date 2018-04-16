@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>新增乘机人</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="mobiscroll/mobiscroll.frame.android.css"/>
+    <link rel="stylesheet" href="mobiscroll/mobiscroll.frame.css"/>
+    <link rel="stylesheet" href="mobiscroll/mobiscroll.scroller.android.css"/>
+    <link rel="stylesheet" href="mobiscroll/mobiscroll.scroller.css"/>
+    <link rel="stylesheet" href="mobiscroll/mobiscroll.frame.android-holo.css"/>
+    <link rel="stylesheet" href="mobiscroll/mobiscroll.scroller.android-holo.css"/>
+</head>
+<body>
+    <div class="header">
+        <span class="back" onclick="javascript:window.history.back();"></span>
+        <span class="home" onclick="javascript:window.location.replace(&#39;http://m.flycua.com/h5/home.html&#39;)"></span>
+        会员登录
+    </div>
+    <div class="header-fillingWrap"></div>
+    <div class="mlr-32">
+        <form action="" method="post" class="form-wrap">
+            <div class="form-group">
+                <div class="form-select-wrap">
+                    <select name="nameType" id="nameType" class="form-name-type">
+                        <option value="zh">中文名</option>
+                        <option value="en">英文名</option>
+                    </select>
+                    <span class="form-xiala-icon"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-realname">
+                    <label for="realname" class="form-label">真实姓名：</label>
+                    <div class="normal-input-info"><input type="text" class=""/></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-select-wrap">
+                    <label for="sex" class="form-label">性    别：</label>
+                    <select name="sex" id="sex" class="part">
+                        <option value="man">男</option>
+                        <option value="woman">女</option>
+                    </select>
+                    <span class="form-xiala-icon"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-select-wrap">
+                    <label for="credential" class="form-label">乘机人类型：</label>
+                    <select name="credential" id="credential" class="part">
+                        <option value="ADT">成人</option>
+                        <option value="CHL">儿童</option>
+                        <option value="INF">婴儿</option>
+                    </select>
+                    <span class="form-xiala-icon"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-select-wrap">
+                    <label for="birthday" class="form-label">出生日期</label>
+                    <input type="text" id="birthday" name="birthday" class="part" placeholder="1990-05-08"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-select-wrap">
+                    <label for="credentialNum" class="form-label">证件号码：</label>
+                    <input type="text" placeholder="请输入证件号码" class="part" id="credentialNum"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-select-wrap">
+                    <label for="contactTel" class="form-label">证件号码：</label>
+                    <input type="text" placeholder="请输入电话号码" class="part" id="contactTel"/>
+                </div>
+            </div>
+            <button class="add-save-btn" type="submit">保存信息</button>
+        </form>
+    </div>
+
+
+    <div class="fillingWrap"></div>
+    <div class="footer pos-bottom footer-nav">
+        <ul class="footer-nav-list">
+            <li><a href="javascript:void (0)"><img class="icon-home" src="img/homepage.png">首页</a></li>
+            <li><a href="javascript:void (0)"><img class="icon-news" src="img/wifi.png">新闻</a></li>
+            <li><a href="javascript:void (0)"><img class="icon-serve" src="img/Microphone.png" style="width: 0.12rem;">24H客服</a></li>
+            <li><a href="javascript:void (0)"><img class="icon-my" src="img/mine.png">我的联航</a></li>
+        </ul>
+    </div>
+    <div class="footer pos-bottom footer-copyright">© Copyright 2010 中国联合航空有限公司 京ICP备05075559号</div>
+    <script src="js/common.js"></script>
+    <script src="../jquery-1.11.0.js"></script>
+    <script src="mobiscroll/mobiscroll.core.js"></script>
+    <script src="mobiscroll/mobiscroll.frame.js"></script>
+    <script src="mobiscroll/mobiscroll.scroller.js"></script>
+    <script src="mobiscroll/mobiscroll.util.datetime.js"></script>
+    <script src="mobiscroll/mobiscroll.datetimebase.js"></script>
+    <script src="mobiscroll/mobiscroll.datetime.js"></script>
+    <script src="mobiscroll/mobiscroll.frame.android.js"></script>
+    <script src="mobiscroll/mobiscroll.i18n.zh.js"></script>
+    <script>
+        $(function(){
+            $('#birthday').val('').mobiscroll().date({
+                theme: 'android-holo',     // Specify theme like: theme: 'ios' or omit setting to use default
+                startYear:1900,
+                endYear:2016,
+                /* mode: scroll, */      // Specify scroller mode like: mode: 'mixed' or omit setting to use default
+                //display: bottom, // Specify display mode like: display: 'bottom' or omit setting to use default
+                lang: 'zh',        // Specify language like: lang: 'pl' or omit setting to use default
+                defaultValue : new Date('1988-08-08'),
+                dateFormat: 'yyyy-mm-dd ',
+                /*btnClass:'sqh_color_56 font_16 sqh_line_height_15 margin_10 sqh_font_type'*/  //设置按钮显示的样式
+            }).val();
+        })
+    </script>
+</body>
+</html>

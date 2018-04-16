@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON.parse</title>
+</head>
+<body>
+<!--
+框架（dwr）可以自动生成接口的方法，直接调用方法就可以，
+例如：后台有个类reportService里面有个方法getReport,写好这个接口后，在dwr中的配置文件中配置一项指定到这个类，前端页面引用dwr，就可以直接reportService.getReport调用
+reportService.getReport（参数,function(){返回的结果}）
+reportService.getReport(id,function(result){console.log(result)})
+-->
+<!--
+<script type="text/javascript" src="dwr/engine.js"></script>
+<script type="text/javascript" src="dwr/util.js"></script>
+<script type="text/javascript" src="dwr/interface/Hello.js"></script>
+-->
+<script>
+    var str = '{"name":"张三"}';
+    var json = JSON.parse(str);
+    alert(json.name);
+</script>
+</body>
+</html>

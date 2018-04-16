@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>音频播放器</title>
+</head>
+<body>
+<audio src="audio/BEYOND-不再犹豫.mp3" controls id="audio"></audio>
+<script>
+    var oAudio = document.getElementById('audio');
+    oAudio.addEventListener('ended',function(){
+        alert('播放完毕')
+    })
+</script>
+</body>
+</html>

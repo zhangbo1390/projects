@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>移动端网页触摸内容滑动JS插件</title>
+    <link rel="stylesheet" href="swiper/swiper-3.3.1.min.css">
+    <style>
+       /* .swiper-container{max-width: 640px;min-width: 320px;}*/
+        /*.swiper-slide{height: 300px;}*/
+        .swiper-pagination{left: 0;top: 158px;width: 100%;text-align: left;}
+        .swiper-pagination-bullet-active{background: #f63939;}
+    </style>
+</head>
+<body>
+<div style="min-width: 320px;max-width: 640px;margin: 0 auto;position: relative; background: #fff;">
+    <div class="swiper-container">
+        <div class="swiper-wrapper" style="width: 800px;">
+            <div class="swiper-slide">
+                <a href="#"> <img src="img/banner1.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#"> <img src="img/banner2.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#"> <img src="img/banner3.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#"> <img src="img/banner4.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination">
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+    </div>
+</div>
+
+
+<script src="../jquery-1.11.0.js"></script>
+<script src="swiper/swiper-3.3.1.jquery.min.js"></script>
+<script>
+    $(function(){
+        var mySwiper = new Swiper('.swiper-container',{
+            autoplay:2000,
+            loop:true,
+            pagination:'.swiper-pagination',
+            /*grabCursor:true,*/
+            paginationClickable:true
+        })
+    });
+
+   /*
+    $('.arrow-left').on('click', function(e){
+        e.preventDefault()
+        mySwiper.swipePrev()
+    })
+    $('.arrow-right').on('click', function(e){
+        e.preventDefault()
+        mySwiper.swipeNext()
+    })*/
+</script>
+</body>
+</html>

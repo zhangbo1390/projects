@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #can{background: #9f6;margin:auto;  display: block;}
+    </style>
+</head>
+<body>
+<canvas id="can" width="500" height="500">
+    您的浏览器不支持canvas标签，建议您更换浏览器查看效果
+</canvas>
+<script src="../jCanvaScript.1.5.18.min.js"></script>
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    jc.start('can',true);//id名,true代表重绘
+    jc.rect(100,100,200,100,'#f0f',1).click(function(){
+        alert(1);
+    });
+    jc.start('can');
+
+    jc.start('can',true);//id名,true代表重绘
+    jc.circle(300,300,50,'#f00',1).click(function(){
+        alert(2);
+    });
+    jc.start('can');
+
+    jc.start('can',true);//id名,true代表重绘
+    jc.circle(400,400,50,'#000',1).draggable();
+    jc.start('can');
+</script>
+</body>
+</html>

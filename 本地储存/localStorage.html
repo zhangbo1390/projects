@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>localStorage:永久存储（可以手动删除数据）</title>
+</head>
+<body>
+<input type="button" id="addData" value="添加数据"/>
+<input type="button" id="getData" value="获取数据"/>
+<input type="button" id="removeData" value="删除数据"/>
+<input type="text" id="txt"/>
+<script>
+    var addData = document.getElementById('addData');
+    var getData = document.getElementById('getData');
+    var removeData = document.getElementById('removeData');
+    var txt = document.getElementById('txt');
+    addData.onclick = function(){
+        localStorage.setItem('key',txt.value);
+    };
+    getData.onclick = function(){
+        var key =  localStorage.getItem('key');
+        alert(key);
+    };
+    removeData.onclick = function(){
+        
+    }
+</script>
+</body>
+</html>

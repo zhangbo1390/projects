@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=640,user-scalable=no"/>
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        html,body{width: 100%;height: 100%;overflow: hidden;}
+        #box{width: 2560px;height: 400px;position: relative;left: 0;}
+        #box img{float: left;}
+        .icon{width: 200px;height: 25px;margin: 10px auto;}
+        .icon i{display: block;width: 25px;height: 25px;border: 1px solid red;border-radius: 50%;margin-right: 23px;float: left;}
+        .curr{background: red;}
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="img/1.jpg" alt="" />
+        <img src="img/2.jpg" alt=""/>
+        <img src="img/3.jpg" alt=""/>
+        <img src="img/4.jpg" alt=""/>
+    </div>
+    <div class="icon">
+        <i class="curr"></i>
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+<script>
+    var oBox = document.getElementById('box');
+    var oIcon = document.getElementsByClassName('icon')[0].children;
+    var x = 0;
+    var startX = 0;
+    var scroll = 0;
+    oBox.addEventListener('touchmove',function(e){
+        e.preventDefault();
+    });
+    document.addEventListener('touchstart',function(e){
+        x = e.changedTouches[0].pageX;
+        startX = scroll;
+    });
+    oBox.addEventListener('touchmove',function(e){
+        var xL = e.changedTouches[0].pageX - x;
+        scroll = startX + xL;
+        this.style.left = scroll + 'px';
+    });
+    oBox.addEventListener('touchend',function(e){
+        var xL = e.changedTouches[0].pageX - x;
+        scroll = startX + xL;
+        var n = -scroll/640;
+        n = n%1<0.3?Math.floor(n):Math.ceil(n);
+        if(n<0){
+            n=0;
+        }else if(n>3){
+            n=3;
+        }
+        scroll = -n*640;
+        this.style.left = scroll + 'px';
+        for(var i=0;i<oIcon.length;i++){
+            oIcon[i].className = i!=n?'':'curr';
+        }
+    })
+
+</script>
+</body>
+</html>

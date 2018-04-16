@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=yes,initial-scale = 1.0,minimum-scale = 1.0,maximum-scale=1.0,target-densitydpi =device-dpi">
+    <title>手机相册</title>
+    <script>
+        document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/3 + 'px';
+    </script>
+    <style>
+        body,div,ul,li{padding: 0;margin: 0;}
+        html,body{width: 100%;background: #000;font-family: "Microsoft YaHei";font-size: 0.15rem;text-align: center;}
+        li{list-style: none;}
+        a{text-decoration: none;color: #fff;}
+        article{width: 100%;height: 100%;}
+        header{background: #333;width: 100%;height: 0.45rem;color: #fff;line-height: 0.45rem;position: relative;}
+        .btn{position: absolute;box-shadow: 0 0 5px #000;width: 0.5rem;height: 0.25rem;border-radius: 5px;line-height: 0.25rem;top: 0.15rem;}
+        .btn:nth-child(1){left: 15px;display: none;}
+        .btn:nth-child(2){right: 15px;}
+        section{width: 100%;position: absolute;left: 0;top: 0.45rem;bottom:0.5rem;overflow: hidden;}
+        section li{width: 1rem;height: 1rem;background-size: 100% 100%;float: left;}
+        footer{position: absolute;left: 0;bottom: 0;width: 100%;height: 0.5rem;line-height: 0.5rem;text-align: center;background: #222;}
+        footer a{width: 1.5rem;height: 100%;display: block;line-height: 0.5rem;float: left;}
+        footer a:nth-child(1){background: #111;border-right: 1px solid #444;-webkit-box-sizing: border-box;}
+    </style>
+</head>
+<body>
+    <article>
+        <header>
+            <a href="javascript:;" class="btn">删除</a>
+            相机相册
+            <a href="javascript:;" class="btn">选择</a>
+        </header>
+        <section>
+            <ul></ul>
+        </section>
+        <footer>
+            <a href="javascript:;">相机相册</a>
+            <a href="javascript:;">所有相册</a>
+        </footer>
+    </article>
+    <script>
+        var oUl = document.getElementsByTagName('ul')[0];
+        var oBtn = document.getElementsByClassName('btn');
+        var oLi = oUl.getElementsByTagName('li');
+        var flag = true;
+        var html = '';
+        var remove = [];
+        for(var i=1;i<16;i++){
+            html += "<li style='background-image:url(photo-img/"+i+".jpg)'></li>";
+        }
+        oUl.innerHTML = html;
+        oBtn[1].addEventListener('touchend',fnClick,false);
+        oBtn[0].addEventListener('touchend',fnRemove,false);
+        function fnClick(){
+            if(flag){
+                flag = false;
+                this.innerHTML = '取消';
+                remove.length = 0;
+                for(var i=0;i<oLi.length;i++){
+                    oLi[i].index = i;
+                    oLi[i].addEventListener('touchend',fnsSlect,false);
+                }
+            }else {
+                oBtn[1].innerHTML = '选择';
+                oBtn[0].style.display = 'none';
+                for (var i=0;i<oLi.length;i++){
+                    oLi[i].style.opacity = 1;
+                }
+                flag = true;
+            }
+        }
+        function fnsSlect(){
+            if(!flag){
+                oBtn[0].style.display = 'block';
+                this.style.opacity = '0.4';
+                remove.push(this.index);
+            }
+        }
+        function fnRemove(){
+            remove = remove.sort(function(a,b){
+                return a-b;
+            });
+            while (remove.length){
+                oUl.removeChild(oLi[remove.pop()]);
+            }
+            this.style.display = 'none';
+            fnClick();
+            flag = true;
+        }
+    </script>
+</body>
+</html>

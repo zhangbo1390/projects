@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #can{background: #9f6;margin:auto;  display: block;}
+    </style>
+</head>
+<body>
+<canvas id="can" width="500" height="500">
+    您的浏览器不支持canvas标签，建议您更换浏览器查看效果
+</canvas>
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    var obj1 = Draw('red',100,100);
+    var obj2 = Draw('blue',200,200);
+
+    can.onclick = function(ev){
+        var ev = ev || event;
+        var x = ev.clientX-can.offsetLeft;
+        var y = ev.clientY-can.offsetTop;
+        //draw('red',x,y);
+        obj1.draw('red',x,y);
+        obj2.draw('yellow',x,y);
+        if(cxt.isPointInPath(x,y)){ //判断鼠标点是否在canvas里面
+            alert(true);
+        }else{
+            alert(false);
+        }
+    };
+    function Draw(color,x,y){
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        cxt.fillStyle = this.color;
+        cxt.beginPath();
+        cxt.arc(this.x,this.y,50,0,360,false);
+        cxt.fill();
+        cxt.closePath();
+    }
+    Draw.prototype.draw = function(x,y){
+        cxt.beginPath();
+        cxt.arc(this.x,this.y,50,0,360,false);
+        cxt.closePath();
+        cxt.fill();
+    };
+
+
+</script>
+</body>
+</html>

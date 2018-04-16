@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #can{background: #CF7F21;}
+        li{float: left;font-size: 30px;font-weight: bold;list-style: none;cursor: pointer;}
+    </style>
+</head>
+<body>
+<canvas id="can" width="500" height="500">您的浏览器不支持此插件，请更换浏览器</canvas>
+<ul>
+    <li>谭</li>
+    <li>花</li>
+    <li>一</li>
+    <li>现</li>
+</ul>
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    var oLi = document.getElementsByTagName('li');
+    for(var i=0;i<oLi.length;i++){
+        oLi[i].onclick = function(){
+            console.time(1);
+            cxt.clearRect(0,0,can.width,can.height);
+            var txt = this.innerHTML;
+            cxt.font  = '200px 微软雅黑';
+            cxt.textBaseline = 'top';
+            cxt.textAlign = 'left';
+            cxt.fillText(txt,(can.width-cxt.measureText(txt).width)/2,(can.height-200)/2);
+            var img = cxt.getImageData((can.width-cxt.measureText(txt).width)/2,(can.height-200)/2,can.width,300);
+            cxt.clearRect(0,0,can.width,can.height);
+            var newImg = cxt.createImageData(can.width,300);
+            var wk = new Worker('canvas.js');
+
+            wk.postMessage(img.width*img.height);
+            wk.onmessage = function(ev){
+                var arr = ev.data;
+                for(var i=0;i<arr.length;i++){
+                    var color = getColor(img,arr[i]%can.width,Math.ceil(arr[i]/can.width));
+                    setColor(newImg,arr[i]%can.width,Math.ceil(arr[i]/can.width),color);
+                }
+                cxt.putImageData(newImg,(can.width-cxt.measureText(txt).width)/2,(can.height-300)/2);
+            };
+            //var arr = randomArr(img.width*img.height,img.width*img.height/5);
+            /*for(var i=0;i<arr.length;i++){
+                var color = getColor(img,arr[i]%can.width,Math.ceil(arr[i]/can.width));
+                setColor(newImg,arr[i]%can.width,Math.ceil(arr[i]/can.width),color);
+            }
+            cxt.putImageData(newImg,(can.width-cxt.measureText(txt).width)/2,(can.height-300)/2);*/
+            console.timeEnd(1)
+        }
+    }
+    function getColor(obj,x,y){
+        var w = obj.width;
+        var h = obj.height;
+        var datas = obj.data;
+        var color = [];
+        color[0] = datas[4*(y*w+x)];//所有r
+        color[1] = datas[4*(y*w+x)+1];//所有g
+        color[2] = datas[4*(y*w+x)+2];//所有b
+        color[3] = datas[4*(y*w+x)+3];//所有a
+        return color;
+    }
+    function setColor(obj,x,y,color){
+        var w = obj.width;
+        var h = obj.height;
+        var datas = obj.data;
+        datas[4*(y*w+x)] = color[0];//所有r
+        datas[4*(y*w+x)+1] = color[1];//所有g
+        datas[4*(y*w+x)+2] = color[2];//所有b
+        datas[4*(y*w+x)+3] = color[3];//所有a
+    }
+    /*function randomArr(all,newall){
+        var arr = [];
+        var newArr = [];
+        for(var i=0;i<all;i++){
+            arr.push(i);
+        }
+        for (var i=0;i<newall;i++){
+            var index = Math.floor(Math.random()*arr.length);
+            newArr.push(arr.splice(index,1));
+        }
+        return newArr;
+    }*/
+</script>
+</body>
+</html>

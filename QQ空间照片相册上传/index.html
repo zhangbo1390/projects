@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扣扣空间相册上传效果</title>
+    <style>
+        *{margin: 0;padding: 0;font-family:  "Microsoft YaHei"}
+        .box{width: 80%;height: 600px;margin: 50px auto;position: relative;border: 1px solid red;}
+        .upload{width: 200px;height: 150px;position: absolute;left: 0;top: 0;bottom: 0;right: 0;margin: auto;text-align: center;line-height: 50px;color: #bbb;}
+        .btn{width: 100%;height: 50px;background: #39f url("img.png") no-repeat 20% center;border-radius: 5px;display: block;text-align: center;text-decoration: none;color: #fff;font-size: 24px;position: relative;}
+        .btn input{width: 100%;height: 100px;position: absolute;left: 0;top: 0;opacity: 0;}
+        .btn span{margin-left: 40px;}
+        .imgs{width: 100%;height: 600px;overflow-y: auto;}
+        .img-box{width: 150px;height: 150px;border: 1px solid #eee;float: left;margin: 10px;}
+        .img-bg{width: 100%;height: 90%;position: relative;}
+        .img-bg .file-name{position: absolute;left: 0;bottom: 0;font-size: 12px;width: 100%;height: 10%;overflow: hidden;}
+        .newUpload{position: relative;float: left;width: 150px;height: 150px;background: #bbb;text-align: center;line-height: 150px;margin: 10px;}
+        .newBtn{position: absolute;width: 150px;height: 150px;left: 0;top: 0;opacity: 0;}
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="upload">
+        <a href="javascript:void(0)" class="btn">
+            <span>选择照片</span>
+            <input type="file" multiple onchange="upload(this)">
+        </a>
+        <p>按住Ctrl可多选</p>
+    </div>
+    <div class="imgs"></div>
+</div>
+<script src="../jquery.js"></script>
+<script>
+    function upload(obj){
+        var html = '';
+        var n = obj.files.length;
+        //console.log(obj.files);
+        for(var i=0;i<n;i++){
+            var url = window.URL.createObjectURL(obj.files[i]);
+            if (obj.files[i].type.match('image')){
+                var fileName = obj.files[i].name;
+                html += '<div class="img-box">' +
+                        '<div class="img-bg" style="background: url('+ url +') no-repeat;background-size: contain">' +
+                        '<div contenteditable="true" class="file-name">'+fileName + '</div>'+
+                        '</div>' +
+                        '</div>';
+            }else {
+                alert('请选择图片');
+            }
+        }
+        $('.upload').remove();
+        $('.newUpload').remove();
+        $('.imgs').append(html+'<div class="newUpload">继续添加照片<input type="file" class="newBtn" multiple onchange="upload(this)"></div>');
+    }
+</script>
+</body>
+</html>

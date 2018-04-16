@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>person</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{background: #000033;overflow: hidden;}
+        .wrap{width: 300px;height: 300px;margin: 50px;}
+        .person{position: absolute;left: 150px;top: 150px;animation: run 5s infinite;}
+        .head{width: 30px;height: 30px;border: 4px solid #fff;border-radius: 50%;transform-origin: 50% 100% 0;animation: head 2s infinite alternate;}
+        .head:before{content:"";width: 42px;height: 3px;border: 4px solid #fff;background: #fff;position: absolute;left: -4px;top: 0;border-radius: 20%;}
+        .head:after{content: "";width: 15px;height: 12px;border: 4px solid #fff;border-radius: 20%;position: absolute;top: -15px;left: 9px;background: #fff;}
+        @keyframes head {
+            0%{transform: rotateZ(5deg);}
+            25%{transform: rotateZ(-30deg);}
+            50%{transform: rotateZ(5deg);}
+            75%{transform: rotateZ(-30deg);}
+            100%{transform: rotateZ(20deg);}
+        }
+        .arm{width: 40px;height: 45px;position: absolute;border: 3px solid #fff;border-top: none;border-right: none;transform-origin: 0 0 0;left: 18px;animation: arm 1s infinite ease;}
+        .arm:nth-child(2){animation-delay: 0.5s;}
+        @keyframes arm {
+            0%{transform: rotateZ(80deg);}
+            50%{transform: rotateZ(-70deg);}
+            100%{transform:rotateZ(80deg);}
+        }
+        .torso{width:0;height: 60px;border: 2px solid #fff;position: absolute;left: 17px;}
+        .leg{width: 80px;height: 70px;border: 3px solid #fff;position: absolute;left: 20px;top: 102px;border-left: none;border-bottom: none;transform-origin: 0 0 0;animation: 1s leg infinite ease;}
+        .leg:nth-child(5){animation-delay: 0.5s;}
+        @keyframes leg {
+            0%{transform:rotateZ(-5deg)}
+            50%{transform:rotateZ(150deg)}
+            100%{transform:rotateZ(-5deg)}
+        }
+        @keyframes run {
+            0%{transform: translateX(-300px);}
+            100%{transform: translateX(1500px);}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="person">
+            <div class="head"></div>
+            <div class="arm"></div>
+            <div class="arm"></div>
+            <div class="torso"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+        </div>
+    </div>
+</body>
+</html>

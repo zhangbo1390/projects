@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eval字符串解析成js</title>
+</head>
+<body>
+<script>
+    var str = "function auto(){alert(1)}";
+    /*
+    eval(str);
+    auto();
+    */
+    var json = "{name:'张三'}";
+    var eval = eval(json);
+    //alert(eval.name);   //undefined
+    //alert(eval);  //张三
+</script>
+</body>
+</html>

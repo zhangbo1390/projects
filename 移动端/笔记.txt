@@ -1,0 +1,44 @@
+
+手机触屏事件
+    touchstart:当手指触摸到屏幕时触发
+    touchmove：当手指滑动屏幕时触发
+    touchend：
+    touchenter:
+    touchleave:
+    touchcancel:
+
+google 移动端调试 讲解
+    Device
+            Model 模型选择
+            resolution 分辨率设置
+            pixel ratio 像素比
+            Emulation Mobile 模拟移动端特效
+            Shrink to fit 缩放适应屏幕
+    Media   媒体查询
+    NetWork
+            网络信息
+            设备版本号
+            浏览器的内核
+    Sensors 传感器
+            Emulation touch screen  模拟移动端触屏事件
+            Emulation geolocation coordinates  重置地理位置
+            Accelerometer 模拟陀螺仪
+                    α  围绕Z轴旋转
+                    β  围绕X轴
+                    γ  围绕Y轴旋转
+
+移动端页面适配
+    <meta name = viewport content = "width= device-width(设备宽度), user-scalable = yes,initial-scale = 1.0,minimum-scale = 1.0,maxinum-scale = 1.0,target-densitydpi = dpi_value(每英寸显示的像素点个数),>
+    移动端分辨率：240*320（一般不考虑）、320*480、480*800、640*960、480*854
+                  1280*720、800*1280、1080*1920
+
+                  320-480（重点考虑）
+    target-densitydpi：dpi_value(70-400//每英寸显示的像素点个数)
+                       device-dpi：设备默认的像素密度
+                       high-dpi :高像素密度
+                       medium-dpi:中等像素密度
+                       low-dpi:低像素密度
+    布局方法：
+            1:320px 宽度定死  然后居中（不推荐）
+            2：通过media媒体查询，根据不同的分辨率设置不同的样式
+            3：通过自适应浏览器窗口 宽度100%，box-flex、rem(相对于根目录html的字体大小来设置)

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>不正常航班改期</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="calendar/calendar.css"/>
+
+    <script src="js/zepto.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/function.inc.js"></script>
+    <script src="calendar/calendar.js"></script>
+    <script src="js/common.js"></script>
+
+    <style>
+        .fillingWrap{
+            width: 6.4rem;
+            height: 0.67rem;
+        }
+        .tn-calendar-head{
+            position: fixed;
+            z-index: 50;
+            width: 6.4rem;
+            background: #ea4b4e;
+            color: #000;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header CommonHeader">
+    <span class="back" onclick="javascript:window.history.back();"></span>
+    <span class="home" onclick="javascript:window.location.replace(&#39;http://m.flycua.com/h5/home.html&#39;)"></span>
+    不正常航班改期
+</div>
+<div class="fillingWrap"></div>
+    <div class="content-container">
+        <form action="" method="post" class="form-wrap">
+            <div class="mlr-32">
+                <div class="form-group">
+                    <div class="form-select-wrap">
+                        <label for="flightNum" class="form-label">航班号：</label>
+                        <input type="text" id="flightNum" class="part" placeholder="KNXXXX">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-select-wrap">
+                        <label class="form-label left">航班日期：</label>
+                        <div class="flightDate part left"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-select-wrap">
+                        <label for="ticket" class="form-label">票号：</label>
+                        <input type="text" class="must-part">
+                        <span class="must">*必填</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-select-wrap">
+                        <label for="name" class="form-label">乘机人姓名：</label>
+                        <input type="text" class="must-part">
+                        <span class="must">*必填</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-select-wrap">
+                        <label for="" class="form-label">证件号码：</label>
+                        <input type="text" class="must-part" placeholder="乘机人证件号码">
+                        <span class="must">*必填</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-select-wrap">
+                        <label for="" class="form-label">手机号码：</label>
+                        <input type="tel" placeholder="乘机人或联系人手机号" class="must-part">
+                        <span class="must">*必填</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-select-wrap">
+                        <label for="" class="form-label">验证码：</label>
+                        <input type="text" class="identify" maxlength="6" placeholder="手机验证码">
+                        <a href="javascript:void(0)" class="identify-btn">验证码( <em class="identify-time">60</em>s)</a>
+                        <span class="must" style="width: 0.63rem;">*必填</span>
+                    </div>
+                </div>
+                <button class="add-save-btn" onclick="nextSet()">确 定</button>
+            </div>
+        </form>
+        <div class="fillingWrap"></div>
+        <div class="footer pos-bottom footer-nav">
+            <ul class="footer-nav-list">
+                <li><a href="index.html"><img class="icon-home" src="img/homepage.png">首页</a></li>
+                <li><a href="javascript:void (0)"><img class="icon-news" src="img/wifi.png">新闻</a></li>
+                <li><a href="javascript:void (0)"><img class="icon-serve" src="img/Microphone.png" style="width: 0.12rem;">24H客服</a></li>
+                <li><a href="myLianhang.html"><img class="icon-my" src="img/mine.png">我的联航</a></li>
+            </ul>
+        </div>
+        <div class="footer pos-bottom footer-copyright">© Copyright 2010 中国联合航空有限公司 京ICP备05075559号</div>
+
+    </div>
+
+<div class="showDateWarp" style="display: none;">
+    <div class="header">
+        <div class="back" onclick="showDeaultHeader();showHideNode('content-container','showDateWarp')"></div>日期选择
+    </div>
+    <!-- 顶部用了fixed，加入层撑开内容区 -->
+    <div class="fillingWrap"></div>
+    <div class="headerWeek tn-calendar-head">
+        <table>
+            <tbody>
+            <tr>
+                <th>SUN<br>日</th>
+                <th>MON<br>一</th>
+                <th>TUE<br>二</th>
+                <th>WED<br>三</th>
+                <th>THU<br>四</th>
+                <th>FRI<br>五</th>
+                <th>SAT<br>六</th></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tn-container">
+        <div class="tn-item-container">
+            <div class="tn-c-header">
+                <span class="tn-c-title">2016 / 7月 Jul</span>
+            </div>
+            <div class="tn-c-body">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td data-date="2016-07-01">1</td>
+                        <td data-date="2016-07-02">2</td>
+                    </tr>
+                    <tr>
+                        <td data-date="2016-07-03">3</td>
+                        <td data-date="2016-07-04">4</td>
+                        <td data-date="2016-07-05">5</td>
+                        <td data-date="2016-07-06">6</td>
+                        <td data-date="2016-07-07">7</td>
+                        <td data-date="2016-07-08">8</td>
+                        <td data-date="2016-07-09">9</td>
+                    </tr>
+                    <tr>
+                        <td data-date="2016-07-10">10</td>
+                        <td data-date="2016-07-11">11</td>
+                        <td data-date="2016-07-12">12</td>
+                        <td data-date="2016-07-13">13</td>
+                        <td data-date="2016-07-14">14</td>
+                        <td data-date="2016-07-15">15</td>
+                        <td data-date="2016-07-16">16</td>
+                    </tr>
+                    <tr>
+                        <td data-date="2016-07-17"><p>今天</p></td>
+                        <td data-date="2016-07-18"><p>18</p></td>
+                        <td data-date="2016-07-19"><p>19</p></td>
+                        <td data-date="2016-07-20"><p>20</p></td>
+                        <td data-date="2016-07-21"><p>21</p></td>
+                        <td data-date="2016-07-22"><p>22</p></td>
+                        <td data-date="2016-07-23"><p class="sundays">23</p></td>
+                    </tr>
+                    <tr>
+                        <td data-date="2016-07-24"><p class="sundays">24</p></td>
+                        <td data-date="2016-07-25"><p>25</p></td>
+                        <td data-date="2016-07-26"><p>26</p></td>
+                        <td data-date="2016-07-27"><p>27</p></td>
+                        <td data-date="2016-07-28"><p>28</p></td>
+                        <td data-date="2016-07-29"><p>29</p></td>
+                        <td data-date="2016-07-30"><p class="sundays">30</p></td>
+                    </tr>
+                    <tr>
+                        <td data-date="2016-07-31"><p class="sundays">31</p></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tn-item-container">
+            <div class="tn-c-header">
+                <span class="tn-c-title">2016 / 8月 Aug</span>
+            </div>
+            <div class="tn-c-body">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td data-date="2016-08-01"><p>1</p></td>
+                        <td data-date="2016-08-02"><p>2</p></td>
+                        <td data-date="2016-08-03"><p>3</p></td>
+                        <td data-date="2016-08-04"><p>4</p></td>
+                        <td data-date="2016-08-05"><p>5</p></td>
+                        <td data-date="2016-08-06"><p class="sundays">6</p></td>
+                    </tr>
+                    <tr>
+                        <td data-date="2016-08-07"><p class="sundays">7</p></td>
+                        <td data-date="2016-08-08"><p>8</p></td>
+                        <td data-date="2016-08-09"><p>9</p></td>
+                        <td data-date="2016-08-10"><p>10</p></td>
+                        <td data-date="2016-08-11"><p>11</p></td>
+                        <td data-date="2016-08-12"><p>12</p></td>
+                        <td data-date="2016-08-13"><p class="sundays">13</p></td>
+                    </tr>
+                    <tr>
+                        <td data-date="2016-08-14"><p class="sundays">14</p></td>
+                        <td data-date="2016-08-15"><p>15</p></td>
+                        <td data-date="2016-08-16"><p>16</p></td>
+                        <td data-date="2016-08-17"><p>17</p></td>
+                        <td data-date="2016-08-18"><p>18</p></td>
+                        <td data-date="2016-08-19"><p>19</p></td>
+                        <td data-date="2016-08-20"><p class="sundays">20</p></td>
+                    </tr>
+                    <tr>
+                        <td data-date="2016-08-21"><p class="sundays">21</p></td>
+                        <td data-date="2016-08-22"><p>22</p></td>
+                        <td data-date="2016-08-23"><p>23</p></td>
+                        <td data-date="2016-08-24"><p>24</p></td>
+                        <td data-date="2016-08-25"><p>25</p></td>
+                        <td data-date="2016-08-26"><p>26</p></td>
+                        <td data-date="2016-08-27"><p class="sundays">27</p></td>
+                    </tr>
+                    <tr>
+                        <td data-date="2016-08-28"><p class="sundays">28</p></td>
+                        <td data-date="2016-08-29"><p>29</p></td>
+                        <td data-date="2016-08-30"><p>30</p></td>
+                        <td data-date="2016-08-31"><p>31</p></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tn-item-container"><div class="tn-c-header"><span class="tn-c-title">2016 / 9月 Sep</span></div><div class="tn-c-body"><table><tbody><tr><td></td><td></td><td></td><td></td><td data-date="2016-09-01"><p>1</p></td><td data-date="2016-09-02"><p>2</p></td><td data-date="2016-09-03"><p class="sundays">3</p></td></tr><tr><td data-date="2016-09-04"><p class="sundays">4</p></td><td data-date="2016-09-05"><p>5</p></td><td data-date="2016-09-06"><p>6</p></td><td data-date="2016-09-07"><p>7</p></td><td data-date="2016-09-08"><p>8</p></td><td data-date="2016-09-09"><p>9</p></td><td data-date="2016-09-10"><p class="sundays">10</p></td></tr><tr><td data-date="2016-09-11"><p class="sundays">11</p></td><td data-date="2016-09-12"><p>12</p></td><td data-date="2016-09-13"><p>13</p></td><td data-date="2016-09-14"><p>14</p></td><td data-date="2016-09-15"><p class="sundays">中秋</p></td><td data-date="2016-09-16"><p>16</p></td><td data-date="2016-09-17"><p class="sundays">17</p></td></tr><tr><td data-date="2016-09-18"><p class="sundays">18</p></td><td data-date="2016-09-19"><p>19</p></td><td data-date="2016-09-20"><p>20</p></td><td data-date="2016-09-21"><p>21</p></td><td data-date="2016-09-22"><p>22</p></td><td data-date="2016-09-23"><p>23</p></td><td data-date="2016-09-24"><p class="sundays">24</p></td></tr><tr><td data-date="2016-09-25"><p class="sundays">25</p></td><td data-date="2016-09-26"><p>26</p></td><td data-date="2016-09-27"><p>27</p></td><td data-date="2016-09-28"><p>28</p></td><td data-date="2016-09-29"><p>29</p></td><td data-date="2016-09-30"><p>30</p></td><td></td></tr></tbody></table></div></div><div class="tn-item-container"><div class="tn-c-header"><span class="tn-c-title">2016 / 10月 Oct</span></div><div class="tn-c-body"><table><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td data-date="2016-10-01"><p class="sundays">国庆</p></td></tr><tr><td data-date="2016-10-02"><p class="sundays">2</p></td><td data-date="2016-10-03"><p>3</p></td><td data-date="2016-10-04"><p>4</p></td><td data-date="2016-10-05"><p>5</p></td><td data-date="2016-10-06"><p>6</p></td><td data-date="2016-10-07"><p>7</p></td><td data-date="2016-10-08"><p class="sundays">8</p></td></tr><tr><td data-date="2016-10-09"><p class="sundays">9</p></td><td data-date="2016-10-10"><p>10</p></td><td data-date="2016-10-11"><p>11</p></td><td data-date="2016-10-12"><p>12</p></td><td data-date="2016-10-13"><p>13</p></td><td data-date="2016-10-14"><p>14</p></td><td data-date="2016-10-15"><p class="sundays">15</p></td></tr><tr><td data-date="2016-10-16"><p class="sundays">16</p></td><td data-date="2016-10-17"><p>17</p></td><td data-date="2016-10-18"><p>18</p></td><td data-date="2016-10-19"><p>19</p></td><td data-date="2016-10-20"><p>20</p></td><td data-date="2016-10-21"><p>21</p></td><td data-date="2016-10-22"><p class="sundays">22</p></td></tr><tr><td data-date="2016-10-23"><p class="sundays">23</p></td><td data-date="2016-10-24"><p>24</p></td><td data-date="2016-10-25"><p>25</p></td><td data-date="2016-10-26"><p>26</p></td><td data-date="2016-10-27"><p>27</p></td><td data-date="2016-10-28"><p>28</p></td><td data-date="2016-10-29"><p class="sundays">29</p></td></tr><tr><td data-date="2016-10-30"><p class="sundays">30</p></td><td data-date="2016-10-31"><p>31</p></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="tn-item-container"><div class="tn-c-header"><span class="tn-c-title">2016 / 11月 Nov</span></div><div class="tn-c-body"><table><tbody><tr><td></td><td></td><td data-date="2016-11-01"><p>1</p></td><td data-date="2016-11-02"><p>2</p></td><td data-date="2016-11-03"><p>3</p></td><td data-date="2016-11-04"><p>4</p></td><td data-date="2016-11-05"><p class="sundays">5</p></td></tr><tr><td data-date="2016-11-06"><p class="sundays">6</p></td><td data-date="2016-11-07"><p>7</p></td><td data-date="2016-11-08"><p>8</p></td><td data-date="2016-11-09"><p>9</p></td><td data-date="2016-11-10"><p>10</p></td><td data-date="2016-11-11"><p>11</p></td><td data-date="2016-11-12"><p class="sundays">12</p></td></tr><tr><td data-date="2016-11-13"><p class="sundays">13</p></td><td data-date="2016-11-14"><p>14</p></td><td data-date="2016-11-15"><p>15</p></td><td data-date="2016-11-16"><p>16</p></td><td data-date="2016-11-17"><p>17</p></td><td data-date="2016-11-18"><p>18</p></td><td data-date="2016-11-19"><p class="sundays">19</p></td></tr><tr><td data-date="2016-11-20"><p class="sundays">20</p></td><td data-date="2016-11-21"><p>21</p></td><td data-date="2016-11-22"><p>22</p></td><td data-date="2016-11-23"><p>23</p></td><td data-date="2016-11-24"><p>24</p></td><td data-date="2016-11-25"><p>25</p></td><td data-date="2016-11-26"><p class="sundays">26</p></td></tr><tr><td data-date="2016-11-27"><p class="sundays">27</p></td><td data-date="2016-11-28"><p>28</p></td><td data-date="2016-11-29"><p>29</p></td><td data-date="2016-11-30"><p>30</p></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="tn-item-container"><div class="tn-c-header"><span class="tn-c-title">2016 / 12月 Dec</span></div><div class="tn-c-body"><table><tbody><tr><td></td><td></td><td></td><td></td><td data-date="2016-12-01"><p>1</p></td><td data-date="2016-12-02"><p>2</p></td><td data-date="2016-12-03"><p class="sundays">3</p></td></tr><tr><td data-date="2016-12-04"><p class="sundays">4</p></td><td data-date="2016-12-05"><p>5</p></td><td data-date="2016-12-06"><p>6</p></td><td data-date="2016-12-07"><p>7</p></td><td data-date="2016-12-08"><p>8</p></td><td data-date="2016-12-09"><p>9</p></td><td data-date="2016-12-10"><p class="sundays">10</p></td></tr><tr><td data-date="2016-12-11"><p class="sundays">11</p></td><td data-date="2016-12-12"><p>12</p></td><td data-date="2016-12-13"><p>13</p></td><td data-date="2016-12-14"><p>14</p></td><td data-date="2016-12-15"><p>15</p></td><td data-date="2016-12-16"><p>16</p></td><td data-date="2016-12-17"><p class="sundays">17</p></td></tr><tr><td data-date="2016-12-18"><p class="sundays">18</p></td><td data-date="2016-12-19"><p>19</p></td><td data-date="2016-12-20"><p>20</p></td><td data-date="2016-12-21"><p>21</p></td><td data-date="2016-12-22"><p>22</p></td><td data-date="2016-12-23"><p>23</p></td><td data-date="2016-12-24"><p class="sundays">24</p></td></tr><tr><td data-date="2016-12-25"><p class="sundays">圣诞</p></td><td data-date="2016-12-26"><p>26</p></td><td data-date="2016-12-27"><p>27</p></td><td data-date="2016-12-28"><p>28</p></td><td data-date="2016-12-29"><p>29</p></td><td data-date="2016-12-30"><p>30</p></td><td data-date="2016-12-31"><p class="sundays">31</p></td></tr></tbody></table></div></div><div class="tn-item-container"><div class="tn-c-header"><span class="tn-c-title">2017 / 1月 Jan</span></div><div class="tn-c-body"><table><tbody><tr><td data-date="2017-01-01"><p class="sundays">元旦</p></td><td data-date="2017-01-02"><p>2</p></td><td data-date="2017-01-03"><p>3</p></td><td data-date="2017-01-04"><p>4</p></td><td data-date="2017-01-05"><p>5</p></td><td data-date="2017-01-06"><p>6</p></td><td data-date="2017-01-07"><p class="sundays">7</p></td></tr><tr><td data-date="2017-01-08"><p class="sundays">8</p></td><td data-date="2017-01-09"><p>9</p></td><td data-date="2017-01-10"><p>10</p></td><td data-date="2017-01-11"><p>11</p></td><td data-date="2017-01-12"><p>12</p></td><td data-date="2017-01-13"><p>13</p></td><td data-date="2017-01-14"><p class="sundays">14</p></td></tr><tr><td data-date="2017-01-15"><p class="sundays">15</p></td><td data-date="2017-01-16"><p>16</p></td><td data-date="2017-01-17"><p>17</p></td><td data-date="2017-01-18"><p>18</p></td><td data-date="2017-01-19"><p>19</p></td><td data-date="2017-01-20"><p>20</p></td><td data-date="2017-01-21"><p class="sundays">21</p></td></tr><tr><td data-date="2017-01-22"><p class="sundays">22</p></td><td data-date="2017-01-23"><p>23</p></td><td data-date="2017-01-24"><p>24</p></td><td data-date="2017-01-25"><p>25</p></td><td data-date="2017-01-26"><p>26</p></td><td data-date="2017-01-27"><p class="sundays">除夕</p></td><td data-date="2017-01-28"><p class="sundays">28</p></td></tr><tr><td data-date="2017-01-29"><p class="sundays">29</p></td><td data-date="2017-01-30"><p>30</p></td><td data-date="2017-01-31"><p>31</p></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="tn-item-container"><div class="tn-c-header"><span class="tn-c-title">2017 / 2月 Feb</span></div><div class="tn-c-body"><table><tbody><tr><td></td><td></td><td></td><td data-date="2017-02-01"><p>1</p></td><td data-date="2017-02-02"><p>2</p></td><td data-date="2017-02-03"><p>3</p></td><td data-date="2017-02-04"><p class="sundays">4</p></td></tr><tr><td data-date="2017-02-05"><p class="sundays">5</p></td><td data-date="2017-02-06"><p>6</p></td><td data-date="2017-02-07"><p>7</p></td><td data-date="2017-02-08"><p>8</p></td><td data-date="2017-02-09"><p>9</p></td><td data-date="2017-02-10"><p>10</p></td><td data-date="2017-02-11"><p class="sundays">11</p></td></tr><tr><td data-date="2017-02-12"><p class="sundays">12</p></td><td data-date="2017-02-13"><p>13</p></td><td data-date="2017-02-14"><p>14</p></td><td data-date="2017-02-15"><p>15</p></td><td data-date="2017-02-16"><p>16</p></td><td data-date="2017-02-17"><p>17</p></td><td data-date="2017-02-18"><p class="sundays">18</p></td></tr><tr><td data-date="2017-02-19"><p class="sundays">19</p></td><td data-date="2017-02-20"><p>20</p></td><td data-date="2017-02-21"><p>21</p></td><td data-date="2017-02-22"><p>22</p></td><td data-date="2017-02-23"><p>23</p></td><td data-date="2017-02-24"><p>24</p></td><td data-date="2017-02-25"><p class="sundays">25</p></td></tr><tr><td data-date="2017-02-26"><p class="sundays">26</p></td><td data-date="2017-02-27"><p>27</p></td><td data-date="2017-02-28"><p>28</p></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="tn-item-container"><div class="tn-c-header"><span class="tn-c-title">2017 / 3月 Mar</span></div><div class="tn-c-body"><table><tbody><tr><td></td><td></td><td></td><td data-date="2017-03-01"><p>1</p></td><td data-date="2017-03-02"><p>2</p></td><td data-date="2017-03-03"><p>3</p></td><td data-date="2017-03-04"><p class="sundays">4</p></td></tr><tr><td data-date="2017-03-05"><p class="sundays">5</p></td><td data-date="2017-03-06"><p>6</p></td><td data-date="2017-03-07"><p>7</p></td><td data-date="2017-03-08"><p>8</p></td><td data-date="2017-03-09"><p>9</p></td><td data-date="2017-03-10"><p>10</p></td><td data-date="2017-03-11"><p class="sundays">11</p></td></tr><tr><td data-date="2017-03-12"><p class="sundays">12</p></td><td data-date="2017-03-13"><p>13</p></td><td data-date="2017-03-14"><p>14</p></td><td data-date="2017-03-15"><p>15</p></td><td data-date="2017-03-16"><p>16</p></td><td data-date="2017-03-17"><p>17</p></td><td data-date="2017-03-18"><p class="sundays">18</p></td></tr><tr><td data-date="2017-03-19"><p class="sundays">19</p></td><td data-date="2017-03-20"><p>20</p></td><td data-date="2017-03-21"><p>21</p></td><td data-date="2017-03-22"><p>22</p></td><td data-date="2017-03-23"><p>23</p></td><td data-date="2017-03-24"><p>24</p></td><td data-date="2017-03-25"><p class="sundays">25</p></td></tr><tr><td data-date="2017-03-26"><p class="sundays">26</p></td><td data-date="2017-03-27"><p>27</p></td><td data-date="2017-03-28"><p>28</p></td><td data-date="2017-03-29"><p>29</p></td><td data-date="2017-03-30"><p>30</p></td><td data-date="2017-03-31"><p>31</p></td><td></td></tr></tbody></table></div></div><div class="tn-item-container"><div class="tn-c-header"><span class="tn-c-title">2017 / 4月 Apr</span></div><div class="tn-c-body"><table><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td data-date="2017-04-01"><p class="sundays">1</p></td></tr><tr><td data-date="2017-04-02"><p class="sundays">2</p></td><td data-date="2017-04-03"><p>3</p></td><td data-date="2017-04-04"><p class="sundays">清明</p></td><td data-date="2017-04-05"><p>5</p></td><td data-date="2017-04-06"><p>6</p></td><td data-date="2017-04-07"><p>7</p></td><td data-date="2017-04-08"><p class="sundays">8</p></td></tr><tr><td data-date="2017-04-09"><p class="sundays">9</p></td><td data-date="2017-04-10"><p>10</p></td><td data-date="2017-04-11"><p>11</p></td><td data-date="2017-04-12"><p>12</p></td><td data-date="2017-04-13"><p>13</p></td><td data-date="2017-04-14"><p>14</p></td><td data-date="2017-04-15"><p class="sundays">15</p></td></tr><tr><td data-date="2017-04-16"><p class="sundays">16</p></td><td data-date="2017-04-17"><p>17</p></td><td data-date="2017-04-18"><p>18</p></td><td data-date="2017-04-19"><p>19</p></td><td data-date="2017-04-20"><p>20</p></td><td data-date="2017-04-21"><p>21</p></td><td data-date="2017-04-22"><p class="sundays">22</p></td></tr><tr><td data-date="2017-04-23"><p class="sundays">23</p></td><td data-date="2017-04-24"><p>24</p></td><td data-date="2017-04-25"><p>25</p></td><td data-date="2017-04-26"><p>26</p></td><td data-date="2017-04-27"><p>27</p></td><td data-date="2017-04-28"><p>28</p></td><td data-date="2017-04-29"><p class="sundays">29</p></td></tr><tr><td data-date="2017-04-30"><p class="sundays">30</p></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="tn-item-container"><div class="tn-c-header"><span class="tn-c-title">2017 / 5月 May</span></div><div class="tn-c-body"><table><tbody><tr><td></td><td data-date="2017-05-01"><p class="sundays">劳动</p></td><td data-date="2017-05-02"><p>2</p></td><td data-date="2017-05-03"><p>3</p></td><td data-date="2017-05-04"><p>4</p></td><td data-date="2017-05-05"><p>5</p></td><td data-date="2017-05-06"><p class="sundays">6</p></td></tr><tr><td data-date="2017-05-07"><p class="sundays">7</p></td><td data-date="2017-05-08"><p>8</p></td><td data-date="2017-05-09"><p>9</p></td><td data-date="2017-05-10"><p>10</p></td><td data-date="2017-05-11"><p>11</p></td><td data-date="2017-05-12"><p>12</p></td><td data-date="2017-05-13"><p class="sundays">13</p></td></tr><tr><td data-date="2017-05-14"><p class="sundays">14</p></td><td data-date="2017-05-15"><p>15</p></td><td data-date="2017-05-16"><p>16</p></td><td data-date="2017-05-17"><p>17</p></td><td data-date="2017-05-18"><p>18</p></td><td data-date="2017-05-19"><p>19</p></td><td data-date="2017-05-20"><p class="sundays">20</p></td></tr><tr><td data-date="2017-05-21"><p class="sundays">21</p></td><td data-date="2017-05-22"><p>22</p></td><td data-date="2017-05-23"><p>23</p></td><td data-date="2017-05-24"><p>24</p></td><td data-date="2017-05-25"><p>25</p></td><td data-date="2017-05-26"><p>26</p></td><td data-date="2017-05-27"><p class="sundays">27</p></td></tr><tr><td data-date="2017-05-28"><p class="sundays">28</p></td><td data-date="2017-05-29"><p>29</p></td><td data-date="2017-05-30"><p class="sundays">端午</p></td><td data-date="2017-05-31"><p>31</p></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="tn-item-container"><div class="tn-c-header"><span class="tn-c-title">2017 / 6月 Jun</span></div><div class="tn-c-body"><table><tbody><tr><td></td><td></td><td></td><td></td><td data-date="2017-06-01"><p>1</p></td><td data-date="2017-06-02"><p>2</p></td><td data-date="2017-06-03"><p class="sundays">3</p></td></tr><tr><td data-date="2017-06-04"><p class="sundays">4</p></td><td data-date="2017-06-05"><p>5</p></td><td data-date="2017-06-06"><p>6</p></td><td data-date="2017-06-07"><p>7</p></td><td data-date="2017-06-08"><p>8</p></td><td data-date="2017-06-09"><p>9</p></td><td data-date="2017-06-10"><p class="sundays">10</p></td></tr><tr><td data-date="2017-06-11"><p class="sundays">11</p></td><td data-date="2017-06-12"><p>12</p></td><td data-date="2017-06-13"><p>13</p></td><td data-date="2017-06-14"><p>14</p></td><td data-date="2017-06-15"><p>15</p></td><td data-date="2017-06-16"><p>16</p></td><td data-date="2017-06-17"><p class="sundays">17</p></td></tr><tr><td data-date="2017-06-18"><p class="sundays">18</p></td><td data-date="2017-06-19"><p>19</p></td><td data-date="2017-06-20"><p>20</p></td><td data-date="2017-06-21"><p>21</p></td><td data-date="2017-06-22"><p>22</p></td><td data-date="2017-06-23"><p>23</p></td><td data-date="2017-06-24"><p class="sundays">24</p></td></tr><tr><td data-date="2017-06-25"><p class="sundays">25</p></td><td data-date="2017-06-26"><p>26</p></td><td data-date="2017-06-27"><p>27</p></td><td data-date="2017-06-28"><p>28</p></td><td data-date="2017-06-29"><p>29</p></td><td data-date="2017-06-30"><p>30</p></td><td></td></tr></tbody></table></div></div></div></div>
+
+
+
+<script>
+    $(function(){
+        //设置日期默认值
+        //$('.flightDate').text(GetDateStr(0));
+        //$('#flightDate').val(GetDateStr(0));
+
+        $(".flightDate").unbind('click')[CLICK](function(){
+            $(".showDateWarp").empty();
+            //$("#takeoffdate1,#takeoffdate2").val(getNowFormatDate());
+            DefaultCalendar = null;
+            //初始化价格日历
+            var DefaultCalendar = new Calendar({
+                type: 'single', // 日历类型 1.单程日历 single 2.往返日历 multiple
+                el: 'showDateWarp', // 渲染节点
+                hideEl:'content-container', //要隐藏的节点
+                showDateEle:'flightDate',//要显示选择时间的节点
+                saveDateEle:'flightDate',//要存储选择时间的节点
+                isNeedHideHeader:true
+            });
+            //showCalendarPrice(getRootPath() + '/book/queryPriceCalendar.json',$('#orgCity1').val(),$('#dstCity1').val(),$('#takeoffdate1').val());
+            $('.content-container').hide();
+            $('.showDateWarp').show();
+        })
+    })
+
+</script>
+</body>
+</html>

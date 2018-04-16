@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    var json = {name:'张三',age:25};
+    var json2 = json;
+    json2.name = '李四';
+    alert(json.name);
+    */
+    //方法一(不改变值)
+    /*
+    var json = {name:'张三',age:25};
+    var json2 = {};
+    for(var attr in json){
+        json2[attr] = json[attr];
+    }
+    json2.name = '李四';
+    alert(json.name);
+    */
+    //方法二(不改变值)  ie6,ie7不兼容，在http://www.json.org/下载兼容版本
+    var json = {name:{firstName:'张',lastName:'四'},age:25};
+    var str = JSON.stringify(json);
+    var json2 = JSON.parse(str);
+    //json2.sex = 'man';
+    json2.name.firstName = '王';
+    console.log(json.name.firstName);
+</script>
+</body>
+</html>

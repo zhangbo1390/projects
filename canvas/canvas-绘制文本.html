@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #can{background: #9f6;margin: 100px auto;
+            display: block;}
+    </style>
+</head>
+<body>
+<canvas id="can" width="500" height="500">
+    您的浏览器不支持canvas标签，建议您更换浏览器查看效果
+</canvas>
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    var w = can.width;//画布的宽度
+    var h = can.height;//画布的高度
+    cxt.font = 'bold 30px Microsoft Yahei ';
+    cxt.textBaseline = 'hanging';
+    cxt.textAlign = 'left';
+    var fw = cxt.measureText('潭州学院strock').width;  //获取文字的宽度
+    console.log(fw);
+    cxt.fillText('潭州学院',0,0);
+    cxt.strokeText('潭州学院strock',(w-fw)/2,150);
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <title>中国联合航空有限公司</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 全屏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- 状态栏-->
+    <meta http-equiv="Pragma" content="no-cache">
+    <!--网站图标-->
+    <link href="img/favicon.ico" rel="shortcut icon" type="images/x-icon">
+    <link rel="stylesheet" href="swiper/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div class="Indexbannerwrap">
+    <div class="swiper-banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#"> <img src="img/banner1.jpg" alt="" class="img-responsive"></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"> <img src="img/banner4.jpg" alt="" class="img-responsive"></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"> <img src="img/banner3.jpg" alt="" class="img-responsive"></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"> <img src="img/banner4.jpg" alt="" class="img-responsive"></a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination">
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+        </div>
+    </div>
+</div>
+
+<div class="fillingBannerWrap"></div>
+<div class="container-content">
+    <div class="content-toplogo-wrap"></div>
+    <div class="content-toplogo"></div>
+    <div class="content-flight-select">
+        <form action="/h5/book/flightSearch.html" method="post">
+            <div class="content-flight-select-wrap">
+                <div class="content-flight-select-tab">
+                    <ul class="content-flight-select-list">
+                        <li class="single active">单程</li>
+                        <li class="double">往返</li>
+                    </ul>
+                    <div class="content-flight-select-content clearfix">
+                        <div class="content-flight-select-start-end">
+                            <div class="content-flight-select-start-city">
+                                <span class="start-city-label">出发城市</span>
+                                <span class="start-city-select">北京南苑</span>
+                            </div>
+                            <div class="content-flight-select-start-date">
+                                <span class="start-date-label">去程日期</span>
+                                <span class="start-date-select">2016-07-28</span>
+                            </div>
+                        </div>
+                        <div class="fresh"></div>
+                        <div class="content-flight-select-start-end">
+                            <div class="content-flight-select-start-city">
+                                <span class="start-city-label">出发城市</span>
+                                <span class="start-city-select">北京南苑</span>
+                            </div>
+                            <div class="content-flight-select-start-date">
+                                <span class="start-date-label">去程日期</span>
+                                <span class="start-date-select">2016-07-28</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="passenger-type">
+                    <div class="passenger-type-wrap">
+                        <span class="passenger-type-label">成人</span>
+                        <div class="passenger-type-ticket">
+                            <em class="adult-num num">1</em>
+                            <span class="passenger-type-icon adultIcon"></span>
+                        </div>
+                    </div>
+                    <div class="passenger-type-wrap">
+                        <span class="passenger-type-label">儿童</span>
+                        <div class="passenger-type-ticket">
+                            <em class="child-num num">1</em>
+                            <span class="passenger-type-icon childIcon"></span>
+                        </div>
+                    </div>
+                    <div class="passenger-type-wrap">
+                        <span class="passenger-type-label">婴儿</span>
+                        <div class="passenger-type-ticket">
+                            <em class="baby-num num">1</em>
+                            <span class="passenger-type-icon babyIcon"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flight-inquiry">
+                    <a href="javascript:void (0)" class="flight-inquiry-btn">航班查询</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="content-flight-business">
+        <ul>
+            <li class="content-flight-business-item" onclick="function_href('myLianhang.html')">
+                <span class="content-flight-business-itemIcon people"></span>
+                <span class="content-flight-business-itemTxt">我的联航</span>
+            </li>
+            <li class="content-flight-business-item" onclick="function_href('/h5/user/index.html')">
+                <span class="content-flight-business-itemIcon flightOrder"></span>
+                <span class="content-flight-business-itemTxt">机票预订</span>
+            </li>
+            <li class="content-flight-business-item" onclick="function_href('/h5/user/index.html')">
+                <span class="content-flight-business-itemIcon camera"></span>
+                <span class="content-flight-business-itemTxt">爱旅游</span>
+            </li>
+            <li class="content-flight-business-item" onclick="function_href('/h5/user/index.html')">
+                <span class="content-flight-business-itemIcon increment"></span>
+                <span class="content-flight-business-itemTxt">增值服务</span>
+            </li>
+            <li class="content-flight-business-item" onclick="function_href('/h5/user/index.html')">
+                <span class="content-flight-business-itemIcon dynamicIcon"></span>
+                <span class="content-flight-business-itemTxt">航班动态</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="fillingWrap"></div>
+<div class="footer pos-bottom footer-nav">
+    <ul class="footer-nav-list">
+        <li><a href="javascript:void (0)"><img class="icon-home" src="img/homepage.png">首页</a></li>
+        <li><a href="javascript:void (0)"><img class="icon-news" src="img/wifi.png">新闻</a></li>
+        <li><a href="javascript:void (0)"><img class="icon-serve" src="img/Microphone.png" style="width: 0.12rem;">24H客服</a></li>
+        <li><a href="myLianhang.html"><img class="icon-my" src="img/mine.png">我的联航</a></li>
+    </ul>
+</div>
+<div class="footer pos-bottom footer-copyright">© Copyright 2010 中国联合航空有限公司 京ICP备05075559号</div>
+
+
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/common.js"></script>
+<script src="swiper/swiper-3.3.1.jquery.min.js"></script>
+<script src="js/touch.min.js"></script>
+<script>
+    $(function(){
+        var mySwiper = new Swiper('.swiper-container',{
+            loop:true,
+            autoplay:2000,
+            pagination:'.swiper-pagination',
+            paginationClickable:true
+        });
+    })
+</script>
+</body>
+</html>

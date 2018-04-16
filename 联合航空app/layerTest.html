@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出层测试</title>
+    <link rel="stylesheet" href="layer/layer.css">
+</head>
+<body>
+<button id="about">关于</button>
+
+<script src="../jquery-1.11.0.js"></script>
+<script src="layer/layer.js"></script>
+<script>
+    $(function(){
+        //layer.msg('玩命加载中。。。');
+        $('#about').on('click',function(){
+            layer.alert('弹出层layer');
+        });
+        //询问框
+        /*layer.confirm('您是如何看待前端开发？', {
+            btn: ['重要','奇葩'] //按钮
+        }, function(){
+            layer.msg('的确很重要', {icon: 1});
+        }, function(){
+            layer.msg('也可以这样', {
+                time: 2000, //2s后自动关闭
+                btn: ['明白了', '知道了']
+            });
+        });*/
+        //墨绿深蓝风
+        /*layer.alert('墨绿风格，点击确认看深蓝', {
+            skin: 'layui-layer-molv' //样式类名
+            ,closeBtn: 0
+        }, function(){
+            layer.alert('偶吧深蓝style', {
+                skin: 'layui-layer-lan'
+                ,closeBtn: 0
+                ,shift: 4 //动画类型
+            });
+        });*/
+
+    })
+</script>
+</body>
+</html>

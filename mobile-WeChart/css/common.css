@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* css 重置 */
+body, p, input, h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, form { margin: 0; padding: 0; list-style: none; vertical-align: middle; font-weight:normal; }
+img { border:0; margin: 0; padding: 0;   }
+body { color: #000; -webkit-user-select: none; -webkit-text-size-adjust: none; font:normal 16px "微软雅黑", helvetica, arial; text-align:left;   }
+header, section, footer { display: block; margin: 0; padding: 0 }
+a{text-decoration:none;color:#000;}
+.percent{width: 91.3%;margin: 0 auto;}
+.clear_wl:after { content: "."; height: 0; visibility: hidden; display: block; clear: both; }
+body{background:#f4f4f4;min-width: 320px;max-width: 640px;margin: 0 auto;}
+
+/* header */
+header{background: #393a3e;color:  #f5f7f6;height: auto;overflow: hidden;}
+header .goBack{float: left;height: 45px;display: -webkit-box;-webkit-box-align: center;-webkit-box-pack: center;-webkit-box-orient: horizontal;}
+header .goBack a{border-right: 1px solid #2e2f33;padding-right: 10px;}
+header .goBack a img{width: 40%;}
+header .deterPay{float: left;height: 45px;}
+header .deterPay h4{font-size: 16px; font-weight: 400;margin-top: 2px;}
+header .deterPay h5{font-size: 12px;color:  #6c7071;font-weight: 400;}
+
+/* 支付信息 */
+.payInfo{text-align: center;font-size: 16px;padding: 18px 0;}
+.payInfo h3{font-size: 45px;}
+.getUserInfo{background: #fff;border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;height: 43px;line-height: 43px;font-size: 12px;}
+.getUserInfo .bt{float: left;color: #767676;}
+.getUserInfo .btUser{float: right;}
+.immePay{background: #44bf16;height: 45px;line-height: 45px;color:#fff;font-size: 16px;text-align: center;display: block;margin-top: 15px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;}
+
+/* 浮动层 */
+.mask{width: 100%;height: 100%;position: fixed;left: 0;top: 0;z-index: 888;background-color: rgba(0,0,0,.4);}
+.mask .pwPanel{position: absolute;left: 50%;top: 25px;width: 88%;margin-left: -44%;background:  #f8f8f8;}
+.mask .pwPanel .pwHead{font-size: 16px;overflow: hidden;border-bottom:1px solid #c9daca;}
+.mask .pwPanel .pwHead img{width: 10%;padding: 10px 0;float: left;}
+.mask .pwPanel .pwHead span{padding:15px 5px;float: left;}
+.mask .pwPanel .pwInfo{}
+.mask .pwPanel .bankInfo{}
+.mask .pwPanel .password{}

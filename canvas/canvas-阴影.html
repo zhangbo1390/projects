@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #can{background: #9f6;margin: 100px auto;
+            display: block;}
+    </style>
+</head>
+<body>
+<canvas id="can" width="500" height="500">
+    您的浏览器不支持canvas标签，建议您更换浏览器查看效果
+</canvas>
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    cxt.font = 'bold 40px 微软雅黑';
+    cxt.shadowOffsetX = 10;
+    cxt.shadowOffsetY = 15;
+    cxt.shadowBlur = 20;
+    cxt.shadowColor = 'red';
+    cxt.fillText('潭州学院',50,50);
+</script>
+</body>
+</html>

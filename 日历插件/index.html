@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Demo1</title>
+    <style type="text/css">
+        .demo1{
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div style="height:200px;"></div>
+    <div class="demo1">
+        方本框：<input type="text" id="J-xl">
+    </div>
+
+    <div class="demo1">
+        按钮触发：<input type="text" id="J-xl-2"><input type="button" id="J-xl-2-btn" value="打开">
+    </div>
+
+
+    <div class="demo1">
+        <label for="J-xl-3">Label触发：</label><input type="text" id="J-xl-3" >
+    </div>
+
+    <div class="demo1">
+        直接传dom：<input type="text" id="J-xl-4" >
+    </div>
+
+
+    <script type="text/javascript" src="laydate.js"></script>
+    <script type="text/javascript">
+        laydate({
+            elem: '#J-xl', // 哪个元素触发
+			format : 'YYYY年MM月DD日', //日期格式
+			festival : true ,//是否显示节假日
+			event : 'click' , //响应事件
+			choose : function(){}, // 选择完后的回调函数
+			defSkin : 'danlan'
+        });
+
+        document.getElementById('J-xl-2-btn').onclick = function(){
+            laydate({
+                elem: '#J-xl-2'
+            });
+        };
+
+        laydate({
+            elem: '#J-xl-3'
+        });
+
+        laydate({
+            elem: document.getElementById('J-xl-4')
+        });
+    </script>
+
+
+    <hr>
+    <style>
+        .inline{    display: inline-block;
+            vertical-align: top;
+            font-size: 14px;}
+        .laydate-icon{    height: 22px;
+            line-height: 22px;
+            padding-right: 20px;
+            border: 1px solid #C6C6C6;
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-color: #fff;
+            outline: 0;}
+    </style>
+    <ul class="inline">
+        开始日：<li class="inline laydate-icon" id="start" style="width:165px; margin-right:10px;font-size: 12px;padding-left: 5px;"></li>
+        结束日：<li class="inline laydate-icon" id="end" style="width:165px;font-size: 12px;padding-left: 5px;"></li>
+    </ul>
+    <script>
+        var start = {
+            elem: '#start',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            /*min: laydate.now(), *///设定最小日期为当前日期
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: true,
+            choose: function(datas){
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas; //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#end',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            /*min: laydate.now(),*/
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: true,
+            choose: function(datas){
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+    </script>
+    <hr>
+
+
+
+
+</body>
+</html>

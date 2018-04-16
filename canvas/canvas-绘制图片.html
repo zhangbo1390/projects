@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>绘制图片</title>
+    <style>
+        #can{background: rosybrown;}
+    </style>
+</head>
+<body onload="drawImg()">
+<img src="1.jpg" alt="" width="300" id="img"/>
+<canvas id="can" width="500" height="500">
+    您的浏览器不支持canvas标签，建议您更换浏览器查看效果
+</canvas>
+
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    var img = document.getElementById('img');
+    function drawImg(){
+        cxt.drawImage(img,0,0,can.width,can.height);
+    }
+
+
+</script>
+</body>
+</html>

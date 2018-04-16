@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #can{background: #9f6;margin:auto;  display: block;}
+    </style>
+</head>
+<body>
+<canvas id="can" width="500" height="500">
+    您的浏览器不支持canvas标签，建议您更换浏览器查看效果
+</canvas>
+<img src="" alt="" id="img"/>
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    var img = document.getElementById('img');
+    can.onmousedown = function(ev){
+        var ev = ev || event;
+        var x = ev.clientX - can.offsetLeft;
+        var y = ev.clientY - can.offsetTop;
+        cxt.beginPath();
+        cxt.moveTo(x,y);
+        document.onmousemove = function(ev){
+            var ev = ev || window.event;
+            var x = ev.clientX-can.offsetLeft;
+            var y = ev.clientY-can.offsetTop;
+            cxt.lineTo(x,y);
+            cxt.stroke();
+
+        };
+        document.onmouseup = function(){
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+
+    }
+</script>
+</body>
+</html>

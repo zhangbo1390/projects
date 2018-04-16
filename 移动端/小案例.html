@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,target-densitydpi=device-dpi"/>
+    <title></title>
+    <script>
+        document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/3 + 'px';
+    </script>
+    <style>
+        *{margin: 0;padding: 0;}
+        .box ul li{width: 1rem;float: left;list-style: none;color: #fff;}
+        li:nth-child(1){background: red;}
+        li:nth-child(2){background: lavender;}
+        li:nth-child(3){background: rosybrown;}
+        li:nth-child(4){background: firebrick;}
+        li:nth-child(5){background: hotpink;}
+        li:nth-child(6){background: black;}
+        li:nth-child(7){background: lightblue;}
+        li:nth-child(8){background: greenyellow;}
+        li:nth-child(9){background: paleturquoise;}
+    </style>
+
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>字体1</li>
+        <li>字体2</li>
+        <li>字体3</li>
+        <li>字体1</li>
+        <li>字体2</li>
+        <li>字体3</li>
+        <li>字体1</li>
+        <li>字体2</li>
+        <li>字体3</li>
+    </ul>
+</div>
+<script>
+    var oLi = document.getElementsByTagName('li');
+    oLi[0].onclick = function(){
+        alert(1);
+    };
+    oLi[1].addEventListener('touchend',function(){
+        alert(2);
+    },false);//之后需要用到移动端点击事件的时候就用这个方法模拟
+</script>
+</body>
+</html>

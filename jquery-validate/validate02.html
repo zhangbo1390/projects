@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" id="valForm" method="post">
+    <p>
+        <label for="userName">用户名：</label> <input type="text" id="userName" name="userName">
+    </p>
+    <p>
+        <label for="psssWord">密  码：</label> <input type="password" id="psssWord" name="passWord">
+    </p>
+    <p>
+        <label for="email">邮  箱：</label> <input type="email" id="email" name="email">
+    </p>
+    <p>
+        <label for="creditcard">信用卡：</label> <input type="text" id="creditcard" name="creditcard">
+    </p>
+    <p>
+        <input type="submit" id="submit" value="提交">
+    </p>
+
+</form>
+<script src="../jquery.js"></script>
+<script src="../联合航空app/validate/jquery.validate.min.js"></script>
+<script src="../联合航空app/validate/jquery.validate.messages_zh.js"></script>
+<script>
+    $(function(){
+        $('#valForm').validate({
+            rules:{
+                userName:{
+                    required:true
+                },
+                passWord:{
+                    required:true
+                },
+                creditcard:{
+                    required:true
+                }
+
+            },
+            messages:{
+                userName:{
+                    required:"请填写用户名"
+                },
+                passWord:{
+                    required:'请输入密码'
+                },
+                email:{
+                    email:'请输入正确邮箱合适'
+                },
+                creditcard:{
+                    //required:"请输入银行卡号",
+                    creditcard:"请输入合法的银行卡号"
+                }
+            }
+        });
+    })
+</script>
+</body>
+</html>

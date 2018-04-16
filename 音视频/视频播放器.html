@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>视频播放器</title>
+    <style>
+        #jdBox{width:200px;height: 10px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            border: 1px solid red;display: inline-block;position: relative;
+        }
+        #jdBox #jdBottom{position: absolute;left: 0;top: 0;height: 100%;background: #eee;}
+        #jdBox #jdTop{position: absolute;left: 0;top: 0;width: 10px;height: 10px;border-radius: 50%;background: blue;}
+
+        #ylBox{width: 100px;height: 10px;border: 1px solid red;display: inline-block;position: relative;}
+        #ylBottom{position: absolute;left: 0;top: 0;height: 100%;background: #eee;}
+        #ylTop{position: absolute;left: 0;top: 0;width: 10px;height: 10px;border-radius: 50%;background: blue;}
+        input{border: none;}
+        input.time{width: 55px;}
+    </style>
+</head>
+<body>
+<video poster="1.jpg" width="500" height="500" id="vid" src="潭州教育.mp4" >
+    您的浏览器不支持
+</video><br/>
+<input type="button" value="播放"/>
+<input type="text" value="00:00:00" class="time"/>/
+<input type="text" value="00:00:00" class="time"/>
+<!-- 进度 -->
+<div id="jdBox">
+    <div id="jdBottom"></div>
+    <div id="jdTop"></div>
+</div>
+
+<!-- 音量 -->
+<div id="ylBox">
+    <div id="ylBottom"></div>
+    <div id="ylTop"></div>
+</div>
+<input type="button" value="静音"/>
+<input type="button" value="全屏"/>
+<script>
+    var input = document.getElementsByTagName('input');
+    var video = document.getElementById('vid');
+    var jdBox = document.getElementById('jdBox');
+    var jdBottom = document.getElementById('jdBottom');
+    var jdTop = document.getElementById('jdTop');
+    var ylBox = document.getElementById('ylBox');
+    var ylBottom = document.getElementById('ylBottom');
+    var ylTop = document.getElementById('ylTop');
+    var mark = true;
+    var timer = null;
+    input[0].onclick = function () {
+        if(mark){
+            video.play();
+            mark = false;
+            this.value = '暂停';
+            nowTime();
+            timer = setInterval(nowTime,1000);
+        }else{
+            video.pause();
+            mark = true;
+            this.value = '播放';
+            clearInterval(timer);
+        }
+    };
+    setTimeout(function(){
+        input[2].value = time(video.duration);
+    },1000);
+
+    /*获取当前时间，并在input里显示*/
+    function nowTime(){
+        input[1].value = time(video.currentTime);
+        var n = video.currentTime/video.duration;
+        jdTop.style.left = n * (jdBox.offsetWidth - jdTop.offsetWidth) + 'px';
+        jdBottom.style.width = n * (jdBox.offsetWidth - jdTop.offsetWidth) + 'px';
+    }
+    function time(timeForm){
+        timeForm = parseInt(timeForm);
+        var h = Math.floor(timeForm/3600);
+        var m = Math.floor(timeForm%3600/60);
+        var s = Math.floor(timeForm%60);
+        return zero(h) + ':' + zero(m) + ':' + zero(s);
+    }
+    function zero(num){
+        if(num<=9){
+            return '0' + num;
+        }else{
+            return num;
+        }
+    }
+    //进度条拖拽
+    jdTop.onmousedown = function (ev) {
+        var ev = ev || event;
+        var x = ev.clientX - jdTop.offsetLeft;
+        document.onmousemove = function(ev){
+            var ev = ev || event;
+            var _left = ev.clientX - x;
+            if(_left<0){
+                _left = 0;
+            }else if(_left > jdBox.offsetWidth - jdTop.offsetWidth){
+                _left = jdBox.offsetWidth - jdTop.offsetWidth;
+            }
+            jdTop.style.left = _left + 'px';
+            jdBottom.style.width = _left + 'px';
+            var n = _left/(jdBox.offsetWidth - jdTop.offsetWidth);
+            video.currentTime = n * video.duration;
+            //nowTime();
+        };
+        document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    };
+
+    input[4].onclick = function(){
+        video.webkitRequestFullScreen();
+    }
+</script>
+</body>
+</html>

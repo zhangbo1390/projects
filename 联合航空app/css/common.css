@@ -1,0 +1,197 @@
+@charset "utf-8";
+/*============公共样式===============*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+}
+
+em{font-style: normal;}
+
+body {
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+.left{float: left;}
+.right{float: right;}
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+.text-center{text-align: center;}
+.clearfix{clear: both;}
+.mlr-32{margin: 0 0.32rem;height: 100%;}
+.mt-16{margin-top: 0.16rem;}
+.img-responsive{display: block;max-width: 100%;height: auto;}
+/*==========login=============*/
+.header{width: 6.4rem;height: 0.67rem;text-align: center;font-size: 0.28rem;color: #fff;background: #f63939;line-height: 0.67rem;position: fixed;left: 0;right: 0;margin-left: auto;margin-right: auto;z-index: 9999;}
+.back{display: block;float: left;width: 0.67rem;height: 0.67rem;background:url("../img/back.png") no-repeat center center;background-size: 0.32rem;position: absolute;left: 0;top: 0;}
+.home{display: block;float: right;width: 0.67rem;height: 0.67rem;background: url("../img/home.png") no-repeat center center;background-size: 0.32rem;position: absolute;right: 0;top: 0;}
+.header-fillingWrap{width: 6.4rem;height: 0.67rem;}
+/*=========登录类型===========*/
+.tab-type{width: 6.4rem;background: #dcdcdc;height: 0.74rem;}
+.tab-type ul li{width: 3.2rem;float: left;height: 0.74rem;}
+.tab-type ul li a{font-size: 0.24rem;color: #fff;text-align: center;line-height:0.74rem;display: block;width: 100%;height: 100%; }
+.tab-type ul li.active{background: #ea4b4e;}
+/*========普通登录========*/
+.login-item-list{width: 6.4rem;font-size: 0.24rem;padding: 0 0.35rem;}
+.normal-login-form{}
+.normal-login{}
+.normal-login-wrap{height: 0.5rem;border-bottom: 2px dotted #ccc;line-height: 0.5rem; margin-top: 0.42rem;}
+.normal-login-wrap:after{content: "";clear: both;display: block;width: 0;height: 0;}
+span.login-input-tip{float: left;width: 1.26rem;}
+span.login-input-info{float: left;width: 4.4rem;height: 0.5rem;}
+span.login-input-info input{outline: none;border: 0 solid #fff;font-size: 0.24rem;height: 0.45rem;}
+.normal-login-btn{margin-top: 0.7rem;}
+.login-btn{display: block;color: #fff;text-align: center;width:100%;height: 0.7rem;background: #df3538;line-height: 0.7rem;outline: none;border: 0 solid #fff;font-size: 0.24rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;}
+.login-user-register{margin: 0.24rem 0 3.5rem;width: 100%;height: 0.24rem;}
+.login-user-register a{color: #df3538;font-size: 0.24rem;display: block;width: 2rem;text-align: left;}
+.login-user-register a:nth-child(1){text-decoration: underline;float: left}
+.login-user-register a:nth-child(2){float: right;text-align: right;}
+/*=========脚部信息==========*/
+.fillingWrap{height: 1.1rem;}
+.footer{height: 0.55rem;width: 6.4rem;padding:0 0.1rem;line-height: 0.55rem;text-align: center;}
+.pos-bottom{position: fixed;bottom: 0;}
+.footer-nav{bottom: 0.55rem;background: #ececec;z-index: 222;}
+.footer-nav-list li{width: 25%;float: left;text-align: center;position: relative;}
+.footer-nav-list li a{font-size: 0.2rem;color: #A1A1A2;display: block;}
+.footer-nav-list li a img{width: 0.2rem;}
+.footer-copyright{color: #fff;font-size:0.16rem;background: #f63939;z-index: 222; }
+
+
+/*========我的联航首页=========*/
+.mineLH-header{width: 100%;height: 2.7rem;background: url("../img/background.png") no-repeat center center;background-size:  100% 100%;}
+
+.mineLH-header-top{width: 100%;color: #fff;font-size: 0.24rem;text-align: center;height: 0.63rem;line-height: 0.63rem;position: relative;}
+.mineLH-header-email-out{width: 1.54rem;height: 0.63rem;float: right;position: absolute;top: 0;right: 0;}
+.mineLH-header-email-out span{display: block;height: 0.63rem;float: left;}
+.mineLH-header-email{background: url("../img/xin.png") no-repeat center center;width: 0.4rem;background-size: 0.32rem;}
+.mineLH-header-out{width: 1.14rem;line-height: 0.63rem;}
+.mineLH-header-out button{outline: none;border: 0 solid #fff;display: block;color: #0069ba;font-size:0.15rem;background: #fff;margin-top: 0.19rem;margin-left: 0.3rem;height: 0.25rem;
+    width: 0.7rem;
+    line-height: 0.25rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;}
+.mineLH-header-content{width: 1.6rem;height: 2rem;margin: 0 auto;color: #a4a4a4;font-size: 0.24rem;text-align: center;}
+.mineLH-header-content-headerDemo{width: 100%;height: 1.6rem;text-align: center;vertical-align: middle;background: url("../img/headerDemo.png") no-repeat center center;background-size: 100% 100%;}
+.mineLH-header-content-name{display:block;width: 100%;height: 0.5rem;line-height: 0.5rem;}
+.mineLH-btn-list{width: 6.4rem;height: 3rem;border-bottom: 3px solid #dedfdf;}
+.mineLH-btn-list-container{width: 90%;margin: 0 auto;position: relative;}
+.mineLH-btn-list a:nth-child(1){background:#00ade7 url("../img/userpage_plane.png") no-repeat 18% center;background-size: 0.25rem;top: 0.32rem;}
+.mineLH-btn-list a:nth-child(2){background:#A1CB3B url("../img/userpage_server.png") no-repeat 33% center;background-size: 0.25rem;top: 1.12rem;}
+.mineLH-btn-list a:nth-child(3){background:#FF9703 url("../img/irregular_flight.png") no-repeat 31% center;background-size: 0.25rem;top:1.94rem;}
+.orderBtn{width: 100%;display: block;position: absolute;color: #fff;font-size: 0.25rem;text-align: center;height: 0.64rem;line-height: 0.64rem;border-radius: 15px;left: 0;}
+
+.mineLH-user-warp{width: 100%;height: 1.4rem;border-bottom: 3px solid #dedfdf;}
+.mineLH-user-warp span{display: table-cell;}
+.mineLH-user-packet{height: 1.9rem;}
+.mineLH-user-icon{display: block;width: 0.32rem;height: 100% ;float: left;}
+.mineLH-user-icon-1{background: url("../img/redpaper.png") no-repeat 0 0.3rem;background-size: 0.25rem;}
+.mineLH-user-icon-2{background: url("../img/personal_information.png") no-repeat 0 0.3rem;background-size: 0.25rem;}
+.mineLH-user-icon-3{background: url("../img/Common_information.png") no-repeat 0 0.3rem;background-size: 0.25rem;}
+.mineLH-user-right{float: left;width:5.39rem;font-size: 0.24rem;}
+.mineLH-user-right-title{font-size: 0.24rem;width: 100%;height: 0.58rem;vertical-align: bottom;}
+.mineLH-user-right-info{width: 100%;font-size: 0.2rem;height: 0.55rem;line-height: 0.55rem;}
+.mineLH-user-right-info span{float: left;width: 50%;height: 100%;}
+.mineLH-user-right-info span:nth-child(2){text-align: right;}
+.mineLH-user-right-info span em{color: #df3538;font-size: 0.25rem;font-style: normal;}
+.mineLH-user-right-btn{display:block;width: 1.77rem;height: 0.4rem;line-height: 0.4rem;font-size: 0.2rem;color: #fff;text-align: center;background: #df3538; float: left;margin-right: 0.2rem;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;}
+.mineLH-user-right-iden{width: 100%;height: 0.58rem;position: relative;}
+.mineLH-user-right-iden-icon{font-size: 0.2rem;vertical-align: bottom;background: url("../img/authenticationIcon.png") no-repeat 100% center;background-size: 0.32rem;position: absolute;right: 0;width: 1.6rem;top: 0.34rem;}
+
+
+/*=======新增乘机人======*/
+.form-group input,.form-group select{outline: none; border: 0 solid #fff;height: 0.5rem;line-height: 0.5rem;background: none;}
+.form-wrap{margin: auto;margin-top: 0.58rem;margin-bottom: 1.23rem;}
+.form-group{width: 100%; height: 0.51rem;line-height: 0.51rem;border-bottom: 1px dotted #ccc;margin-bottom: 0.5rem;font-size: 0.28rem;}
+.form-select-wrap{position: relative;}
+.form-name-type{font-size: 0.28rem;width: 100%;}
+.form-xiala-icon{position: absolute;right: 0;top:50%;bottom:50%;margin-top:-0.2rem;background:#fff url("../img/xia%20la.png") no-repeat center center;width: 0.4rem;height: 0.4rem;background-size: 0.4rem;}
+.form-label{display: inline-block;width: 1.7rem;height: 0.5rem;line-height: .5rem;}
+.normal-input-info{width: 3.75rem;display: inline-block;}
+.normal-input-info input{font-size: 0.22rem;width: 100%;}
+.part{width: 3.98rem;font-size: 0.2rem;}
+.add-save-btn{display: block;height: .7rem;line-height: .7rem;font-size: .28rem;color: #fff;text-align: center;
+    background: #ea4b4e;width: 100%;outline: none;border: 0 solid #fff;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;}
+/*==========不正常航班改期==========*/
+.flightDate{display: inline-block;height: 0.5rem;}
+.must-part{width: 3rem;font-size: 0.2rem;}
+.must{color: #DF3538;font-size: 0.22rem;display: inline-block;width: 0.8rem;text-align: right;}
+.identify,.identify-btn{display: inline-block;font-size: 0.24rem;height: 0.44rem!important;line-height: 0.44rem!important;text-align: center; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+.identify{border:1px solid #ccc!important;width: 1.36rem;position: relative;bottom: 0.09rem;}
+.identify-btn{color: #fff;background: #FF9704;width: 1.73rem;}
+.proving-code{padding: 0 0.24rem;font-size: 0.22rem;width: 1.6rem!important;}
+.btn-inline{width: 1.96rem!important;font-size: 0.14rem!important;position: relative;bottom: 0.13rem;}
+
+/*==========layer确认密码==========*/
+.layui-layer-content{text-align: center;}
+.layui-layer-btn{display: none;}
+/*==========首页==========*/
+.Indexbannerwrap{width: 6.4rem;height: 1.85rem}
+.swiper-banner{position: relative;min-width: 320px;max-width: 640px;background: #fff;margin: 0 auto;}
+.swiper-pagination{width: 100%;text-align: left;top: 0.8rem;}
+.swiper-pagination-bullet-active{background: #f63939;}
+.container-content{z-index: 100;position: relative;}
+.content-toplogo-wrap{width: 100%;height:0.52rem; position: relative;background:#e7e7e7;z-index: 1;opacity: 0.85; }
+.content-toplogo{width: 100%;height: 0.52rem;background: url("../img/logo.png") no-repeat center center;background-size: 1.41rem;position: absolute;top: 0;left: 0;z-index: 2;}
+.content-flight-select{width: 100%;height: 3.46rem;background: rgba(255,255,255,0.85);}
+
+.content-flight-select-wrap{width: 89.3%;height: 3.46rem;margin: 0 auto;}
+.content-flight-select-tab{padding-top: .03rem;width: 100%;height: 1.7rem;border-bottom: 1px solid #eee;}
+.content-flight-select-list{width: 100%;height: 0.38rem;}
+.content-flight-select-list li{list-style: none;width: 50%;float: left;text-align: center;height: 0.38rem;line-height: 0.38rem;font-size: .2rem;border: 1px solid #eee;cursor: pointer;background: #fff;}
+.content-flight-select-list li.active{background: #f63939 !important;color: #fff;border: 1px solid #f63939 !important;}
+.content-flight-select-content{width: 100%;height: 0.87rem;margin-top: 0.28rem;font-size: 0.23rem;}
+.content-flight-select-start-end{width: 45%;height: 0.87rem;float: left;}
+.content-flight-select-start-city{width: 100%;height: 0.42rem;line-height: 0.42rem;}
+.start-city-label,.start-date-label{display: inline-block;height: 100%;font-size: 0.16rem;color: #999;}
+.start-city-select,.start-date-select{display: inline-block;width: 60%;height: 100%;font-size: 0.23rem;}
+.start-date-select{font-size: 0.18rem;}
+.content-flight-select-start-date{width: 100%;height: 0.44rem;line-height: 0.44rem;}
+.fresh{height: 0.87rem;width: 10%;float: left;background: url("../img/changeIcon.png") no-repeat 0 center;background-size: 0.4rem;}
+.passenger-type{width: 100%;height: 0.75rem;border-bottom: 1px solid #eee;}
+.passenger-type-wrap{width: 33.3%;float: left;height: 0.75rem;line-height: 0.75rem;font-size: 0.19rem;-webkit-box-sizing: border-box;}
+.passenger-type-label{height: 100%;width: 35%;text-align: right;display: inline-block;}
+.passenger-type-ticket{height: 0.4rem;width: 50%;background: #e3e3e3;margin-left: 0.18rem;line-height: 0.4rem;font-size: 0.19rem;text-align: left;padding-left: 0.18rem;float: right;margin-top: 0.16rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; }
+.num{display: block;width: 40%;height:0.4rem;line-height: 0.4rem;float: left;}
+.passenger-type-icon{display: block;width:60%;height: 0.4rem;float: left;}
+.adultIcon{background: url("../img/adult.png") no-repeat center center;background-size: 0.21rem;}
+.childIcon{background: url("../img/child.png") no-repeat center center;background-size: 0.15rem 0.22rem;}
+.babyIcon{background: url("../img/baby.png") no-repeat center center;background-size: 0.29rem 0.23rem}
+.flight-inquiry{width: 100%;height: 1rem;}
+.flight-inquiry-btn{color: #fff;font-size: 0.25rem;background: #f63939;display: block;width: 100%;height: 0.52rem;line-height: 0.52rem;text-align: center;margin-top: 0.25rem;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;}
+.content-flight-business{width: 100%;height: 3.04rem;background: #fff;margin-top: .05rem;}
+.content-flight-business-item{width: 25%;float: left;cursor: pointer;height: 1.52rem;}
+.content-flight-business-itemIcon{display: block;width: 100%;height: 1.1rem;}
+.people{background: url("../img/people.png") no-repeat center center; background-size: 0.9rem;}
+.flightOrder{background: url("../img/flightOrder.png") no-repeat center center;background-size: 0.9rem;}
+.camera{background: url("../img/camera.png") no-repeat center center;background-size: 0.9rem;}
+.increment{background: url("../img/increment.png") no-repeat center center;background-size: 0.9rem;}
+.dynamicIcon{background: url("../img/dynamicIcon.png") no-repeat center center;background-size: 0.9rem;}
+.content-flight-business-itemTxt{display: block;width: 100%;height: 0.42rem;line-height: 0.42rem;text-align: center;font-size: 0.2rem;}
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>绘制文本小案例</title>
+    <style>
+        #can{background: #9f6;margin:auto;  display: block;}
+    </style>
+</head>
+<body>
+<canvas id="can" width="500" height="500">
+    您的浏览器不支持canvas标签，建议您更换浏览器查看效果
+</canvas>
+<div class="wrap">
+    <label for="text">请输入全文：</label><input type="text" id="text" value="请输入文本"/>
+    <select name="" id="bg">
+        <option value="bg1.png">bg1.png</option>
+        <option value="bg2.png">bg2.png</option>
+        <option value="bg3.png">bg3.png</option>
+        <option value="bg4.png">bg4.png</option>
+    </select>
+</div>
+
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    var txt = document.getElementById('text');
+    var bg = document.getElementById('bg');
+    var w = can.width;
+    var h = can.height;
+    var img = new Image();
+    img.src = '1.jpg';
+    var imgs = new Image();
+    imgs.src = 'bg1.jpg';
+    imgs.onload = draw;
+    function draw(){
+        imgs.src = bg.value;
+        cxt.drawImage(img,0,0,w,h);
+        cxt.save();
+		var ft = Math.ceil(w/txt.value.length);
+        cxt.font = ft + 'px 微软雅黑';
+        var fw = cxt.measureText(txt.value).width;
+        var color = cxt.createPattern(imgs,'no-repeat');
+        cxt.fillStyle = color;
+        cxt.shadowOffsetX = 10;
+        cxt.shadowOffsetY = 10;
+        cxt.shadowBlur = 5;
+        cxt.shadowColor = 'red';
+        cxt.fillText(txt.value,(w-fw)/2,(h-40)/2);
+        cxt.restore();
+
+    }
+    /*txt.onchange = function(){
+
+        cxt.save();
+        cxt.font = '40px 微软雅黑';
+        var fw = cxt.measureText(txt.value).width;
+        cxt.fillText(txt.value,(w-fw)/2,(h-40)/2);
+        cxt.restore();
+        can.clearRect(0,0,500,500);
+    }*/
+</script>
+</body>
+</html>

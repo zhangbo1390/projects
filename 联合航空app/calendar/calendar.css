@@ -1,0 +1,221 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	max-width: 640px !important;
+	min-width: 320px !important;
+	margin: 0 auto !important;
+}
+.tn-calendar {
+	width: 100%;
+	overflow: hidden
+}
+.tn-item-container {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px
+}
+.tn-c-header {
+	text-align: center;
+	font-size: 14px;
+	height: 0.75rem;
+	line-height: 0.75rem;
+	color: #222;
+	font-size: 0.24rem;
+	background:#f0f0f0;
+}
+.tn-c-header .icon-arrow-right {
+	float: right;
+	padding: 24px;
+	color: #ff6000
+}
+.tn-c-header .icon-arrow-left {
+	float: left;
+	padding: 24px;
+	color: #ff6000
+}
+.tn-c-body {
+	clear: both
+}
+.tn-c-body .tn-c-week {
+	display: none
+}
+.tn-c-body table,.tn-c-body tbody {
+	width: 100%
+}
+.tn-c-body table th {
+	text-align: center;
+	height: 24px;
+	vertical-align: middle;
+	background: #dfdfdf;
+	font-size: 12px;
+	color: #666
+}
+.tn-c-body table tr {
+	}
+.tn-c-body table td {
+	text-align: center;
+	height: 1.05rem;
+	vertical-align: middle;
+	border: none;
+	font-size: 16px;
+	font-weight: medium;
+	color: #222;
+	width: 14.3%;
+	font-family: "Arial";
+	background-color: #fff;
+	position: relative
+}
+.tn-c-body table td em.top-center {
+	color: #666;
+	font-size: 10px;
+	position: absolute;
+	top: 2px;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	color: #999;
+	width: 24px
+}
+.tn-c-body table td span.top-center.special {
+	color: #ff6010
+}
+.tn-c-body table td span.bottom-center {
+	color: #666;
+	font-size: 10px;
+	position: absolute;
+	bottom: 2px;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	color: #999;
+	width: 45px
+}
+.tn-c-body table td em.bottom-center.special {
+	color: #ff6010
+}
+.tn-c-body table td p {
+	color: #ff9703;
+	font-size: 16px
+}
+.tn-c-body table td .lowPrice {
+	color: #ff7c70
+}
+.tn-c-body table td.selected p {
+	color: #fff;
+	font-size: 16px
+}
+.tn-c-body table td.selected em {
+	color: #fff !important
+}
+.tn-c-body table td span.rmb {
+	font-family: ""
+}
+.tn-c-body table td span.price {
+	font-size: 10px
+}
+.tn-c-body table td.disabled {
+	color: #999
+}
+.tn-c-body table td.normal {
+	color: #ff6000
+}
+.tn-c-body table td.selected {
+	color: #fff;
+}
+.tn-c-body table td.selected p{
+	display: block;
+    width: 0.6rem;
+    height: 0.6rem;
+    background: #ff9705;
+    border-radius: 45px;
+    -webkit-border-radius: 45px;
+    text-align: center;
+    line-height: 0.6rem;
+    color: #fff !important;
+    margin: 0 auto;
+}
+.tn-c-body table td.beselected {
+	background-color: #ffe7cc;
+	color: #fff
+}
+.tn-c-body table tr:nth-child(2) td {
+	border-top: none
+}
+.tn-c-body table tr td:first-child {
+	border-left: none
+}
+.tn-c-body table tr td:last-child {
+	border-right: none
+}
+.tn-c-body table td .price:before {
+	/***
+	content:"￥";
+	font-family: "Microsoft YaHei"
+	***/
+}
+.tn-calendar-head {
+	position: fixed;
+	z-index: 50;
+	width: 6.4rem;
+	background: #ea4b4e;
+	color: #000
+}
+.tn-calendar-head table {
+	width: 100%
+}
+.tn-calendar-head table th {
+	text-align: center;
+	height: 0.9rem;
+	vertical-align: middle;
+	font-size: 0.2rem;
+	color: #fff;
+	font-weight: normal !important;
+}
+.tn-container{
+	padding-top: 0.9rem;
+}
+.tn-c-body table tbody tr td{
+	border-bottom: 1px dashed #e9e9e9;
+}
+.today p{
+	display: block;
+	width: 0.6rem;
+	height: 0.6rem;
+	background: #df3538;
+	border-radius: 45px;
+	-webkit-border-radius:45px;
+	text-align: center;
+	line-height: 0.6rem;
+	color: #fff !important;
+	margin: 0 auto;
+}
+.sundays{
+	color: #df3538 !important;
+}
+.changeFront{
+	color:#999 !important;
+}
+/**不正常改期被取消航班日期样式**/
+.cancleDate p{
+	display:block !important;
+	width:60px !important;
+	height:60px !important;
+	border:1px solid #ea4b4e !important;
+	border-radius:45px !important;
+	text-align:center !important;
+	line-height:60px !important;
+	color:#ea4b4e !important;
+}

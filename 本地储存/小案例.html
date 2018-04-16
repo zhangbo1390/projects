@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>购物车</title>
+</head>
+<body>
+<input type="checkbox" value="手机"/>手机
+<input type="checkbox" value="电脑"/>电脑
+<input type="checkbox" value="平板"/>平板
+<input type="checkbox" value="手表"/>手表
+<script>
+    var input = document.getElementsByTagName('input');
+    for(var i=0;i<input.length;i++){
+        input[i].onclick = function(){
+            if(this.checked){
+                localStorage.setItem('check',this.value);
+            }else{
+                localStorage.setItem('uncheck',this.value);
+            }
+        }
+    }
+    window.addEventListener('storage',function(ev){
+        if(ev.key == 'check'){
+            for(var j=0;j<input.length;j++){
+                if(ev.newValue == input[j].value){
+                    input[j].checked = true;
+                }
+            }
+        }
+        if(ev.key == 'uncheck'){
+            for(var j=0;j<input.length;j++){
+                if(ev.newValue == input[j].value){
+                    input[j].checked = false;
+                }
+            }
+        }
+    },false)
+</script>
+</body>
+</html>

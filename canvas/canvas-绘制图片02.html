@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #can{background: rosybrown;}
+    </style>
+</head>
+<body>
+<canvas id="can" width="1000" height="1000">
+    您的浏览器不支持canvas标签，建议您更换浏览器查看效果
+</canvas>
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    var img = new Image;
+    img.src = '1.jpg';
+    img.onload = drawImg;
+    function drawImg(){
+        //cxt.drawImage(img,0,0);
+        cxt.fillStyle = cxt.createPattern(img,'repeat');
+        cxt.fillRect(0,0,can.width,can.height);
+    }
+</script>
+</body>
+</html>

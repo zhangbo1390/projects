@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" id="btn" value="点击随机产生数"/>
+<div class="box"></div>
+<script>
+    var oBtn = document.getElementById('btn');
+    var oBox = document.getElementsByClassName('box')[0];
+    var json = {};
+    oBtn.onclick = function(){
+        var sum = random(20,5);
+        //history.pushState(sum,'',sum);
+        oBox.innerHTML = sum;
+        var n = Math.random();
+        json[n] = sum;
+        window.location.hash = n;
+    };
+    /*方法一*/
+    /*window.onpopstate = function(ev){
+        var ev = ev || event;
+        oBox.innerHTML = ev.state;
+    };*/
+    /*方法二*/
+    window.onhashchange = function(){
+        oBox.innerHTML = json[window.location.hash.substring(1)];
+    };
+    function random(a,b){
+        var arr = [];
+        var arr_ran = [];
+        for(var i=0;i<a;i++){
+            arr.push(i);
+        }
+        for(var i=0;i<b;i++){
+            var index = Math.floor(Math.random()*arr.length);
+            arr_ran.push(arr.splice(index,1));
+        }
+        return arr_ran;
+    }
+</script>
+</body>
+</html>

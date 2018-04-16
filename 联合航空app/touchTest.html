@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>touch练习</title>
+    <style>
+        #target{width: 100px;height: 100px;margin: 100px auto;background: rebeccapurple;cursor: pointer;font-size: 24px;color: #fff;text-align: center;line-height: 100px;
+            -webkit-transform: rotate(0deg);
+            -moz-transform:rotate(0deg) ;
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);}
+    </style>
+</head>
+<body>
+<div id="target">texttext</div>
+<script src="js/touch.min.js"></script>
+<script>
+    (function(){
+        var angle = 0;
+        touch.on('#target','touchstart',function(ev){
+            ev.startRotate();
+            ev.preventDefault();
+        });
+        touch.on('#target','rotate',function(ev){
+            var totalAngle = angle + ev.rotation;
+            console.log(ev.fingerStatus);
+            if(ev.fingerStatus === 'end'){
+                angle = angle + ev.rotation;
+            }
+            this.style.transform = 'rotate('+ totalAngle +'deg)';
+        })
+    })();
+</script>
+</body>
+</html>

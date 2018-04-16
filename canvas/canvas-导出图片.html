@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #can{background: #9f6;margin:auto;  display: block;}
+    </style>
+</head>
+<body>
+<canvas id="can" width="500" height="500">
+    您的浏览器不支持canvas标签，建议您更换浏览器查看效果
+</canvas>
+<img src="" alt="" id="img"/>
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    var img = document.getElementById('img');
+    cxt.fillStyle = 'red';
+    cxt.beginPath();
+    cxt.fillRect(50,50,100,100);
+    cxt.closePath();
+    cxt.fillStyle = 'blue';
+    cxt.globalAlpha = 0.5; //设置透明度
+    cxt.globalCompositeOperation = 'xor';//设置交叉样式
+    cxt.beginPath();
+    cxt.fillRect(80,80,100,100);
+    cxt.closePath();
+    console.log(can.toDataURL());
+    img.src = can.toDataURL();
+</script>
+</body>
+</html>

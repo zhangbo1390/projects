@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频播放器</title>
+    <style>
+        #jdBox{display: inline-block;position: relative;width: 100px;height: 10px;border: 1px solid #eee;
+            -webkit-box-shadow: inset 1px 1px 3px #000;
+            -moz-box-shadow: inset 1px 1px 3px #000;
+            box-shadow: inset 1px 1px 3px #000;}
+        #jdBack{position: absolute;left: 0;top: 0;width: 0;height: 100%;background: #000; }
+        #jdSlider{position: absolute;left: 0;top: 0;width: 10px;height: 10px;background: #000;
+            -webkit-border-radius:50%;
+            -moz-border-radius:50%;
+            border-radius:50%;}
+    </style>
+</head>
+<body>
+<video src="潭州教育.mp4" id="vid" width="500" height="300">您的浏览器不支持该插件，建议更换浏览器</video>
+<br/>
+<input type="button" id="control" value="播放">
+<span id="curTime">00:00:00</span>/
+<span id="tolTime">00:00:00</span>
+<div id="jdBox">
+    <div id="jdBack"></div>
+    <div id="jdSlider"></div>
+</div>
+<input type="button" value="静音" id="mute">
+<input type="button" value="全屏" id="fullScr">
+<script>
+    var vid = document.getElementById('vid');
+    var input = document.getElementsByTagName('input');
+    var curTime = document.getElementById('curTime');
+    var tolTime = document.getElementById('tolTime');
+    var jdBox = document.getElementById('jdBox');
+    var jdBack = document.getElementById('jdBack');
+    var jdSlider = document.getElementById('jdSlider');
+    var maxWidth = jdBox.offsetWidth - jdSlider.offsetWidth;
+    var flag = true;
+    var mutedF = true;
+    var timer = null;
+    //获取总时间
+    setTimeout(function(){
+        tolTime.innerHTML = transTime(vid.duration);
+    },1000);
+
+    //播放
+    input[0].onclick = function () {
+        if(flag){
+            vid.play();
+            this.value = '暂停';
+            flag = false;
+            nowTime();
+            timer = setInterval(nowTime,100);
+        }else {
+            vid.pause();
+            this.value = '播放';
+            flag = true;
+            clearInterval(timer);
+        }
+    };
+    //静音
+    input[1].onclick = function(){
+        if(mutedF){
+            vid.muted = true;
+            mutedF = false;
+        }else {
+            vid.muted = false;
+            mutedF = true;
+        }
+    };
+    //全屏
+    input[2].onclick = function(){
+        if(vid.webkitRequestFullScreen)vid.webkitRequestFullScreen();
+        if(vid.mozRequestFullScreen)vid.mozRequestFullScreen();
+        if(vid.requestFullscreen)vid.requestFullscreen();
+    };
+
+
+    //进度
+    jdSlider.onmousedown = function(ev){
+        var ev = ev || event;
+        var x = ev.clientX - jdSlider.offsetLeft;
+        document.onmousemove = function(ev){
+            var ev = ev || event;
+            var _left = ev.clientX - x;
+
+            if(_left<0){
+                _left = 0;
+            }else if(_left > maxWidth){
+                _left = maxWidth;
+            }
+            jdBack.style.width = (_left+10) + 'px';
+            jdSlider.style.left = _left + 'px';
+            var n = _left/maxWidth;
+            vid.currentTime = n*vid.duration;
+                                                         console.log(vid.currentTime);
+            nowTime();
+
+        };
+        document.onmouseup = function(){
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    };
+
+    function  nowTime(){
+        curTime.innerHTML = transTime(vid.currentTime);
+        var n = vid.currentTime / vid.duration;
+        jdBack.style.width = n*maxWidth+10+'px';
+        jdSlider.style.left = n*maxWidth+'px';
+    }
+    function transTime(time){
+        time = parseInt(time);
+        var h = Math.floor(time/3600);
+        var m = Math.floor(time%3600/60);
+        var s = Math.floor(time%60);
+        return zero(h)+':'+zero(m)+':'+zero(s);
+    }
+    function zero(num){
+        if(num<10){
+            return '0'+num;
+        }else {
+            return num;
+        }
+    }
+</script>
+</body>
+</html>

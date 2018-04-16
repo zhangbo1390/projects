@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐播放器</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .left{float: left;}
+        .right{float: right;}
+        .clear{clear: both;}
+        .music{width: 330px;margin: 10px auto;background: red;text-align: center;color: #fff;}
+        .head{width:100%;height: 280px;background: blue;color: #fff;padding-top: 20px;}
+        .head p{line-height: 30px;}
+        .head img{border-radius: 50%;margin-top: 30px;}
+        .content{width: 60%;margin: 10px auto;height: 500px;overflow: hidden;line-height: 30px;}
+        .footer{width: 100%;height: 90px;background: #000;}
+        .jd_box{width: 100%;height: 10px;background: #fff;position: relative;}
+        .jd_box .jd_bg{width: 0;height: 10px;background: #6c7071;position: absolute;left: 0;top: 0;}
+        .jd_box .jd_slider{width: 10px;height: 10px;background: #000;border-radius: 50%;position: absolute;left: 0;top: 0;}
+        .time{margin: 0 10px;}
+        .play_control{width: 220px;height: 37px;margin: 20px auto;position: relative;}
+        .btn{display: inline-block;background: url("img/player_bg.png");}
+        #pre{width: 27px;height: 27px;background-position: -76px 0;}
+        #play{width: 30px;height: 36px;background-position: -110px 0;}
+        #next{width: 27px;height: 27px;background-position: -150px 0;}
+        #vol{width: 22px;height: 22px;background-position: -190px 0;vertical-align: super;}
+        .vol_box{position: absolute;width: 5px;height: 50px;background: #fff;right: 53px;bottom: 24px;display: none;}
+        .vol_bg{position: absolute;width: 5px;background: green;right: 0;bottom: 0;}
+        .vol_slider{position: absolute;right: -2px;bottom: -1px;width: 9px;height: 9px;background: green;border-radius: 50%;}
+    </style>
+</head>
+<body>
+<div class="music">
+    <div class="head">
+        <p class="gm">海阔天空</p>
+        <p class="gs">Beyound</p>
+        <img src="img/1.jpg" alt="">
+    </div>
+    <div class="content">
+        <div class="gc"></div>
+    </div>
+    <div class="footer">
+        <div class="jd_box">
+            <div class="jd_bg"></div>
+            <div class="jd_slider"></div>
+        </div>
+        <span class="time left">00:00:00</span>
+        <span class="time right">00:00:00</span>
+        <div class="play_control clear">
+            <a href="javascript:;" id="pre" class="btn"></a>
+            <a href="javascript:;" id="play" class="btn"></a>
+            <a href="javascript:;" id="next" class="btn"></a>
+            <a href="javascript:;" id="vol" class="btn"></a>
+            <div class="vol_box">
+                <div class="vol_bg"></div>
+                <div class="vol_slider"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<textarea id="lrc" style="display:none">
+		[00:00.31]海阔天空-Beyond
+		[00:18.51]今天我寒夜里看雪飘过
+		[00:25.16]怀着冷却了的心窝飘远方
+		[00:30.92]风雨里追赶
+		[00:33.74]雾里分不清影踪
+		[00:36.66]天空海阔你与我
+		[00:39.94]可会变(谁没在变)
+		[00:43.61]多少次迎着冷眼与嘲笑
+		[00:49.87]从没有放弃过心中的理想
+		[00:55.71]一刹那恍惚
+		[00:58.85]若有所失的感觉
+		[01:01.64]不知不觉已变淡
+		[01:05.00]心里爱(谁明白我)
+		[01:08.75]原谅我这一生不羁放纵爱自由
+		[01:15.91]也会怕有一天会跌倒 哦NO
+		[01:21.81]背弃了理想谁人都可以
+		[01:28.04]哪会怕有一天只你共我
+		[01:42.76]今天我寒夜里看雪飘过
+		[01:49.18]怀着冷却了的心窝飘远方
+		[01:54.89]风雨里追赶
+		[01:57.96]雾里分不清影踪
+		[02:01.47]天空海阔你与我可会变
+		[02:05.37](谁没在变)
+		[02:07.96]原谅我这一生不羁放纵爱自由
+		[02:15.11]也会怕有一天会跌倒 哦NO
+		[02:21.08]背弃了理想谁人都可以
+		[02:27.57]哪会怕有一天只你共我
+		[02:32.28]哦 yeah
+		[03:08.63]仍然自由自我
+		[03:11.75]永远高唱我歌
+		[03:14.76]走遍千里
+		[03:19.62]原谅我这一生不羁放纵爱自由
+		[03:26.51]也会怕有一天会跌倒
+		[03:31.04]哦NO
+		[03:32.78]背弃了理想谁人都可以
+		[03:39.18]哪会怕有一天只你共我
+		[03:45.57]被弃了理想谁人都可以
+		[03:51.73]哪会怕有一天只你共我
+		[03:56.29]哦yeah
+		[03:57.35]原谅我这一生不羁放纵爱自由
+		[04:02.57]哦yeah
+		[04:04.25]也会怕有一天会跌倒哦
+		[04:10.18]背弃了理想谁人都可以
+		[04:16.64]哪会怕有一天只你共我
+		</textarea>
+<audio src="audio/Beyond-海阔天空.mp3" id="audio">您的浏览器不支持该插件，请更换浏览器查看</audio>
+<script>
+    var oAudio = document.getElementById('audio');
+    var oPre = document.getElementById('pre');
+    var oPlay = document.getElementById('play');
+    var oNext = document.getElementById('next');
+    var oVol = document.getElementById('vol');
+    var oVolBox = document.getElementsByClassName('vol_box')[0];
+    var oVolBg = document.getElementsByClassName('vol_bg')[0];
+    var oVolSlider = document.getElementsByClassName('vol_slider')[0];
+    var oJdBox = document.getElementsByClassName('jd_box')[0];
+    var oJdBg = document.getElementsByClassName('jd_bg')[0];
+    var oJdSlider = document.getElementsByClassName('jd_slider')[0];
+    var oTime = document.getElementsByClassName('time');
+    var oLrc = document.getElementById('lrc');
+    var oGc = document.getElementsByClassName('gc')[0];
+    var oVol_f = true;
+    var oPlay_f = true;
+    var timer = null;
+    oVolBg.style.height = '50px';
+    oVolSlider.style.bottom = '40px';
+    oVol.onclick = function(){
+        if(oVol_f){
+            oVolBox.style.display = 'block';
+        }else {
+            oVolBox.style.display = 'none';
+        }
+        oVol_f = !oVol_f;
+        var y = 0;
+        var bottom = 0;
+
+        /*音量控制条*/
+
+        oVolSlider.onmousedown = function(e){
+            var e = e || event;
+            y = e.clientY + oVolBg.offsetHeight;
+            document.onmousemove = function(ev){
+                var ev = ev || event;
+                bottom = ev.clientY - y;
+                if(bottom>0){
+                    bottom = 0;
+                }else if(bottom<-(oVolBox.offsetHeight-oVolSlider.offsetHeight)){
+                    bottom = -(oVolBox.offsetHeight-oVolSlider.offsetHeight);
+                    //console.log(bottom)
+                }
+                oVolSlider.style.bottom = -bottom + 'px';
+                oVolBg.style.height = -bottom +  'px';
+                var n = -bottom/(oVolBox.offsetHeight-oVolSlider.offsetHeight);
+                oAudio.volume = n;
+            };
+
+        };
+        document.onmouseup = function(){
+            document.onmousemove = null;
+            document.onmouseup = null;
+            oVolBox.style.display = 'none';
+            oVol_f = !oVol_f;
+        }
+    };
+    oPlay.onclick = function(){
+        if(oPlay_f){
+            oAudio.play();
+            this.style.backgroundPosition = '-295px -89px';
+            nowTime();
+            timer = setInterval(nowTime,1000);
+        }else {
+            oAudio.pause();
+            this.style.backgroundPosition = '-110px 0';
+            clearInterval(timer);
+        }
+        oPlay_f = !oPlay_f;
+    };
+
+    /*上一首，下一首*/
+    oPre.onclick = next;
+    oNext.onclick = next;
+    function next(){
+        oAudio.src = 'audio/BEYOND-不再犹豫.mp3';
+        oAudio.play();
+        oPlay_f = false;
+        oPlay.style.backgroundPosition = '-295px -89px';
+    }
+
+    /*获取总的歌曲时间*/
+    setTimeout(function(){
+        oTime[1].innerHTML = time(oAudio.duration);
+    },1000);
+
+    /*进度控制条*/
+    oJdSlider.onmousedown = function(e){
+        var e = e || event;
+        var x = e.clientX - oJdSlider.offsetLeft;
+        document.onmousemove = function(ev){
+            var ev = ev || event;
+            var x_ = ev.clientX - x;
+            if(x_<0){
+                x=0;
+            }else if(x_>oJdBox.offsetWidth-oJdSlider.offsetWidth){
+                x_ = oJdBox.offsetWidth-oJdSlider.offsetWidth;
+            }
+            oJdSlider.style.left = x_ + 'px';
+            oJdBg.style.width = x_ + oJdSlider.offsetWidth +'px';
+            var n = x_/(oJdBox.offsetWidth-oJdSlider.offsetWidth);
+            oAudio.currentTime = n*oAudio.duration;
+        };
+        document.onmouseup = function(){
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    };
+
+    /*获取歌词*/
+    var lrc = oLrc.value;
+    var arr = lrc.split('[');
+    var html = '';
+    for(var i=1;i<arr.length;i++){
+        var lrcArr = arr[i].split(']');
+        var timeArr = lrcArr[0].split('.');
+        var timesArr = timeArr[0].split(':');
+        var ms = timesArr[0]*60 + timesArr[1]*1;
+        var text = lrcArr[1];
+        if (text){
+            oGc.innerHTML += '<p id="s'+ ms +'">'+ text +'</p>';
+        }
+    }
+
+    /*歌词滚动*/
+    oAudio.addEventListener('timeupdate',function(){
+        var curr = parseInt(this.currentTime);
+        if(document.getElementById('s'+curr)){
+            document.getElementById('s'+curr).style.color = '#000';
+        }
+        for(var i=0;i<curr;i++){
+            oGc.style.marginTop = -(15+curr) + 'px';
+        }
+    });
+
+    function nowTime(){
+        oTime[0].innerHTML = time(oAudio.currentTime);
+        var n = oAudio.currentTime/oAudio.duration;
+        oJdBg.style.width = n*(oJdBox.offsetWidth-oJdSlider.offsetWidth) + oJdSlider.offsetWidth + 'px';
+        oJdSlider.style.left = n*(oJdBox.offsetWidth-oJdSlider.offsetWidth) + 'px';
+    }
+    function time(cTime){
+        var time = parseInt(cTime);
+        var h = zero(Math.floor(time/3600));
+        var m = zero(Math.floor(time%3600/60));
+        var s = zero(Math.floor(time%60));
+        return h + ':' + m + ':' + s;
+    }
+    function zero(num){
+        if(num<10){
+            return '0'+num;
+        }else {
+            return num;
+        }
+    }
+</script>
+</body>
+</html>

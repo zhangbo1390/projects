@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas-线性渐变</title>
+    <style>
+        #can{background: #9f6;margin: 100px auto;
+            display: block;}
+    </style>
+</head>
+<body>
+<canvas id="can" width="500" height="500">
+    您的浏览器不支持canvas标签，建议您更换浏览器查看效果
+</canvas>
+<script>
+    var can = document.getElementById('can');
+    var cxt = can.getContext('2d');
+    var color = cxt.createLinearGradient(75,100,75,50);//设置渐变颜色
+    color.addColorStop(0,'#f3c');//添加渐变点
+    color.addColorStop(0.3,'#0c3');
+    color.addColorStop(1,'#03f');
+    cxt.fillStyle = color;
+    cxt.fillRect(50,50,100,100);
+</script>
+</body>
+</html>
