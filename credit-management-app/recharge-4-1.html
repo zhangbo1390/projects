@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <title>充值</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 全屏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- 状态栏-->
+    <meta http-equiv="Pragma" content="no-cache">
+    <!--网站图标-->
+    <!--<link href="img/favicon.ico" rel="shortcut icon" type="images/x-icon">-->
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body class="">
+<header>
+    <div class="top-bar">
+        <p class="text-center text-white top-title"><i class="go-back" onclick="javascript:window.history.back();">&lt;返回</i>充值</p>
+    </div>
+    <div class="top-banner card-swiping-bg"></div>
+</header>
+
+<div class="login-form card-swiping-form mt-10">
+    <form action="">
+        <div class="grid-x grid-padding-x">
+            <div class="cell display-flex">
+                <label for="swiping_number" class="text-left middle mb-0 flex-1">充值金额：</label>
+                <input type="number" id="swiping_number" placeholder="" class="mb-0 flex-2">
+            </div>
+        </div>
+
+        <div class="grid-x mb-2 recharge-method-list grid-padding-x">
+            <div class="cell display-flex mt-4">
+                <label for="" class="text-left middle flex-1">充值方式：</label>
+
+                <div class="flex-2">
+                    <div class="display-flex">
+                        <input type="radio" name="recharge_method" value="Red" id="recharge_method_1" required class="mb-0 flex-1"><div class="icon pay-icon-1 flex-1" ></div><label for="recharge_method_1" class="font-32 flex-3">微信支付</label>
+                    </div>
+                    <div class="display-flex">
+                        <input type="radio" name="recharge_method" value="Red" id="recharge_method_2" required class="mb-0 flex-1"><div class="icon pay-icon-2 flex-1" ></div><label for="recharge_method_2" class="font-32 flex-3">微信支付</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-x mt-10 mb-4">
+            <div class="small-1 cell "></div>
+            <div class="small-10 cell ">
+                <input type="submit" class="button expanded text-white app-blue login-button mb-0 border-radius" value="提交">
+            </div>
+            <div class="small-1 cell"></div>
+        </div>
+    </form>
+</div>
+
+<div class="footer pos-bottom footer-nav">
+    <ul class="footer-nav-list grid-x">
+        <li class="small-2 cell"><a href="index.html"><i class="fontello-icon icon-home">&#xe823;</i><span>首页</span></a></li>
+        <li class="small-2 cell"><a href="card-package-9-1.html"><i class="fontello-icon icon-address-card-o">&#xf2bc;</i><span>卡包</span></a></li>
+        <li class="small-2 cell"><a href="deal-records-10-1.html"  class="active"><i class="fontello-icon icon-newspaper-1">&#xe8e3;</i><span>交易明细</span></a></li>
+        <li class="small-2 cell"><a href="profit-detail-11.html"><i class="fontello-icon icon-list-alt">&#xe891;</i><span>分润明细</span></a></li>
+        <li class="small-2 cell"><a href="personal-center-12-1.html"><i class="fontello-icon icon-user-1">&#xe8b0;</i><span>个人中心</span></a></li>
+        <li class="small-2 cell"><a href="email-import-13.html"><i class="fontello-icon icon-mail">&#xe804;</i><span>邮箱导入</span></a></li>
+    </ul>
+</div>
+
+
+<script src="js/font_resize.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/foundation.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

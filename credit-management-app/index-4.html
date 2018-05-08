@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <title>添加借记卡</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 全屏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- 状态栏-->
+    <meta http-equiv="Pragma" content="no-cache">
+    <!--网站图标-->
+    <!--<link href="img/favicon.ico" rel="shortcut icon" type="images/x-icon">-->
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body class="card-swiping">
+<header>
+    <div class="top-bar">
+        <p class="text-center text-white top-title"><i class="go-back" onclick="javascript:window.history.back();">&lt;返回</i>添加借记卡</p>
+    </div>
+</header>
+
+<form action="">
+    <div class="card-panel card-panel-container add-card">
+       <div class="display-flex">
+           <div class="flex-1"><label for="">银行卡卡号：</label></div>
+           <div class="flex-2"><input type="tel" id="bank_id"></div>
+       </div>
+        <div class="display-flex mt-2">
+            <div class="flex-1"><label for="">银行名称：</label></div>
+            <div class="flex-2">
+                <select class="add-card-select">
+                    <option value="husker">中国银行</option>
+                    <option value="starbuck">建设银行</option>
+                    <option value="hotdog">工商银行</option>
+                    <option value="apollo">上海浦东发展银行</option>
+                </select>
+            </div>
+        </div>
+        <div class="display-flex mt-2">
+            <div class="flex-1"><label for="">支行名称：</label></div>
+            <div class="flex-2">
+                <select class="add-card-select">
+                    <option value="husker">闸北支行</option>
+                    <option value="starbuck">建设银行</option>
+                    <option value="hotdog">工商银行</option>
+                    <option value="apollo">上海浦东发展银行</option>
+                </select>
+            </div>
+        </div>
+        <div class="display-flex mt-2">
+            <div class="flex-1"><label for="">支付密码：</label></div>
+            <div class="flex-2"><input type="password"></div>
+        </div>
+    </div>
+
+    <div class="add-card-wrap mt-4">
+        <input type="tel" id="pre_id" placeholder="请输入银行预留手机号">
+        <div class="display-flex mt-2">
+            <div class="flex-2 pr-1"><input type="text" id="" placeholder="请输入短信验证码"></div>
+            <div class="flex-1 pl-1"><input class="button expanded text-white app-blue login-button mb-0 font-24 border-radius" type="submit" value="发送验证码"></div>
+        </div>
+    </div>
+
+
+
+    <div class="grid-x mb-4 mt-8">
+        <div class="small-1 cell"></div>
+        <div class="small-10 cell">
+            <input class="button expanded text-white app-blue login-button mb-0 font-32 border-radius" type="submit" value="确定">
+        </div>
+        <div class="small-1 cell"></div>
+    </div>
+</form>
+
+
+<script src="js/bank_id_split.js"></script>
+<script src="js/font_resize.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/foundation.js"></script>
+<script src="js/app.js"></script>
+
+
+</body>
+</html>
